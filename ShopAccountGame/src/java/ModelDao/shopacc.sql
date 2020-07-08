@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2020 at 03:54 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Jul 08, 2020 at 03:58 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,39 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `acccount`
---
-
-CREATE TABLE `acccount` (
-  `acId` int(11) NOT NULL,
-  `ifId` int(11) DEFAULT NULL,
-  `ifAccName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cgName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `acPrice` double DEFAULT NULL,
-  `acAmount` int(11) DEFAULT NULL,
-  `acDescription` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tpId` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `acNote` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `igId` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
-  `aId` int(11) NOT NULL,
-  `rId` int(11) DEFAULT NULL,
-  `aFullname` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `aUserName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `aPass` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `aPhone` int(12) DEFAULT NULL,
-  `aAddress` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `aEmail` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `aAge` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `aId` int(20) NOT NULL COMMENT 'id admin',
+  `aFullName` varchar(50) NOT NULL COMMENT 'name of admin',
+  `aUserName` varchar(50) NOT NULL COMMENT 'user name admin',
+  `aPassWord` varchar(50) NOT NULL COMMENT 'password admin',
+  `uEmail` varchar(50) NOT NULL COMMENT 'Email admin',
+  `rId` int(20) NOT NULL COMMENT 'id role admin'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table admin';
 
 -- --------------------------------------------------------
 
@@ -66,171 +43,54 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `bill` (
-  `bid` int(11) NOT NULL,
-  `uid` int(11) NOT NULL,
-  `acid` int(11) NOT NULL,
-  `sbid` int(11) NOT NULL,
-  `bdate` date NOT NULL,
-  `totalPrice` int(11) NOT NULL,
-  `mgfullname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `uPhone` int(12) NOT NULL,
-  `bNote` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `bId` int(20) NOT NULL COMMENT 'id bill',
+  `uFullName` varchar(20) NOT NULL COMMENT 'full name user buy ',
+  `pId` int(20) NOT NULL COMMENT 'id of product',
+  `pPrice` int(50) NOT NULL COMMENT 'price of product',
+  `bTotalPrice` int(50) NOT NULL COMMENT 'total price of bill',
+  `bDateBuy` date NOT NULL COMMENT 'date buy product',
+  `uEmail` varchar(50) NOT NULL COMMENT 'email of user',
+  `bNote` varchar(100) NOT NULL COMMENT 'note of bill'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table bill';
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buy`
+-- Table structure for table `product`
 --
 
-CREATE TABLE `buy` (
-  `buyid` int(11) NOT NULL,
-  `buyusername` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `buyPass` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `buyPass2` varchar(100) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `product` (
+  `pId` int(20) NOT NULL COMMENT 'id product',
+  `pName` varchar(50) NOT NULL COMMENT 'name product',
+  `pPrice` int(11) NOT NULL COMMENT 'price product',
+  `pType` varchar(50) NOT NULL COMMENT 'type product',
+  `pDescription` varchar(100) NOT NULL COMMENT 'description product',
+  `codeProduce` varchar(100) NOT NULL COMMENT 'username password of account buy',
+  `pImage` varchar(150) NOT NULL COMMENT 'image of produce',
+  `PpriceSale` int(50) NOT NULL COMMENT 'price after sale'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table product';
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `category` (
-  `cgName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `cgDescription` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `cgNameProducer` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `comment`
---
-
-CREATE TABLE `comment` (
-  `cmtid` int(11) NOT NULL,
-  `userName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `comment` text COLLATE utf8_unicode_ci NOT NULL,
-  `cmtDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `image`
---
-
-CREATE TABLE `image` (
-  `igid` int(11) NOT NULL,
-  `acid` int(11) NOT NULL,
-  `iglink` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `infioac`
---
-
-CREATE TABLE `infioac` (
-  `ifId` int(11) NOT NULL,
-  `ifAccName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ifRank` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ifLevel` int(11) NOT NULL,
-  `comment` text COLLATE utf8_unicode_ci NOT NULL,
-  `cgName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `igLink` varchar(200) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `manage`
---
-
-CREATE TABLE `manage` (
-  `mgid` int(11) NOT NULL,
-  `aid` int(11) NOT NULL,
-  `mgName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `rid` int(11) NOT NULL,
-  `rName` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `payment`
---
-
-CREATE TABLE `payment` (
-  `pid` int(11) NOT NULL,
-  `pName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `pdate` date NOT NULL,
-  `buyid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `role`
---
-
-CREATE TABLE `role` (
-  `rid` int(11) NOT NULL,
-  `rName` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `statusbill`
---
-
-CREATE TABLE `statusbill` (
-  `sbid` int(11) NOT NULL,
-  `status` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `pid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `type`
---
-
-CREATE TABLE `type` (
-  `tpid` int(11) NOT NULL,
-  `tpName` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `uid` int(11) NOT NULL,
-  `ufull_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `uPass` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `uAge` int(11) DEFAULT NULL,
-  `uPhone` int(11) DEFAULT NULL,
-  `uEmail` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `uAdrress` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `uBirthday` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `user` (
+  `uId` int(10) NOT NULL COMMENT 'id user',
+  `uFullName` varchar(50) NOT NULL COMMENT 'full name user',
+  `userName` varchar(50) NOT NULL COMMENT 'username user',
+  `uPassWord` varchar(50) NOT NULL COMMENT 'password user',
+  `uAge` int(10) NOT NULL COMMENT 'age user',
+  `uPhone` varchar(20) NOT NULL COMMENT 'phone user',
+  `uEmail` varchar(50) NOT NULL COMMENT 'email user',
+  `uAddress` varchar(50) NOT NULL COMMENT 'address user',
+  `uBirthday` date NOT NULL COMMENT 'birthday user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='thable user';
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `acccount`
---
-ALTER TABLE `acccount`
-  ADD PRIMARY KEY (`acId`);
 
 --
 -- Indexes for table `admin`
@@ -242,137 +102,35 @@ ALTER TABLE `admin`
 -- Indexes for table `bill`
 --
 ALTER TABLE `bill`
-  ADD PRIMARY KEY (`bid`);
+  ADD PRIMARY KEY (`bId`);
 
 --
--- Indexes for table `buy`
+-- Indexes for table `user`
 --
-ALTER TABLE `buy`
-  ADD PRIMARY KEY (`buyid`);
-
---
--- Indexes for table `comment`
---
-ALTER TABLE `comment`
-  ADD PRIMARY KEY (`cmtid`);
-
---
--- Indexes for table `image`
---
-ALTER TABLE `image`
-  ADD PRIMARY KEY (`igid`);
-
---
--- Indexes for table `infioac`
---
-ALTER TABLE `infioac`
-  ADD PRIMARY KEY (`ifId`);
-
---
--- Indexes for table `manage`
---
-ALTER TABLE `manage`
-  ADD PRIMARY KEY (`mgid`);
-
---
--- Indexes for table `payment`
---
-ALTER TABLE `payment`
-  ADD PRIMARY KEY (`pid`);
-
---
--- Indexes for table `role`
---
-ALTER TABLE `role`
-  ADD PRIMARY KEY (`rid`);
-
---
--- Indexes for table `type`
---
-ALTER TABLE `type`
-  ADD PRIMARY KEY (`tpid`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`uid`);
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`uId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `acccount`
---
-ALTER TABLE `acccount`
-  MODIFY `acId` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `aId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `aId` int(20) NOT NULL AUTO_INCREMENT COMMENT 'id admin';
 
 --
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bId` int(20) NOT NULL AUTO_INCREMENT COMMENT 'id bill';
 
 --
--- AUTO_INCREMENT for table `buy`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `buy`
-  MODIFY `buyid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `comment`
---
-ALTER TABLE `comment`
-  MODIFY `cmtid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `image`
---
-ALTER TABLE `image`
-  MODIFY `igid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `infioac`
---
-ALTER TABLE `infioac`
-  MODIFY `ifId` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `manage`
---
-ALTER TABLE `manage`
-  MODIFY `mgid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `payment`
---
-ALTER TABLE `payment`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `role`
---
-ALTER TABLE `role`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `type`
---
-ALTER TABLE `type`
-  MODIFY `tpid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `user`
+  MODIFY `uId` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id user';
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
