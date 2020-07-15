@@ -17,7 +17,7 @@ public class ProductDao {
     private Connection connection;
 
     public ProductDao() {
-        DBConection dBConection = new DBConection();
+        DBConnection dBConection = new DBConnection();
         connection = dBConection.getConnection();
     }
 
@@ -72,8 +72,4 @@ public class ProductDao {
         }
         return null;
     }
-    
-//    public boolean update(int id, int quantity ){
-//        String sql = "UPDATE `product` SET `pId`=[value-1],`pName`=[value-2],`pPrice`=[value-3],`pType`=[value-4],`pQuantity`=[value-5],`pDescription`=[value-6],`codeProduce`=[value-7],`PpriceSale`=[value-8],`pImage`=[value-9] WHERE 1";
-//    }
 }

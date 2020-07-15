@@ -11,22 +11,22 @@ import java.util.logging.Logger;
  * @author Hao Nguyen
  */
 public class DBConnection {
-    static Connection con = null;
+    Connection conn;
 
-    public static Connection getConnection() {
+    public  DBConnection() {
         try {
-            String url = "jdbc:mysql://localhost:3306/shopacc";
-            String username = "root";
-            String password = "";    
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            con = (Connection) DriverManager.getConnection(url, username, password);
+            Class.forName("com.mysql.jdbc.Driver");
+
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopacc", "root", "");
         } catch (SQLException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            return con;
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
-    public static void main(String[] args) {
-        System.out.println(getConnection());
+
+    Connection getConnection() {
+        return conn ;
     }
 }
