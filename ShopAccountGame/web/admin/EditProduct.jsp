@@ -88,17 +88,17 @@
 
                             <input type="hidden" name="page" value="edit_product">
 
-                            <input type="hidden" name="id" value="${p.getpId()}"/>
+                            <input type="hidden" name="id" value="<c:out value="${p.getpId()}"></c:out>">
 
                             <div class="row form-group">
                                 <div class="col-lg-6 col-md-6 form-group">   
                                     <label>Name</label>
-                                    <input type="text" class="form-control"  name="name"  value="${p.getpName()}" required >
+                                    <input type="text" class="form-control"  name="name"  value="<c:out value="${p.getpName()}"></c:out>" required >
                                 </div>
 
                                 <div class="col-lg-6 col-md-6 form-group">  
                                     <label>Price</label>
-                                    <input type="text"class="form-control" name="price" value="${p.getpPrice()}" required>
+                                    <input type="text"class="form-control" name="price" value="<c:out value="${p.getpPrice()}"></c:out>" required>
                                 </div>
                             </div>
                             <div class="row form-group">
