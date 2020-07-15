@@ -12,77 +12,118 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Insert title here</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <title>Visual Admin Dashboard - Home</title>
+        <meta name="description" content="">
+        <meta name="author" content="templatemo">
+        <!-- 
+        Visual Admin Template
+        http://www.templatemo.com/preview/templatemo_455_visual_admin
+        -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/templatemo-style.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
-        <form action="Admin" method="post">
-        <header>
-            <h1>
-                Welcome admin
-            </h1>
-            
-            <nav>
-                <ul>
-                    <li><a href="admin?page=index">Home</a></li>
-                    <li><a href="/admin?page=addproduct">Add Product</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Pages</a></li>
-                </ul>
-            </nav>
-        </header>
+        <div class="templatemo-flex-row">
+            <div class="templatemo-sidebar">
+                <header class="templatemo-site-header">
+                    <div class="square"></div>
+                    <h1>Admin</h1>
+                </header>
+                <div class="profile-photo-container">
+                    <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+                    <div class="profile-photo-overlay"></div>
+                </div> 
+                <div class="mobile-menu-icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <nav class="templatemo-left-nav"> 
+                    <ul>
+                        <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
+                        <li><a href="AddProduct.jsp">Add Product</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Pages</a></li>
+                    </ul>
 
-        <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
-
-        <sql:query var="result" dataSource="${ds }">
-
-            select * from product
-
-
-        </sql:query>
-
-
-
-        <div class="container">
-            <h2>Products List:</h2>
-            <table>
-                <tr>
-                    <th>Item id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Type</th>
-                    <th>Description</th>
-                    <th>Code Produce</th>
-                    <th>Image</th>
-                    <th>Price Sale</th>
-                    <th>Option</th>
-                </tr>
-            </table>
-
-            <c:forEach items="${result.rows }" var="row">
-                <table style="table-layout: fixed;width: 100%;">
-
-                    <tr>
-                        <td style="width: 50px;"><c:out value="${row.pId }"></c:out></td>
-                        <td style="width: 100px;"><c:out value="${row.pName }"></c:out></td>
-                        <td style="width: 100px;"><c:out value="${row.pPrice }"></c:out></td>
-                        <td style="width: 100px;"><c:out value="${row.pType }"/></td>
-                        <td style="width: 100px;"><c:out value="${row.pDescription}"/></td>
-                        <td style="width: 100px;"><c:out value="${row.codeProduce}"/></td>
-                        <td style="width: 100px;"><img src="${row.pImage}" height="100" width="150" ></td>
-                        <td style="width: 100px;"><c:out value="${row.PpriceSale}"/></td>
-
-                        <td style="width: 100px;"><a href="/admin/EditProduct.jsp?page=edit&id=${row.pId}" style="color: #6bb1f8;">edit</a> ||
-                            <a href="<%= request.getContextPath()%>/admin?page=delete&id=${row.pId}" style="color:#6bb1f8;">delete</a></td>
-                    </tr>
-                </table>
-            </c:forEach>
-        </div>
-        <footer>
-            <div class="footer"> &copy; 2020Copyright:
-
+                    <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="conn"/>
+                    <sql:query var="result" dataSource="${conn }">
+      
+                       select * from product ORDER BY pId ASC
+                    </sql:query>
+                </nav>
             </div>
-        </footer>
-            </form>
+            <div class="templatemo-content col-1 light-gray-bg">
+                <div class="templatemo-top-nav-container">
+                    <div class="row">
+                        <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                            <ul class="text-uppercase">
+                                <li><a href="" class="active">Admin panel</a></li>
+                                <li><a href="">Dashboard</a></li>
+                                <li><a href="">Overview</a></li>
+                                <li><a href="login.html">Sign in form</a></li>
+                                <li><a href="?rs=">Sign in form</a></li>
+                            </ul>  
+                        </nav> 
+                    </div>
+                </div>
+                <div class="templatemo-content-container">
+                    <div class="templatemo-content-widget no-padding">
+                        <div class="panel panel-default table-responsive">
+
+                            <table class="table table-striped table-bordered templatemo-user-table">
+                                <thead>
+                                    <tr>
+                                        <td>Item id</td>
+                                        <td>Name</td>
+                                        <td>Price</td>
+                                        <td>Type</td>
+                                        <td>Description</td>
+                                        <td>Code Produce</td>
+                                        <td>Image</td>
+                                        <td>Price Sale</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody style="table-layout: auto;width: 100%;">
+                                    <c:forEach items="${result.rows }" var="row">
+                                        <tr>
+                                            <td ><c:out value="${row.pId }"></c:out></td>
+                                            <td ><c:out value="${row.pName }"></c:out></td>
+                                            <td ><c:out value="${row.pPrice }"></c:out></td>
+                                            <td ><c:out value="${row.pType}"/></td>
+                                            <td ><c:out value="${row.pDescription}"/></td>
+                                            <td ><c:out value="${row.codeProduce}"/></td>
+                                            <td ><img src="${row.pImage}" height="100" width="150" ></td>
+                                            <td ><c:out value="${row.PpriceSale}"/></td>
+                                            <td ><a href="/ADMController?page=edit&id=${row.pId}"class="templatemo-edit-btn">Edit</a> </td>
+                                            <td><a href="/ADMController?page=delete&id=${row.pId}" class="templatemo-edit-btn">Delete</a></td>
+                                            
+                                        </tr>
+                                    </c:forEach>   
+                                </tbody>
+
+                            </table>   
+                        </div>     
+                    </div>
+                </div>           
+            </div>
+            <footer>
+                <div class="footer"> &copy; 2020Copyright:
+                </div>
+            </footer>
+        </div>
     </body>
 </html>

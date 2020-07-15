@@ -9,13 +9,11 @@ import Model.Product;
 import Model.User;
 import ModelDao.DBConection;
 import ModelDao.fetchDB;
-
 import java.io.IOException;
-
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,16 +24,38 @@ import javax.swing.JOptionPane;
  *
  * @author Quang Hiển
  */
-@WebServlet(name = "ProductDAO", urlPatterns = {"/ProductDAO"})
-public class getContrller extends HttpServlet {
-
+public class Controller extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    ArrayList<Product> list = new ArrayList<>();
     static ArrayList<String> cartlist = new ArrayList<>();
     ArrayList<User> userList = new ArrayList<>();
-    ArrayList<Product> list = new ArrayList<>();
     HttpSession session;
-
     DBConection db = new DBConection();
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Controller</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Controller at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -49,24 +69,24 @@ public class getContrller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String page = request.getParameter("page");
-        if (page == null || page.equals("index")) {
-            fetchDB getDB = new fetchDB();
-            try {
-                list = getDB.CreatedProduct();
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-            session = request.getSession();
-            //  session.setAttribute("cartlist", cartlist);
-            session.setAttribute("list", list);
-
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        } else {
-            doPost(request, response);
-        }
+       String page = request.getParameter("page");
+//        if (page == null || page.equals("index")) {
+//            fetchDB getDB = new fetchDB();
+//            try {
+//                list = getDB.CreatedProduct();
+//            } catch (SQLException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//
+//            session = request.getSession();
+//            //  session.setAttribute("cartlist", cartlist);
+//            session.setAttribute("list", list);
+//
+//            request.getRequestDispatcher("index.jsp").forward(request, response);
+//        } else {
+//            doPost(request, response);
+//        }
     }
 
     /**
@@ -80,110 +100,10 @@ public class getContrller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String page = request.getParameter("page");
-        if (page.equals("login")) {
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-
-        if (page.equals("sign-up")) {
-            request.getRequestDispatcher("signup.jsp").forward(request, response);
-        }
- 
-//        if (page.equals("sign-up-form")) {
-//            String name = request.getParameter("name");
-//            String email = request.getParameter("email");
-//            String username = request.getParameter("username");
-//            String address = request.getParameter("address");
-//            String password_1 = request.getParameter("password_1");
-//            String password_2 = request.getParameter("password_2");
-//
-//            if (password_1.equals(password_2)) {
-//
-//                User user = new User();
-//                user.setAddress(address);
-//                user.setEmail(email);
-//                user.setName(name);
-//                user.setUsername(username);
-//                user.setPassword(password_1);
-//
-//                DB db = new DB();
-//                try {
-//                    db.addUser(user);
-//                } catch (SQLException e) {
-//                    // TODO Auto-generated catch block
-//                    e.printStackTrace();
-//                }
-//
-//                request.setAttribute("username", username);
-//                request.setAttribute("msg", "Account created successfully, Please Login!");
-//                request.getRequestDispatcher("login.jsp").forward(request, response);
-//
-//            } else {
-//                request.setAttribute("msg", "The two passwords do not match");
-//                request.setAttribute("name", name);
-//                request.setAttribute("address", address);
-//                request.setAttribute("email", email);
-//                request.setAttribute("username", username);
-//                request.getRequestDispatcher("signup.jsp").forward(request, response);
-//            }
-//
-//        }
-//        if (page.equals("login-form")) {
-//
-//            String username = request.getParameter("username");
-//            String password = request.getParameter("password");
-//
-//            DB db = new DB();
-//            User user = new User();
-//            boolean status = false;
-//            try {
-//                status = db.checkUser(username, password);
-//            } catch (SQLException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//            if (status) {
-//                session = request.getSession();
-//                session.setAttribute("session", session);
-//
-//                try {
-//                    userList = db.fetchUser();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//                session.setAttribute("address", user.fetchadd(userList, username));
-//                session.setAttribute("email", user.fetchemail(userList, username));
-//                session.setAttribute("name", user.fetchname(userList, username));
-//                session.setAttribute("username", username);
-//                request.getRequestDispatcher("index.jsp").forward(request, response);
-//            } else {
-//                request.setAttribute("msg", "Invalid Crediantials");
-//                request.setAttribute("username", username);
-//                request.getRequestDispatcher("login.jsp").forward(request, response);
-//            }
-//
-//        }
-//
-//        if (page.equals("logout")) {
-//            session = request.getSession();
-//            session.invalidate();
-//
-//            session = request.getSession();
-//            cartlist.clear();
-//            session.setAttribute("cartlist", cartlist);
-//            session.setAttribute("list", list);
-//
-//            request.getRequestDispatcher("index.jsp").forward(request, response);
-//        }
-        if (page.equals("LienMinh") || page.equals("LienQuan") || page.equals("FiFA") || page.equals("all-products")) {
-            fetchDB getDB = new fetchDB();
-            try {
-                list = getDB.CreatedProduct();
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
+         String page = request.getParameter("page");
+         if (page.equals("LienMinh") || page.equals("Lien Quan") || page.equals("FiFA") || page.equals("all-products")) {
+            fetchDB getDB = new fetchDB();          
+                list = getDB.getALL();
             request.setAttribute("list", list);
 
             if (page.equals("Lien Minh")) {
@@ -200,12 +120,10 @@ public class getContrller extends HttpServlet {
                 request.getRequestDispatcher("all-products.jsp").forward(request, response);
             }
         }
-
-        if (page.equals("showcart")) {
+         if (page.equals("showcart")) {
             request.getRequestDispatcher("cart.jsp").forward(request, response);
         }
-
-        if (page.equals("addtocart")) {
+         if (page.equals("addtocart")) {
             String id = request.getParameter("id");
             String action = request.getParameter("action");
             Product p = new Product();
@@ -237,17 +155,7 @@ public class getContrller extends HttpServlet {
                 request.getRequestDispatcher("mobiles.jsp").forward(request, response);
             }
         }
-
-        if (page.equals("success")) {
-
-            request.getRequestDispatcher("success.jsp").forward(request, response);
-
-            /*session = request.getSession();
-			 cartlist.clear();
-			 session.setAttribute("cartlist", cartlist);*/
-        }
-
-        if (page.equals("remove")) {
+         if (page.equals("remove")) {
             String id = request.getParameter("id");
             Product p = new Product();
             cartlist = p.remove(cartlist, id);
@@ -256,8 +164,7 @@ public class getContrller extends HttpServlet {
             session.setAttribute("cartlist", cartlist);
             request.getRequestDispatcher("cart.jsp").forward(request, response);
         }
-
-        if (page.equals("price-sort")) {
+          if (page.equals("price-sort")) {
             String price = request.getParameter("sort");
             String action = request.getParameter("action");
             Product p = new Product();

@@ -70,137 +70,111 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Insert title here</title>\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\"> \n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n");
+      out.write("        <meta charset=\"utf-8\">\n");
+      out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">  \n");
+      out.write("        <title>Visual Admin Dashboard - Home</title>\n");
+      out.write("        <meta name=\"description\" content=\"\">\n");
+      out.write("        <meta name=\"author\" content=\"templatemo\">\n");
+      out.write("        <!-- \n");
+      out.write("        Visual Admin Template\n");
+      out.write("        http://www.templatemo.com/preview/templatemo_455_visual_admin\n");
+      out.write("        -->\n");
+      out.write("        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>\n");
+      out.write("        <link href=\"css/font-awesome.min.css\" rel=\"stylesheet\">\n");
+      out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("        <link href=\"css/templatemo-style.css\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->\n");
+      out.write("        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n");
+      out.write("        <!--[if lt IE 9]>\n");
+      out.write("          <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n");
+      out.write("          <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n");
+      out.write("        <![endif]-->\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <form action=\"Admin\" method=\"post\">\n");
-      out.write("        <header>\n");
-      out.write("            <h1>\n");
-      out.write("                Welcome admin\n");
-      out.write("            </h1>\n");
-      out.write("            \n");
-      out.write("            <nav>\n");
-      out.write("                <ul>\n");
-      out.write("                    <li><a href=\"admin?page=index\">Home</a></li>\n");
-      out.write("                    <li><a href=\"/admin?page=addproduct\">Add Product</a></li>\n");
-      out.write("                    <li><a href=\"#\">Settings</a></li>\n");
-      out.write("                    <li><a href=\"#\">Pages</a></li>\n");
-      out.write("                </ul>\n");
-      out.write("            </nav>\n");
-      out.write("        </header>\n");
+      out.write("        <div class=\"templatemo-flex-row\">\n");
+      out.write("            <div class=\"templatemo-sidebar\">\n");
+      out.write("                <header class=\"templatemo-site-header\">\n");
+      out.write("                    <div class=\"square\"></div>\n");
+      out.write("                    <h1>Admin</h1>\n");
+      out.write("                </header>\n");
+      out.write("                <div class=\"profile-photo-container\">\n");
+      out.write("                    <img src=\"images/profile-photo.jpg\" alt=\"Profile Photo\" class=\"img-responsive\">  \n");
+      out.write("                    <div class=\"profile-photo-overlay\"></div>\n");
+      out.write("                </div> \n");
+      out.write("                <div class=\"mobile-menu-icon\">\n");
+      out.write("                    <i class=\"fa fa-bars\"></i>\n");
+      out.write("                </div>\n");
+      out.write("                <nav class=\"templatemo-left-nav\"> \n");
+      out.write("                    <ul>\n");
+      out.write("                        <li><a href=\"IndexADM.jsp\"><i class=\"fa fa-home fa-fw\"></i>Home</a></li>\n");
+      out.write("                        <li><a href=\"AddProduct.jsp\">Add Product</a></li>\n");
+      out.write("                        <li><a href=\"#\">Settings</a></li>\n");
+      out.write("                        <li><a href=\"#\">Pages</a></li>\n");
+      out.write("                    </ul>\n");
       out.write("\n");
-      out.write("        ");
+      out.write("                    ");
       if (_jspx_meth_sql_setDataSource_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("\n");
-      out.write("        ");
+      out.write("                    ");
       if (_jspx_meth_sql_query_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("        <div class=\"container\">\n");
-      out.write("            <h2>Products List:</h2>\n");
-      out.write("            <table>\n");
-      out.write("                <tr>\n");
-      out.write("                    <th>Item id</th>\n");
-      out.write("                    <th>Name</th>\n");
-      out.write("                    <th>Price</th>\n");
-      out.write("                    <th>Type</th>\n");
-      out.write("                    <th>Description</th>\n");
-      out.write("                    <th>Code Produce</th>\n");
-      out.write("                    <th>Image</th>\n");
-      out.write("                    <th>Price Sale</th>\n");
-      out.write("                    <th>Option</th>\n");
-      out.write("                </tr>\n");
-      out.write("            </table>\n");
-      out.write("\n");
-      out.write("            ");
-      //  c:forEach
-      org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-      _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
-      _jspx_th_c_forEach_0.setParent(null);
-      _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-      _jspx_th_c_forEach_0.setVar("row");
-      int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
-      try {
-        int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
-        if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-          do {
-            out.write("\n");
-            out.write("                <table style=\"table-layout: fixed;width: 100%;\">\n");
-            out.write("\n");
-            out.write("                    <tr>\n");
-            out.write("                        <td style=\"width: 50px;\">");
-            if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("                        <td style=\"width: 100px;\">");
-            if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("                        <td style=\"width: 100px;\">");
-            if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("                        <td style=\"width: 100px;\">");
-            if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("                        <td style=\"width: 100px;\">");
-            if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("                        <td style=\"width: 100px;\">");
-            if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("                        <td style=\"width: 100px;\"><img src=\"");
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pImage}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-            out.write("\" height=\"100\" width=\"150\" ></td>\n");
-            out.write("                        <td style=\"width: 100px;\">");
-            if (_jspx_meth_c_out_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-              return;
-            out.write("</td>\n");
-            out.write("\n");
-            out.write("                        <td style=\"width: 100px;\"><a href=\"/admin/EditProduct.jsp?page=edit&id=");
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-            out.write("\" style=\"color: #6bb1f8;\">edit</a> ||\n");
-            out.write("                            <a href=\"");
-            out.print( request.getContextPath());
-            out.write("/admin?page=delete&id=");
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-            out.write("\" style=\"color:#6bb1f8;\">delete</a></td>\n");
-            out.write("                    </tr>\n");
-            out.write("                </table>\n");
-            out.write("            ");
-            int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
-            if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-              break;
-          } while (true);
-        }
-        if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-          return;
-        }
-      } catch (Throwable _jspx_exception) {
-        while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
-          out = _jspx_page_context.popBody();
-        _jspx_th_c_forEach_0.doCatch(_jspx_exception);
-      } finally {
-        _jspx_th_c_forEach_0.doFinally();
-        _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
-      }
-      out.write("\n");
-      out.write("        </div>\n");
-      out.write("        <footer>\n");
-      out.write("            <div class=\"footer\"> &copy; 2020Copyright:\n");
-      out.write("\n");
+      out.write("                </nav>\n");
       out.write("            </div>\n");
-      out.write("        </footer>\n");
-      out.write("            </form>\n");
+      out.write("            <div class=\"templatemo-content col-1 light-gray-bg\">\n");
+      out.write("                <div class=\"templatemo-top-nav-container\">\n");
+      out.write("                    <div class=\"row\">\n");
+      out.write("                        <nav class=\"templatemo-top-nav col-lg-12 col-md-12\">\n");
+      out.write("                            <ul class=\"text-uppercase\">\n");
+      out.write("                                <li><a href=\"\" class=\"active\">Admin panel</a></li>\n");
+      out.write("                                <li><a href=\"\">Dashboard</a></li>\n");
+      out.write("                                <li><a href=\"\">Overview</a></li>\n");
+      out.write("                                <li><a href=\"login.html\">Sign in form</a></li>\n");
+      out.write("                                <li><a href=\"?rs=\">Sign in form</a></li>\n");
+      out.write("                            </ul>  \n");
+      out.write("                        </nav> \n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"templatemo-content-container\">\n");
+      out.write("                    <div class=\"templatemo-content-widget no-padding\">\n");
+      out.write("                        <div class=\"panel panel-default table-responsive\">\n");
+      out.write("\n");
+      out.write("                            <table class=\"table table-striped table-bordered templatemo-user-table\">\n");
+      out.write("                                <thead>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Item id</td>\n");
+      out.write("                                        <td>Name</td>\n");
+      out.write("                                        <td>Price</td>\n");
+      out.write("                                        <td>Type</td>\n");
+      out.write("                                        <td>Description</td>\n");
+      out.write("                                        <td>Code Produce</td>\n");
+      out.write("                                        <td>Image</td>\n");
+      out.write("                                        <td>Price Sale</td>\n");
+      out.write("                                        <td>Edit</td>\n");
+      out.write("                                        <td>Delete</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                </thead>\n");
+      out.write("\n");
+      out.write("                                <tbody style=\"table-layout: auto;width: 100%;\">\n");
+      out.write("                                    ");
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+        return;
+      out.write("   \n");
+      out.write("                                </tbody>\n");
+      out.write("\n");
+      out.write("                            </table>   \n");
+      out.write("                        </div>     \n");
+      out.write("                    </div>\n");
+      out.write("                </div>           \n");
+      out.write("            </div>\n");
+      out.write("            <footer>\n");
+      out.write("                <div class=\"footer\"> &copy; 2020Copyright:\n");
+      out.write("                </div>\n");
+      out.write("            </footer>\n");
+      out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -228,7 +202,7 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_sql_setDataSource_0.setPassword("");
     _jspx_th_sql_setDataSource_0.setDriver("com.mysql.jdbc.Driver");
     _jspx_th_sql_setDataSource_0.setUrl("jdbc:mysql://localhost:3306/shopacc");
-    _jspx_th_sql_setDataSource_0.setVar("ds");
+    _jspx_th_sql_setDataSource_0.setVar("conn");
     int _jspx_eval_sql_setDataSource_0 = _jspx_th_sql_setDataSource_0.doStartTag();
     if (_jspx_th_sql_setDataSource_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_sql_setDataSource_var_user_url_password_driver_nobody.reuse(_jspx_th_sql_setDataSource_0);
@@ -247,7 +221,7 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_sql_query_0.setPageContext(_jspx_page_context);
     _jspx_th_sql_query_0.setParent(null);
     _jspx_th_sql_query_0.setVar("result");
-    _jspx_th_sql_query_0.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ds }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_sql_query_0.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${conn }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_sql_query_0 = new int[] { 0 };
     try {
       int _jspx_eval_sql_query_0 = _jspx_th_sql_query_0.doStartTag();
@@ -260,11 +234,9 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\n");
-          out.write("\n");
-          out.write("            select * from product\n");
-          out.write("\n");
-          out.write("\n");
-          out.write("        ");
+          out.write("      \n");
+          out.write("                       select * from product ORDER BY pId ASC\n");
+          out.write("                    ");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -283,6 +255,82 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspx_th_sql_query_0.doFinally();
       _jspx_tagPool_sql_query_var_dataSource.reuse(_jspx_th_sql_query_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_0.setParent(null);
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setVar("row");
+    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
+      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                                        <tr>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td ><img src=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pImage}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" height=\"100\" width=\"150\" ></td>\n");
+          out.write("                                            <td >");
+          if (_jspx_meth_c_out_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("</td>\n");
+          out.write("                                            <td ><a href=\"/ADMController?page=edit&id=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"class=\"templatemo-edit-btn\">Edit</a> </td>\n");
+          out.write("                                            <td><a href=\"/ADMController?page=delete&id=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" class=\"templatemo-edit-btn\">Delete</a></td>\n");
+          out.write("                                            \n");
+          out.write("                                        </tr>\n");
+          out.write("                                    ");
+          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_0.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
     return false;
   }
@@ -349,7 +397,7 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_3 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_3.setPageContext(_jspx_page_context);
     _jspx_th_c_out_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pType }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pType}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_3 = _jspx_th_c_out_3.doStartTag();
     if (_jspx_th_c_out_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_3);
