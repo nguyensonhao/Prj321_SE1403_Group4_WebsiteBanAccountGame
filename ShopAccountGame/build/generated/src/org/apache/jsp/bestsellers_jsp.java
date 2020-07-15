@@ -61,7 +61,7 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  </noscript>\n");
       out.write("  <!-- End Google Tag Manager (noscript) -->\n");
       out.write("\n");
-      out.write("  <div class=\"top-header\">\n");
+      out.write("  <div class=\"top-header\" style=\"background-color: #088A08\">\n");
       out.write("    <div class=\"container\">\n");
       out.write("      <div class=\"row\" style=\"opacity: 0.7\">\n");
       out.write("        <div class=\"slide-news\">\n");
@@ -91,7 +91,7 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("        <div class=\"text-right\" style=\"padding:5px 0;float: right\">\n");
-      out.write("          Hỗ trợ 1900 633 305\n");
+      out.write("          Hỗ trợ 0337470726\n");
       out.write("        </div>\n");
       out.write("      </div>\n");
       out.write("    </div>\n");

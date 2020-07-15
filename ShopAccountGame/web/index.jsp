@@ -1,5 +1,8 @@
-
-
+<%-- 
+    Document   : index
+    Created on : Jul 6, 2020, 2:59:12 PM
+    Author     : Hao Nguyen
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="vi">
