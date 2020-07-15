@@ -1,4 +1,4 @@
-package Model;
+package ModelEntities;
 
 import java.sql.Date;
 
@@ -9,26 +9,26 @@ import java.sql.Date;
 public class User {
     private int uId ;
     private String uFullName;
-    private String userName;
-    private String pasWord;
+    private String uUserName;
+    private String uPassWord;
     private int uAge;
     private int uPhone;
     private String uEmail;
-    private String uAdrress;
+    private String uAdress;
     private Date uBirthday;
 
     public User() {
     }
 
-    public User(int uId, String uFullName, String userName, String pasWord, int uAge, int uPhone, String uEmail, String uAdrress, Date uBirthday) {
+    public User(int uId, String uFullName, String uUserName, String uPassWord, int uAge, int uPhone, String uEmail, String uAdress, Date uBirthday) {
         this.uId = uId;
         this.uFullName = uFullName;
-        this.userName = userName;
-        this.pasWord = pasWord;
+        this.uUserName = uUserName;
+        this.uPassWord = uPassWord;
         this.uAge = uAge;
         this.uPhone = uPhone;
         this.uEmail = uEmail;
-        this.uAdrress = uAdrress;
+        this.uAdress = uAdress;
         this.uBirthday = uBirthday;
     }
 
@@ -49,19 +49,19 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return uUserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String uUserName) {
+        this.uUserName = uUserName;
     }
 
     public String getPasWord() {
-        return pasWord;
+        return uPassWord;
     }
 
-    public void setPasWord(String pasWord) {
-        this.pasWord = pasWord;
+    public void setPasWord(String uPassWord) {
+        this.uPassWord = uPassWord;
     }
 
     public int getuAge() {
@@ -88,12 +88,12 @@ public class User {
         this.uEmail = uEmail;
     }
 
-    public String getuAdrress() {
-        return uAdrress;
+    public String getuAdress() {
+        return uAdress;
     }
 
-    public void setuAdrress(String uAdrress) {
-        this.uAdrress = uAdrress;
+    public void setuAdress(String uAdress) {
+        this.uAdress = uAdress;
     }
 
     public Date getuBirthday() {

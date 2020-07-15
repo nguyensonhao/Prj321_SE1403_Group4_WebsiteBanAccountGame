@@ -1,7 +1,4 @@
-package Model;
-
-import java.sql.Date;
-
+package ModelEntities;
 /**
  *
  * @author Hao Nguyen
@@ -10,19 +7,19 @@ public class Admin {
 
     private int aId;
     private String aFullName;
-    private String userName;
-    private String pasWord;
+    private String aUserName;
+    private String aPassWord;
     private String uEmail;
     private int rId;
 
     public Admin() {
     }
 
-    public Admin(int aId, String aFullName, String userName, String pasWord, String uEmail, int rId) {
+    public Admin(int aId, String aFullName, String aUserName, String aPassWord, String uEmail, int rId) {
         this.aId = aId;
         this.aFullName = aFullName;
-        this.userName = userName;
-        this.pasWord = pasWord;
+        this.aUserName = aUserName;
+        this.aPassWord = aPassWord;
         this.uEmail = uEmail;
         this.rId = rId;
     }
@@ -44,19 +41,19 @@ public class Admin {
     }
 
     public String getUserName() {
-        return userName;
+        return aUserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String aUserName) {
+        this.aUserName = aUserName;
     }
 
-    public String getPasWord() {
-        return pasWord;
+    public String getPassWord() {
+        return aPassWord;
     }
 
-    public void setPasWord(String pasWord) {
-        this.pasWord = pasWord;
+    public void setPassWord(String pasWord) {
+        this.aPassWord = pasWord;
     }
 
     public String getuEmail() {

@@ -1,4 +1,4 @@
-package Model;
+package ModelEntities;
 
 import java.sql.Date;
 
@@ -11,23 +11,21 @@ public class Bill {
     private int bId;
     private String uFullname;
     private int pId;
-    private String aFullname;
     private double pPrice;
     private double bTotalPrice;
-    private Date bDateBy;
+    private Date bDateBuy;
     private String uEmail;
-    private String Note;
+    private String bNote;
 
-    public Bill(int bId, String uFullname, int pId, String aFullname, double pPrice, double bTotalPrice, Date bDateBy, String uEmail, String Note) {
+    public Bill(int bId, String uFullname, int pId, String aFullname, double pPrice, double bTotalPrice, Date bDateBuy, String uEmail, String bNote) {
         this.bId = bId;
         this.uFullname = uFullname;
         this.pId = pId;
-        this.aFullname = aFullname;
         this.pPrice = pPrice;
         this.bTotalPrice = bTotalPrice;
-        this.bDateBy = bDateBy;
+        this.bDateBuy = bDateBuy;
         this.uEmail = uEmail;
-        this.Note = Note;
+        this.bNote = bNote;
     }
 
     public int getbId() {
@@ -54,14 +52,6 @@ public class Bill {
         this.pId = pId;
     }
 
-    public String getaFullname() {
-        return aFullname;
-    }
-
-    public void setaFullname(String aFullname) {
-        this.aFullname = aFullname;
-    }
-
     public double getpPrice() {
         return pPrice;
     }
@@ -78,12 +68,12 @@ public class Bill {
         this.bTotalPrice = bTotalPrice;
     }
 
-    public Date getbDateBy() {
-        return bDateBy;
+    public Date getbDateBuy() {
+        return bDateBuy;
     }
 
-    public void setbDateBy(Date bDateBy) {
-        this.bDateBy = bDateBy;
+    public void setbDateBuy(Date bDateBuy) {
+        this.bDateBuy = bDateBuy;
     }
 
     public String getuEmail() {
@@ -94,12 +84,12 @@ public class Bill {
         this.uEmail = uEmail;
     }
 
-    public String getNote() {
-        return Note;
+    public String getbNote() {
+        return bNote;
     }
 
-    public void setNote(String Note) {
-        this.Note = Note;
+    public void setbNote(String bNote) {
+        this.bNote = bNote;
     }
 
 }
