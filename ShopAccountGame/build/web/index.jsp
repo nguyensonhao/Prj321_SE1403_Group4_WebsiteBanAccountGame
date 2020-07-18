@@ -422,14 +422,14 @@
                 <c:forEach items="${result.rows}" var="row">
                 <div class="col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames">
                     <div class="item-game-wrapper">
-                        <a href="#">
+                        <a href="ProductDetail?id=${row.pId}">
                             <div class="img">
                                 <img class="check_img_errs" src="${row.pImage}" />
                             </div>
                         </a>
                         <div class="item-info">
                                 <div class="item-title">
-                                    <a href="link thanh toan">${row.pName }</a>                                
+                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a>                                
                                 </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
@@ -476,13 +476,13 @@
                 <c:forEach items="${result.rows}" var="row">
                 <div class="col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames">
                     <div class="item-game-wrapper">
-                        <a href="#">
+                        <a href="ProductDetail?id=${row.pId}">
                             <div class="img">
                                 <img class="check_img_errs" src="${row.pImage}" />
                             </div></a>
                         <div class="item-info">
                             <div class="item-title">
-                                    <a href="link thanh toan">${row.pName }</a>                                
+                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a>                                
                              </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
@@ -528,13 +528,13 @@
                 <c:forEach items="${result.rows}" var="row">
                        <div class="col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames">
                     <div class="item-game-wrapper">
-                        <a href="#">
+                        <a href="ProductDetail?id=${row.pId}">
                             <div class="img">
                                 <img class="check_img_errs" src="${row.pImage}" />
                             </div></a>
                         <div class="item-info">
                           <div class="item-title">
-                                    <a href="link thanh toan">${row.pName }</a>                                
+                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a>                                
                                 </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
