@@ -63,8 +63,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html dir=\"ltr\" lang=\"vi\">\n");
-      out.write("    <!--<![endif]-->\n");
-      out.write("\n");
       out.write("    <head>\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header/header1.jsp", out, false);
@@ -72,7 +70,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("\n");
       out.write("    <body>\n");
-      out.write("        <!-- Google Tag Manager (noscript) -->\n");
       out.write("        <noscript>\n");
       out.write("        <iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-NDLT8HM\" height=\"0\" width=\"0\"\n");
       out.write("                style=\"display:none;visibility:hidden\"></iframe>\n");
@@ -339,7 +336,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    </li>\n");
       out.write("                                    <li>\n");
       out.write("                                        <a href=\"#\"><i class=\"icon icon-origin-svg\"></i>\n");
-      out.write("                                            <span>Fifa</span></a>\n");
+      out.write("                                            <span>Fifa online 4</span></a>\n");
       out.write("                                    </li>           \n");
       out.write("                                </ul>\n");
       out.write("                            </div>\n");
@@ -351,7 +348,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <a href=\"bestsellers.jsp\" target=\"_blank\"><i class=\"fab fa-hotjar\"></i><span>Sản Phẩm Hot</span></a>\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"quick-menu head-link\">\n");
-      out.write("                                    <a href=\"#\" target=\"_blank\"><i class=\"fas fa-award\"></i><span>Sản Phẩm Tốt</span></a>\n");
+      out.write("                                    <a href=\"#\" target=\"_blank\"><i class=\"fas fa-award\"></i><span>Đang Khuyến Mãi</span></a>\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"quick-menu head-link\">\n");
       out.write("                                    <a href=\"#\" target=\"_blank\"><i class=\"far fa-credit-card\"></i><span>Hình thức thanh toán</span></a>\n");

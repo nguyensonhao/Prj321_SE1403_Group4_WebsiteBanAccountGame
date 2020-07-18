@@ -4,14 +4,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="vi">
-    <!--<![endif]-->
-
     <head>
         <jsp:include page="header/header1.jsp"></jsp:include>
     </head>
 
     <body>
-        <!-- Google Tag Manager (noscript) -->
         <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDLT8HM" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe>
@@ -276,7 +273,7 @@
                                     </li>
                                     <li>
                                         <a href="#"><i class="icon icon-origin-svg"></i>
-                                            <span>Fifa</span></a>
+                                            <span>Fifa online 4</span></a>
                                     </li>           
                                 </ul>
                             </div>
@@ -288,7 +285,7 @@
                                     <a href="bestsellers.jsp" target="_blank"><i class="fab fa-hotjar"></i><span>Sản Phẩm Hot</span></a>
                                 </div>
                                 <div class="quick-menu head-link">
-                                    <a href="#" target="_blank"><i class="fas fa-award"></i><span>Sản Phẩm Tốt</span></a>
+                                    <a href="#" target="_blank"><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
                                 </div>
                                 <div class="quick-menu head-link">
                                     <a href="#" target="_blank"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>

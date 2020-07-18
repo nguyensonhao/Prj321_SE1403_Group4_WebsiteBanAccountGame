@@ -304,7 +304,7 @@
                                         </li>
                                         <li>
                                             <a href="Link duong dan fifa"><i class="icon icon-origin-svg"></i>
-                                                <span>Fifa oline 4</span></a>
+                                                <span>Fifa online 4</span></a>
 
                                     </ul>
                                 </div>
@@ -314,10 +314,10 @@
                             <div class="right-menu">
                                 <div class="row menu-tab-all">
                                     <div class="quick-menu head-link">
-                                        <a href="bestsellers.jsp"><i class="fab fa-hotjar"></i><span>Khác hàng mua nhiều</span></a>
+                                        <a href="bestsellers.jsp"><i class="fab fa-hotjar"></i><span>Sản Phẩm Hot</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href=""><i class="fas fa-award"></i><span>ĐANG KHUYẾN MẠI</span></a>
+                                        <a href=""><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
                                         <a href="/index.php?route=account/topup"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
