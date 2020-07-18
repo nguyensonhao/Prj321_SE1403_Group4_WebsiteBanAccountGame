@@ -1,5 +1,5 @@
 <%-- 
-    Document   : tesst
+    Document   : ProductDetail
     Created on : Jul 17, 2020, 11:23:40 PM
     Author     : Hao Nguyen 
 --%>
