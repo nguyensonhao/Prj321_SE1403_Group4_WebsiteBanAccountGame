@@ -299,25 +299,16 @@
                                     <div class="home-slider">
                                         <div>
                                             <!--  Link hình chạy, link hình  -->
-                                            <a href="#"><img class="check_img_errs" src="#" alt="#"></a>
+                                            <a href="index.jsp"><img class="check_img_errs" src="https://lh3.googleusercontent.com/NrqvieF6vnnrPQGKbAQLcEVrVPeA8rNiYbzxhkLAOqVarCjZCMufHV9aBRnqXhl0Sq0g3mB7zIgfJEcZpZKmdFmGCaOlvKo4zUFHRNZLxdE6OFtUrR5ocfhurqpob_ab6D511pI1bVJ10m2q5ZXQIJrWWmhp-hJN7vhTQagEig1DDwpBeBLv_5mvTxxOcgSOe4ZPkY3H1VLU6VlcU6m-slkAsBJ75koO0YIdu8u7IYX6dNFtRjYb0-AY0njw-XTUkUzX7DRtl-sbjOLsJcEbQmsi97aCj9lOIi_wDVFo0UOHlmhViwKq4h_A6zfeXdlzf6Rn3W5_5iuDAw6zdo_pBFTvfMnkwFyAfUmy7G-nCnUhRPbaQoHBgqOU2azzAe7NFqs0XXOy0Z5kDs4eO4cpfDrG0QOIq6bpu3ltFIAC7_Fl_N3wMJm7Ad4IM6TyYsSFvXBrN_fLnZ_dlEIFXwGvm3X_M50aA4ciIGGfObn0N0uqWDHnJafbz8oH-PvIOnljjyi23rKVYOf0g5uHM8AhGcAc441x3KvY5-L_iOnVH3u6yGHXCza4Sj5yNkw_fgtTu99Hkf-AXlPf_Rlu5TrfJgynKSFAycDdnPwSSxc2JRPGKFKdY1e_fpP3RT70N4GvO2M2rKS9YoBxQuCf7f8IDxUffbUrkZzShVu9kZzicm1Og6YbevXDCN7nwTw=w1677-h943-no?authuser=1" alt="#"></a>
                                         </div>
                                         <div>
-                                            <a href="#"><img class="check_img_errs" src="#" alt="#	"></a>
+                                            <a href="accountFifa.jsp"><img class="check_img_errs" src="https://danongonline.com.vn/wp-content/uploads/2017/11/Fifa-Online-4-ra-m%E1%BA%AFt-v%E1%BB%9Bi-%C4%91%E1%BB%93-h%E1%BB%8Da-si%C3%AAu-kh%E1%BB%A7ng-1.jpg" alt="#	"></a>
                                         </div>
                                         <div>
-                                            <a href="#"><img class="check_img_errs" src="#" alt="#"></a>
+                                            <a href="accountLienQuan.jsp"><img class="check_img_errs" src="https://gameviet.mobi/wp-content/uploads/2020/03/Hinh-Nen-Lien-Quan-Mobile-Wallpaper-Cho-Iphone-Android-1280x640.jpg" alt="#"></a>
                                         </div>
                                         <div>
-                                            <a href="#"><img class="check_img_errs" src="#" alt="#"></a>
-                                        </div>
-                                        <div>
-                                            <a href="/#"><img class="check_img_errs" src="#" alt="#"></a>
-                                        </div>
-                                        <div>
-                                            <a href="#"><img class="check_img_errs" src="#" alt="#"></a>
-                                        </div>
-                                        <div>
-                                            <a href="#"><img class="check_img_errs" src="#" alt="#"></a>
+                                            <a href="accountLienMinh.jsp"><img class="check_img_errs" src="https://s.dowload.vn/data/image/2018/09/26/lien-minh-huyen-thoai-doi-hinh-vuot-ai-co-truong-640.jpg" alt="#"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -331,26 +322,7 @@
                                         arrows: true,
                                     });
                                 </script>
-                                <div class="row sub-banner">
-                                    <div class="col col-md-4 col-sm-6 col-xs-6 col-lg-4">
-                                        <a class="w-100" href="#"><img class="check_img_errs" src="#" alt="#"></a>
-                                    </div>
-                                    <div class="col col-md-4 col-sm-6 col-xs-6 col-lg-4">
-                                        <a class="w-100" href="#"><img src="#" class="height-banner-home check_img_errs img-banner" alt="#"></a>
-                                    </div>
-                                </div>
-                                <!--Một số acc nổi bật ở giao diện chính-->
-                                <div class="row banner_bottom">
-                                    <div class="col col-md-4 col-sm-4 col-xs-4 col-lg-4">
-                                        <a href="#"><img src="#" alt="#"></a>
-                                    </div>
-                                    <div class="col col-md-4 col-sm-4 col-xs-4 col-lg-4">
-                                        <a href="#"><img src="#" alt="#"></a>
-                                    </div>
-                                    <div class="col col-md-4 col-sm-4 col-xs-4 col-lg-4">
-                                        <a href="#"><img src="#" alt="#l"></a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
