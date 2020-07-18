@@ -96,7 +96,7 @@ public final class accountLienMinh_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                </a>\n");
       out.write("\n");
       out.write("                                <div class=\"marquee-slide\">\n");
-      out.write("                                    <a href=\"#\" class=\"mySlides\" id=\"new-slide-0\">\n");
+      out.write("                                    <a href=\"accountLienQuan.jsp\" class=\"mySlides\" id=\"new-slide-0\">\n");
       out.write("                                        <i class=\"fab fa-hotjar\"></i>\n");
       out.write("                                        Liên Quân              </a>\n");
       out.write("                                    <a href=\"#\" class=\"mySlides\" id=\"new-slide-1\">\n");
@@ -354,7 +354,7 @@ public final class accountLienMinh_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                <div class=\"dropdown-menu drop-category nav-menu\" aria-labelledby=\"dropdownMenuLink\">\n");
       out.write("                                    <ul>\n");
       out.write("                                        <li>\n");
-      out.write("                                            <a href=\"link duong dan lien quan\"><i class=\"fab fa-steam-symbol\"></i>\n");
+      out.write("                                            <a href=\"accountLienQuan.jsp\"><i class=\"fab fa-steam-symbol\"></i>\n");
       out.write("                                                <span>Liên quân</span></a>\n");
       out.write("                                        </li>\n");
       out.write("                                        <li>\n");
@@ -363,7 +363,7 @@ public final class accountLienMinh_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                        </li>\n");
       out.write("                                        <li>\n");
       out.write("                                            <a href=\"Link duong dan fifa\"><i class=\"icon icon-origin-svg\"></i>\n");
-      out.write("                                                <span>Fifa oline 4</span></a>\n");
+      out.write("                                                <span>Fifa online 4</span></a>\n");
       out.write("\n");
       out.write("                                    </ul>\n");
       out.write("                                </div>\n");
@@ -373,10 +373,10 @@ public final class accountLienMinh_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                            <div class=\"right-menu\">\n");
       out.write("                                <div class=\"row menu-tab-all\">\n");
       out.write("                                    <div class=\"quick-menu head-link\">\n");
-      out.write("                                        <a href=\"bestsellers.jsp\"><i class=\"fab fa-hotjar\"></i><span>Khác hàng mua nhiều</span></a>\n");
+      out.write("                                        <a href=\"bestsellers.jsp\"><i class=\"fab fa-hotjar\"></i><span>Sản Phẩm Hot</span></a>\n");
       out.write("                                    </div>\n");
       out.write("                                    <div class=\"quick-menu head-link\">\n");
-      out.write("                                        <a href=\"\"><i class=\"fas fa-award\"></i><span>ĐANG KHUYẾN MẠI</span></a>\n");
+      out.write("                                        <a href=\"\"><i class=\"fas fa-award\"></i><span>Đang Khuyến Mãi</span></a>\n");
       out.write("                                    </div>\n");
       out.write("                                    <div class=\"quick-menu head-link\">\n");
       out.write("                                        <a href=\"/index.php?route=account/topup\"><i class=\"far fa-credit-card\"></i><span>Hình thức thanh toán</span></a>\n");

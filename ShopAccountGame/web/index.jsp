@@ -33,13 +33,13 @@
 
 
                             <div class="marquee-slide">
-                                <a href="#" class="mySlides" id="new-slide-0">
+                                <a href="accountLienQuan.jsp" class="mySlides" id="new-slide-0">
                                     <i class="fab fa-hotjar"></i>
                                     Liên Quân              </a>
-                                <a href="#" class="mySlides" id="new-slide-1">
+                                <a href="accountLienMinh.jsp" class="mySlides" id="new-slide-1">
                                     <i class="fab fa-hotjar"></i>
                                     Liên Minh              </a>
-                                <a href="#" class="mySlides" id="new-slide-2">
+                                <a href="accountFifa.jsp" class="mySlides" id="new-slide-2">
                                     <i class="fab fa-hotjar"></i>
                                     Fifa              </a>
                             </div>
@@ -264,15 +264,15 @@
                             <div class="nav-menu">
                                 <ul>
                                     <li>
-                                        <a href="#"><i class="fab fa-steam-symbol"></i>
+                                        <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
                                             <span>Liên Quân</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fas fa-trophy"></i>
+                                        <a href="accountLienMinh.jsp"><i class="fas fa-trophy"></i>
                                             <span>Liên Minh</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="icon icon-origin-svg"></i>
+                                        <a href="accountFifa.jsp"><i class="icon icon-origin-svg"></i>
                                             <span>Fifa online 4</span></a>
                                     </li>           
                                 </ul>
@@ -359,7 +359,6 @@
         </div>
 
 
-        <div class="view-more btn-aqua" id="loadMoreProduct4" onclick="loadMore($('.next-page-product4').text(), 4, this);$('.next-page-product4').text(Number($('.next-page-product4').text()) + 1);">Tải thêm sản phẩm</div>
         <hr>
     <div class="container padd-0">
         <div class="list-title">

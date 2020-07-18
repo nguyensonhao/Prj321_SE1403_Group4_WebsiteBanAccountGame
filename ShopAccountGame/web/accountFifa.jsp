@@ -42,10 +42,10 @@
                                     <a href="#" class="mySlides" id="new-slide-0">
                                         <i class="fab fa-hotjar"></i>
                                         Liên Quân              </a>
-                                    <a href="#" class="mySlides" id="new-slide-1">
+                                    <a href="accountLienMinh.jsp" class="mySlides" id="new-slide-1">
                                         <i class="fab fa-hotjar"></i>
                                         Liên Minh              </a>
-                                    <a href="#" class="mySlides" id="new-slide-2">
+                                    <a href="accountFifa.jsp" class="mySlides" id="new-slide-2">
                                         <i class="fab fa-hotjar"></i>
                                         Fifa              </a>
                                 </div>
@@ -147,15 +147,15 @@
                                 <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
                                     <ul>
                                         <li>
-                                            <a href="link duong dan lien quan"><i class="fab fa-steam-symbol"></i>
+                                            <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
                                                 <span>Liên quân</span></a>
                                         </li>
                                         <li>
-                                            <a href="link duong dan lien minh"><i class="fas fa-trophy"></i>
+                                            <a href="accountLienMinh.jsp"><i class="fas fa-trophy"></i>
                                                 <span>Liên minh</span></a>
                                         </li>
                                         <li>
-                                            <a href="Link duong dan fifa"><i class="icon icon-origin-svg"></i>
+                                            <a href="accountFifa.jsp"><i class="icon icon-origin-svg"></i>
                                                 <span>Fifa online 4</span></a>
 
                                     </ul>
