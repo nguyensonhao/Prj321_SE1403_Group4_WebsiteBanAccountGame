@@ -4,9 +4,17 @@
         <servlet-name>ADMController</servlet-name>
         <servlet-class>Controller.ADMController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>Controller.LoginController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ADMController</servlet-name>
         <url-pattern>/ADMController</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
