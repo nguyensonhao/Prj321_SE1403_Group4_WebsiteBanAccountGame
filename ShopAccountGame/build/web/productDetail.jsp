@@ -1,5 +1,5 @@
 <%-- 
-    Document   : ProductDetail
+    Document   : tesst
     Created on : Jul 17, 2020, 11:23:40 PM
     Author     : Hao Nguyen 
 --%>
@@ -21,6 +21,7 @@
             </noscript>
             <!-- End Google Tag Manager (noscript) -->
 
+            <
             <div class="top-header" style="background-color: #088A08">
                 <div class="container">
                     <div class="row" style="opacity: 0.7">
@@ -38,13 +39,13 @@
                                 </a>
 
                                 <div class="marquee-slide">
-                                    <a href="accountLienQuan.jsp" class="mySlides" id="new-slide-0">
+                                    <a href="#" class="mySlides" id="new-slide-0">
                                         <i class="fab fa-hotjar"></i>
                                         Liên Quân              </a>
-                                    <a href="accountLienMinh.jsp" class="mySlides" id="new-slide-1">
+                                    <a href="#" class="mySlides" id="new-slide-1">
                                         <i class="fab fa-hotjar"></i>
                                         Liên Minh              </a>
-                                    <a href="accountFifa.jsp" class="mySlides" id="new-slide-2">
+                                    <a href="#" class="mySlides" id="new-slide-2">
                                         <i class="fab fa-hotjar"></i>
                                         Fifa              </a>
                                 </div>
@@ -294,15 +295,15 @@
                                 <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
                                     <ul>
                                         <li>
-                                            <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
+                                            <a href="link duong dan lien quan"><i class="fab fa-steam-symbol"></i>
                                                 <span>Liên quân</span></a>
                                         </li>
                                         <li>
-                                            <a href="accountLienMinh.jsp"><i class="fas fa-trophy"></i>
+                                            <a href="link duong dan lien minh"><i class="fas fa-trophy"></i>
                                                 <span>Liên minh</span></a>
                                         </li>
                                         <li>
-                                            <a href="accountFifa"><i class="icon icon-origin-svg"></i>
+                                            <a href="Link duong dan fifa"><i class="icon icon-origin-svg"></i>
                                                 <span>Fifa oline 4</span></a>
 
                                     </ul>

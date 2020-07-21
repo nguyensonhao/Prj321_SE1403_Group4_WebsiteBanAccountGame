@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ModelDao;
 
 import Model.Product;
-import Model.User;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,7 +26,7 @@ public class ProductDAO {
     public ArrayList<Product> getALL() {
 
         try {
-            String sql = "Select * from product";
+            String sql = "Select * from product WHERE 1";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
@@ -42,9 +35,9 @@ public class ProductDAO {
                 int price = rs.getInt("pPrice");
                 int quantity = rs.getInt("quantity");
                 String type = rs.getString("pType");
-                String Description = rs.getString("Description");
+                String Description = rs.getString("pDescription");
                 String codeProduce = rs.getString("codeProduce");
-                String image = rs.getString("pLImage");
+                String image = rs.getString("pImage");
                 int PpriceSale = rs.getInt("PpriceSale");
                 int desId = rs.getInt("dId");
 
@@ -79,11 +72,22 @@ public class ProductDAO {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
+    }
+    
+    public ResultSet getProducts() {
+        try {
+            String sql = "SELECT * FROM `product`";
+            PreparedStatement ps = conn.prepareStatement(sql);
 
+            return ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     public Product getProduct(int id) {
-       try {
+        try {
             String sql = "select * from product where pId=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
@@ -108,8 +112,8 @@ public class ProductDAO {
         return null;
     }
 
-    public int updateProduct(Product p) {
-       try {
+     public int updateProduct(Product p) {
+        try {
             String sql = "UPDATE `product` SET `pName`=?,`pPrice`=?,`pType`=?,`pDescription`=?,`codeProduce`=?,`PpriceSale`=? WHERE pId=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, p.getpName());
@@ -126,10 +130,24 @@ public class ProductDAO {
         return 0;
 
     }
+    
+    public boolean updateBill(int id, int quantity) {
+        try {
+            String sql = "UPDATE `product` SET `quantity`=? WHERE `pId`=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, quantity);
+            ps.setInt(2, id);
+
+            return ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 
     public int addProduct(Product p) {
 
-         try {
+        try {
             String sql = "INSERT INTO `product`(`pName`, `pPrice`, `quantity`, `pType`, `pDescription`, `codeProduce`, `PpriceSale`, `pImage`, `dId`) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, p.getpName());
@@ -149,4 +167,6 @@ public class ProductDAO {
         }
         return 0;
     }
+    
+
 }
