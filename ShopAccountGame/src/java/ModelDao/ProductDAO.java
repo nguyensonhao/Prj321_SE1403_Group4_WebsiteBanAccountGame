@@ -33,7 +33,7 @@ public class ProductDAO {
     public ArrayList<Product> getALL() {
 
         try {
-            String sql = "Select * from product WHERE 1";
+            String sql = "Select * from product";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
@@ -83,7 +83,7 @@ public class ProductDAO {
     }
 
     public Product getProduct(int id) {
-        try {
+       try {
             String sql = "select * from product where pId=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
@@ -109,7 +109,7 @@ public class ProductDAO {
     }
 
     public int updateProduct(Product p) {
-        try {
+       try {
             String sql = "UPDATE `product` SET `pName`=?,`pPrice`=?,`pType`=?,`pDescription`=?,`codeProduce`=?,`PpriceSale`=? WHERE pId=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, p.getpName());
@@ -129,7 +129,7 @@ public class ProductDAO {
 
     public int addProduct(Product p) {
 
-        try {
+         try {
             String sql = "INSERT INTO `product`(`pName`, `pPrice`, `quantity`, `pType`, `pDescription`, `codeProduce`, `PpriceSale`, `pImage`, `dId`) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, p.getpName());

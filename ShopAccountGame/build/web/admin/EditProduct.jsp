@@ -45,14 +45,21 @@
                     <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
                     <div class="profile-photo-overlay"></div>
                 </div>
+                <!-- Search box -->
+                <form class="templatemo-search-form" role="search">
+                    <div class="input-group">
+                        <button type="submit" class="fa fa-search"></button>
+                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                    </div>
+                </form>
                 <div class="mobile-menu-icon">
                     <i class="fa fa-bars"></i>
                 </div>
                 <nav class="templatemo-left-nav">
                     <ul>
                        <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                        <li><a href="AddProduct.jsp"><i class="fa fa-database fa-fw"></i>Product</a></li>
-                        <li><a href="User.jsp" class="active"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
+                        <li><a href="AddProduct.jsp" class="active"><i class="fa fa-database fa-fw"></i>Product</a></li>
+                        <li><a href="User.jsp"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
                         <li><a href="#">Pages</a></li>
                         <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
@@ -82,17 +89,17 @@
 
                             <input type="hidden" name="page" value="edit_product">
 
-                            <input type="hidden" name="id" value="${p.getpId()}"/>
+                            <input type="hidden" name="id" value="<c:out value="${p.getpId()}"></c:out>">
 
                             <div class="row form-group">
                                 <div class="col-lg-6 col-md-6 form-group">   
                                     <label>Name</label>
-                                    <input type="text" class="form-control"  name="name"  value="${p.getpName()}" required >
+                                    <input type="text" class="form-control"  name="name"  value="<c:out value="${p.getpName()}"></c:out>" required >
                                 </div>
 
                                 <div class="col-lg-6 col-md-6 form-group">  
                                     <label>Price</label>
-                                    <input type="text"class="form-control" name="price" value="${p.getpPrice()}" required>
+                                    <input type="text"class="form-control" name="price" value="<c:out value="${p.getpPrice()}"></c:out>" required>
                                 </div>
                             </div>
                             <div class="row form-group">

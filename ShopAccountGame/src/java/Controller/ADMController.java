@@ -89,18 +89,23 @@ public class ADMController extends HttpServlet {
             throws ServletException, IOException {
         String page = request.getParameter("page");
         if (page.equals("edit_product")) {
+            int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
-            String price = request.getParameter("price");
+            int price = Integer.parseInt(request.getParameter("price"));
             String type = request.getParameter("type");
             String codeproduce = request.getParameter("codeproduce");
             String description = request.getParameter("description");
-            String priceSale = request.getParameter("sale");
-            if (request.getParameter("id") != null) {
-                Product p = new Product();
-                int id = Integer.parseInt(request.getParameter("id"));
-                p.setpId(id);
-                new ProductDAO().updateProduct(p);
-            }
+            int priceSale = Integer.parseInt(request.getParameter("sale"));
+
+            Product p = new Product();
+            p.setpId(id);
+            p.setpName(name);
+            p.setpPrice(price);
+            p.setpType(type);
+            p.setCodeProduce(codeproduce);
+            p.setDescription(description);
+            p.setPpriceSale(priceSale);
+            new ProductDAO().updateProduct(p);
             response.sendRedirect("admin/IndexADM.jsp");
 //            request.getRequestDispatcher(" IndexADM.jsp").forward(request, response);
         }
@@ -111,8 +116,8 @@ public class ADMController extends HttpServlet {
             p = product.getProduct(id);
             getServletContext().setAttribute("p", p);
 
-//            request.getRequestDispatcher("admin/EditProduct.jsp").forward(request, response);
-            response.sendRedirect("admin/EditProduct.jsp");
+            //   request.getRequestDispatcher("admin/EditProduct.jsp").forward(request, response);
+            response.sendRedirect("admin/EditProduct.jsp?");
         }
 
         if (page.equals("delete")) {

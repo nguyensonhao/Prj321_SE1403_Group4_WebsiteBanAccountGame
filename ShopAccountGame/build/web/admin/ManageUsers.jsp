@@ -1,6 +1,6 @@
 <%-- 
-    Document   : IndexADM
-    Created on : Jul 9, 2020, 6:47:40 PM
+    Document   : ManageUsers
+    Created on : Jul 20, 2020, 4:30:06 PM
     Author     : Quang Hiển
 --%>
 
@@ -11,8 +11,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Insert title here</title>
-        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">  
         <title>Visual Admin Dashboard - Home</title>
@@ -39,7 +37,7 @@
             <div class="templatemo-sidebar">
                 <header class="templatemo-site-header">
                     <div class="square"></div>
-                    <h1>Admin</h1>
+                    <h1>User </h1>
                 </header>
                 <div class="profile-photo-container">
                     <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
@@ -50,18 +48,18 @@
                 </div>
                 <nav class="templatemo-left-nav"> 
                     <ul>
-                        <li><a href="IndexADM.jsp"class="active"><i class="fa fa-home fa-fw"></i>Home</a></li>
+                        <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
                         <li><a href="AddProduct.jsp"><i class="fa fa-database fa-fw"></i>Product</a></li>
-                        <li><a href="ManageUsers.jsp" ><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
+                        <li><a href="ManageUsers.jsp"class="active"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
                         <li><a href="/ADMController?page=home">Pages</a></li>
                         <li><a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
                     </ul>
 
                     <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="conn"/>
+                    <sql:update var="delete" dataSource="${conn}" sql="DELETE FROM `user`WHERE uId='${param.id}'"/>
                     <sql:query var="result" dataSource="${conn }">
-      
-                       select * from product ORDER BY pId ASC
+                        SELECT * FROM `user` INNER JOIN role ON role.rId = user.rId ORDER BY uId ASC
                     </sql:query>
                 </nav>
             </div>
@@ -85,34 +83,36 @@
 
                             <table class="table table-striped table-bordered templatemo-user-table">
                                 <thead>
-                                    <tr>
-                                        <td>Item id</td>
-                                        <td>Name</td>
-                                        <td>Price</td>
-                                        <td>Type</td>
-                                        <td>Description</td>
-                                        <td>Code Produce</td>
-                                        <td>Image</td>
-                                        <td>Price Sale</td>
-                                        <td>Edit</td>
-                                        <td>Delete</td>
+                                     <tr>
+                                        <td>No</td>
+                                        <td>Full Name</td>
+                                        <td>User Name</td>
+                                        <td>PassWord</td>
+                                        <td>BirthDay</td>
+                                        <td>Age</td>
+                                        <td>Phone Number</td>
+                                        <td>Email</td>
+                                        <td>Address</td>
+                                        <td>Role</td>
+                                        <td>Option</td>
                                     </tr>
                                 </thead>
 
-                                <tbody style="table-layout: auto;width: 100%;">
-                                    <c:forEach items="${result.rows }" var="row">
+                                <tbody>
+                                     <c:forEach items="${result.rows }" var="row">
                                         <tr>
-                                            <td ><c:out value="${row.pId }"></c:out></td>
-                                            <td ><c:out value="${row.pName }"></c:out></td>
-                                            <td ><c:out value="${row.pPrice }"></c:out></td>
-                                            <td ><c:out value="${row.pType}"/></td>
-                                            <td ><c:out value="${row.pDescription}"/></td>
-                                            <td ><c:out value="${row.codeProduce}"/></td>
-                                            <td ><img src="${row.pImage}" height="100" width="150" ></td>
-                                            <td ><c:out value="${row.PpriceSale}"/></td>
-                                            <td ><a href="/ADMController?page=edit&id=${row.pId}"class="templatemo-edit-btn">Edit</a> </td>
-                                            <td><a href="/ADMController?page=delete&id=${row.pId}" class="templatemo-edit-btn">Delete</a></td>
-                                            
+                                            <td ><c:out value="${row.uId }"></c:out></td>
+                                            <td ><c:out value="${row.uFullName }"></c:out></td>
+                                            <td ><c:out value="${row.userName }"></c:out></td>
+                                            <td ><c:out value="${row.uPassWord }"></c:out></td>
+                                            <td ><c:out value="${row.uBirthday}"/></td> 
+                                            <td ><c:out value="${row.uAge }"></c:out></td>
+                                            <td ><c:out value="${row.uPhone}"/></td>
+                                            <td ><c:out value="${row.uEmail}"/></td>
+                                            <td ><c:out value="${row.uAddress}"/></td>
+                                            <td ><c:out value="${row.NameRole}"/></td>
+                                            <td ><a href="/ADMController?page=edit_u&uid=${row.uId}"class="templatemo-edit-btn">Edit</a> <hr>
+                                                <a href="?id=${row.uId}" class="templatemo-edit-btn">Delete</a></td>
                                         </tr>
                                     </c:forEach>   
                                 </tbody>
@@ -122,10 +122,11 @@
                     </div>
                 </div>           
             </div>
-            <footer>
-                <div class="footer"> &copy; 2020Copyright:
-                </div>
-            </footer>
         </div>
+        <footer>
+            <div class="footer"> &copy; 2020Copyright:
+            </div>
+        </footer>
+
     </body>
 </html>

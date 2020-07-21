@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class Product implements Comparable<Product> {
+public class Product {
 
     private int pId;
     private String pName;
@@ -22,6 +22,19 @@ public class Product implements Comparable<Product> {
     private int desId;
 
     public Product() {
+    }
+
+    public Product(int pId, String pName, int pPrice, String pType, String Description, String codeProduce, String pLImage, int PpriceSale, int quantity, int desId) {
+        this.pId = pId;
+        this.pName = pName;
+        this.pPrice = pPrice;
+        this.pType = pType;
+        this.Description = Description;
+        this.codeProduce = codeProduce;
+        this.pLImage = pLImage;
+        this.PpriceSale = PpriceSale;
+        this.quantity = quantity;
+        this.desId = desId;
     }
 
     public int getpId() {
@@ -107,51 +120,6 @@ public class Product implements Comparable<Product> {
     @Override
     public String toString() {
         return "Product{" + "pId=" + pId + ", pName=" + pName + ", pPrice=" + pPrice + ", pType=" + pType + ", Description=" + Description + ", codeProduce=" + codeProduce + ", pLImage=" + pLImage + ", PpriceSale=" + PpriceSale + ", quantity=" + quantity + ", desId=" + desId + '}';
-    }
-    public boolean check(ArrayList<String> cartlist, String id2) {
-        for (String id : cartlist) {
-            if (id.equals(id2)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public ArrayList<String> remove(ArrayList<String> cartlist, String id) {
-        for (String cid : cartlist) {
-            if (cid.equals(id)) {
-                cartlist.remove(cid);
-                break;
-            }
-
-        }
-
-        return cartlist;
-    }
-
-    public ArrayList<Product> lowtohigh(ArrayList<Product> list) {
-        Collections.sort(list);
-        return list;
-    }
-
-    @Override
-    public int compareTo(Product p) {
-        return pPrice - p.pPrice;
-    }
-
-    public ArrayList<Product> hightolow(ArrayList<Product> list) {
-        Collections.sort(list, new Temp());
-        return list;
-
-    }
-
-}
-
-class Temp implements Comparator<Product> {
-
-    @Override
-    public int compare(Product o1, Product o2) {
-        return o2.getpPrice() - o1.getpPrice();
     }
 
 }

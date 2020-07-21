@@ -11,11 +11,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Insert title here</title>
+         <title>Dashboard - Home</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">  
-        <title>Visual Admin Dashboard - Home</title>
         <meta name="description" content="">
         <meta name="author" content="templatemo">
         <!-- 
@@ -46,17 +45,18 @@
                     <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
                     <div class="profile-photo-overlay"></div>
                 </div>
+                <!-- Search box -->
                 <div class="mobile-menu-icon">
                     <i class="fa fa-bars"></i>
                 </div>
                 <nav class="templatemo-left-nav">
-                    <ul>
+                     <ul>
                         <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                        <li><a href="AddProduct.jsp"><i class="fa fa-database fa-fw"></i>ADD Product</a></li>
-                        <li><a href="User.jsp" class="active"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
+                        <li><a href="AddProduct.jsp"class="active"><i class="fa fa-database fa-fw"></i>Product</a></li>
+                        <li><a href="ManageUsers.jsp"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+                        <li><a href="/ADMController?page=home">Pages</a></li>
+                        <li><a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
                     </ul>
                 </nav>
             </div>
