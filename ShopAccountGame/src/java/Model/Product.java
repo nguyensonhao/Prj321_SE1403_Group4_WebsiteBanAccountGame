@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class Product implements Comparable<Product> {
+public class Product {
 
     private int pId;
     private String pName;
@@ -18,11 +18,13 @@ public class Product implements Comparable<Product> {
     private String codeProduce;
     private String pLImage;
     private int PpriceSale;
+    private int quantity;
+    private int desId;
 
     public Product() {
     }
 
-    public Product(int pId, String pName, int pPrice, String pType, String Description, String codeProduce, String pLImage, int PpriceSale) {
+    public Product(int pId, String pName, int pPrice, String pType, String Description, String codeProduce, String pLImage, int PpriceSale, int quantity, int desId) {
         this.pId = pId;
         this.pName = pName;
         this.pPrice = pPrice;
@@ -31,6 +33,8 @@ public class Product implements Comparable<Product> {
         this.codeProduce = codeProduce;
         this.pLImage = pLImage;
         this.PpriceSale = PpriceSale;
+        this.quantity = quantity;
+        this.desId = desId;
     }
 
     public int getpId() {
@@ -97,55 +101,25 @@ public class Product implements Comparable<Product> {
         this.PpriceSale = PpriceSale;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getDesId() {
+        return desId;
+    }
+
+    public void setDesId(int desId) {
+        this.desId = desId;
+    }
+
     @Override
     public String toString() {
-        return "Product{" + "pId=" + pId + ", pName=" + pName + ", pPrice=" + pPrice + ", pType=" + pType + ", Description=" + Description + ", codeProduce=" + codeProduce + ", pLImage=" + pLImage + ", PpriceSale=" + PpriceSale + '}';
-    }
-
-    public boolean check(ArrayList<String> cartlist, String id2) {
-        for (String id : cartlist) {
-            if (id.equals(id2)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public ArrayList<String> remove(ArrayList<String> cartlist, String id) {
-        for (String cid : cartlist) {
-            if (cid.equals(id)) {
-                cartlist.remove(cid);
-                break;
-            }
-
-        }
-
-        return cartlist;
-    }
-
-    public ArrayList<Product> lowtohigh(ArrayList<Product> list) {
-        Collections.sort(list);
-        return list;
-    }
-
-    @Override
-    public int compareTo(Product p) {
-        return pPrice - p.pPrice;
-    }
-
-    public ArrayList<Product> hightolow(ArrayList<Product> list) {
-        Collections.sort(list, new Temp());
-        return list;
-
-    }
-
-}
-
-class Temp implements Comparator<Product> {
-
-    @Override
-    public int compare(Product o1, Product o2) {
-        return o2.getpPrice() - o1.getpPrice();
+        return "Product{" + "pId=" + pId + ", pName=" + pName + ", pPrice=" + pPrice + ", pType=" + pType + ", Description=" + Description + ", codeProduce=" + codeProduce + ", pLImage=" + pLImage + ", PpriceSale=" + PpriceSale + ", quantity=" + quantity + ", desId=" + desId + '}';
     }
 
 }

@@ -8,7 +8,7 @@ package Controller;
 import Model.Product;
 import Model.User;
 import ModelDao.DBConection;
-import ModelDao.fetchDB;
+import ModelDao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -71,7 +71,7 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
        String page = request.getParameter("page");
 //        if (page == null || page.equals("index")) {
-//            fetchDB getDB = new fetchDB();
+//            ProductDAO getDB = new ProductDAO();
 //            try {
 //                list = getDB.CreatedProduct();
 //            } catch (SQLException e) {
@@ -101,100 +101,7 @@ public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          String page = request.getParameter("page");
-         if (page.equals("LienMinh") || page.equals("Lien Quan") || page.equals("FiFA") || page.equals("all-products")) {
-            fetchDB getDB = new fetchDB();          
-                list = getDB.getALL();
-            request.setAttribute("list", list);
-
-            if (page.equals("Lien Minh")) {
-                request.getRequestDispatcher("#.jsp").forward(request, response);
-            }
-            if (page.equals("Lien Quan ")) {
-                request.getRequestDispatcher("#.jsp").forward(request, response);
-            }
-            if (page.equals("FiFa")) {
-                request.getRequestDispatcher("#.jsp").forward(request, response);
-            }
-
-            if (page.equals("All-Products")) {
-                request.getRequestDispatcher("all-products.jsp").forward(request, response);
-            }
-        }
-         if (page.equals("showcart")) {
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
-        }
-         if (page.equals("addtocart")) {
-            String id = request.getParameter("id");
-            String action = request.getParameter("action");
-            Product p = new Product();
-            boolean check = p.check(cartlist, id);
-
-            if (check) {
-                JOptionPane.showMessageDialog(null, "Product is already added to Cart", "Info", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                cartlist.add(id);
-                JOptionPane.showMessageDialog(null, "Product successfully added to Cart", "Info", JOptionPane.INFORMATION_MESSAGE);
-            }
-
-            if (action.equals("index")) {
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
-            if (action.equals("allproducts")) {
-                request.getRequestDispatcher("all-products.jsp").forward(request, response);
-            }
-            if (action.equals("clothing")) {
-                request.getRequestDispatcher("clothing.jsp").forward(request, response);
-            }
-            if (action.equals("home-decor")) {
-                request.getRequestDispatcher("home-decor.jsp").forward(request, response);
-            }
-            if (action.equals("laptops")) {
-                request.getRequestDispatcher("laptops.jsp").forward(request, response);
-            }
-            if (action.equals("mobiles")) {
-                request.getRequestDispatcher("mobiles.jsp").forward(request, response);
-            }
-        }
-         if (page.equals("remove")) {
-            String id = request.getParameter("id");
-            Product p = new Product();
-            cartlist = p.remove(cartlist, id);
-
-            session = request.getSession();
-            session.setAttribute("cartlist", cartlist);
-            request.getRequestDispatcher("cart.jsp").forward(request, response);
-        }
-          if (page.equals("price-sort")) {
-            String price = request.getParameter("sort");
-            String action = request.getParameter("action");
-            Product p = new Product();
-            if (price.equals("low-to-high")) {
-                list = p.lowtohigh(list);
-            } else {
-                list = p.hightolow(list);
-            }
-
-            session.setAttribute("list", list);
-
-            if (action.equals("index")) {
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
-            if (action.equals("all-products")) {
-                request.getRequestDispatcher("all-products.jsp").forward(request, response);
-            }
-            if (action.equals("mobiles")) {
-                request.getRequestDispatcher("mobiles.jsp").forward(request, response);
-            }
-            if (action.equals("laptops")) {
-                request.getRequestDispatcher("laptops.jsp").forward(request, response);
-            }
-            if (action.equals("clothing")) {
-                request.getRequestDispatcher("clothing.jsp").forward(request, response);
-            }
-            if (action.equals("home-decor")) {
-                request.getRequestDispatcher("home-decor.jsp").forward(request, response);
-            }
-        }
+         
     }
 
     /**

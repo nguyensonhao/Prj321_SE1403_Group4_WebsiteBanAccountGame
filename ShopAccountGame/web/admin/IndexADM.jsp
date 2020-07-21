@@ -50,10 +50,12 @@
                 </div>
                 <nav class="templatemo-left-nav"> 
                     <ul>
-                        <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                        <li><a href="AddProduct.jsp">Add Product</a></li>
+                        <li><a href="IndexADM.jsp"class="active"><i class="fa fa-home fa-fw"></i>Home</a></li>
+                        <li><a href="AddProduct.jsp"><i class="fa fa-database fa-fw"></i>Product</a></li>
+                        <li><a href="ManageUsers.jsp" ><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
-                        <li><a href="#">Pages</a></li>
+                        <li><a href="/ADMController?page=home">Pages</a></li>
+                        <li><a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
                     </ul>
 
                     <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="conn"/>

@@ -20,12 +20,12 @@ import java.util.logging.Logger;
  *
  * @author Quang Hiển
  */
-public class fetchDB {
+public class ProductDAO {
 
     private Connection conn;
     ArrayList<Product> list = new ArrayList<>();
 
-    public fetchDB() {
+    public ProductDAO() {
         DBConection dBConection = new DBConection();
         this.conn = dBConection.getConnection();
     }
@@ -33,33 +33,37 @@ public class fetchDB {
     public ArrayList<Product> getALL() {
 
         try {
-            String sql = "Select * from product WHERE 1";
+            String sql = "Select * from product";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("pId");
                 String name = rs.getString("pName");
                 int price = rs.getInt("pPrice");
+                int quantity = rs.getInt("quantity");
                 String type = rs.getString("pType");
                 String Description = rs.getString("Description");
                 String codeProduce = rs.getString("codeProduce");
                 String image = rs.getString("pLImage");
                 int PpriceSale = rs.getInt("PpriceSale");
+                int desId = rs.getInt("dId");
 
                 Product p = new Product();
                 p.setpName(name);
                 p.setpPrice(price);
+                p.setQuantity(quantity);
                 p.setpType(type);
                 p.setDescription(Description);
                 p.setCodeProduce(codeProduce);
                 p.setpLImage(image);
                 p.setPpriceSale(PpriceSale);
+                p.setDesId(desId);
                 list.add(p);
             }
 
             return list;
         } catch (SQLException ex) {
-            Logger.getLogger(fetchDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -72,14 +76,14 @@ public class fetchDB {
             st.setInt(1, id);
             return st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(fetchDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
 
     }
 
     public Product getProduct(int id) {
-        try {
+       try {
             String sql = "select * from product where pId=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
@@ -89,21 +93,23 @@ public class fetchDB {
                 p.setpId(rst.getInt("pId"));
                 p.setpName(rst.getString("pName"));
                 p.setpPrice(rst.getInt("pPrice"));
+                p.setQuantity(rst.getInt("quantity"));
                 p.setpType(rst.getString("pType"));
                 p.setDescription(rst.getString("pDescription"));
                 p.setCodeProduce(rst.getString("codeProduce"));
                 p.setpLImage(rst.getString("pImage"));
                 p.setPpriceSale(rst.getInt("PpriceSale"));
+                p.setDesId(rst.getInt("dId"));
             }
             return p;
         } catch (SQLException ex) {
-            Logger.getLogger(fetchDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
 
     public int updateProduct(Product p) {
-        try {
+       try {
             String sql = "UPDATE `product` SET `pName`=?,`pPrice`=?,`pType`=?,`pDescription`=?,`codeProduce`=?,`PpriceSale`=? WHERE pId=?";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, p.getpName());
@@ -115,7 +121,7 @@ public class fetchDB {
             st.setInt(7, p.getpId());
             return st.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(fetchDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
 
@@ -123,20 +129,23 @@ public class fetchDB {
 
     public int addProduct(Product p) {
 
-        try {
-            String sql = "INSERT INTO `product`(`pName`, `pPrice`, `pType`, `pDescription`, `codeProduce`, `pImage`, `PpriceSale`) values(?,?,?,?,?,?,?)";
+         try {
+            String sql = "INSERT INTO `product`(`pName`, `pPrice`, `quantity`, `pType`, `pDescription`, `codeProduce`, `PpriceSale`, `pImage`, `dId`) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, p.getpName());
             st.setInt(2, p.getpPrice());
-            st.setString(3, p.getpType());
+            st.setInt(3, p.getQuantity());
+            st.setString(4, p.getpType());
             st.setString(5, p.getCodeProduce());
-            st.setString(4, p.getDescription());
-            st.setString(6, p.getpLImage());
-            st.setInt(7, p.getPpriceSale());
+            st.setString(6, p.getDescription());
+            st.setString(7, p.getpLImage());
+            st.setInt(8, p.getDesId());
+            st.setInt(9, p.getPpriceSale());
+            
             return st.executeUpdate();
 
         } catch (SQLException ex) {
-            Logger.getLogger(fetchDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
     }

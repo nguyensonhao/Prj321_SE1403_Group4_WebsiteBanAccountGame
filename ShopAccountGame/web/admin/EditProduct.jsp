@@ -57,8 +57,9 @@
                 </div>
                 <nav class="templatemo-left-nav">
                     <ul>
-                        <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                        <li><a href="AddProduct.jsp">Add Product</a></li>
+                       <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
+                        <li><a href="AddProduct.jsp" class="active"><i class="fa fa-database fa-fw"></i>Product</a></li>
+                        <li><a href="User.jsp"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
                         <li><a href="#">Pages</a></li>
                         <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>

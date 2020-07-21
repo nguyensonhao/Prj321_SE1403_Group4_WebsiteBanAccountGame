@@ -6,7 +6,7 @@
 package Controller;
 
 import Model.Product;
-import ModelDao.fetchDB;
+import ModelDao.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -105,13 +105,13 @@ public class ADMController extends HttpServlet {
             p.setCodeProduce(codeproduce);
             p.setDescription(description);
             p.setPpriceSale(priceSale);
-            new fetchDB().updateProduct(p);
+            new ProductDAO().updateProduct(p);
             response.sendRedirect("admin/IndexADM.jsp");
 //            request.getRequestDispatcher(" IndexADM.jsp").forward(request, response);
         }
         if (page.equals("edit")) {
             int id = Integer.parseInt(request.getParameter("id"));
-            fetchDB product = new fetchDB();
+            ProductDAO product = new ProductDAO();
             Product p = null;
             p = product.getProduct(id);
             getServletContext().setAttribute("p", p);
@@ -122,7 +122,7 @@ public class ADMController extends HttpServlet {
 
         if (page.equals("delete")) {
             int id = Integer.parseInt(request.getParameter("id"));
-            fetchDB getDB = new fetchDB();
+            ProductDAO getDB = new ProductDAO();
             getDB.deleteProduct(id);
             response.sendRedirect("admin/IndexADM.jsp");
         }
@@ -146,7 +146,7 @@ public class ADMController extends HttpServlet {
             p.setPpriceSale(Integer.parseInt(priceSale));
             p.setpLImage(image);
 
-            fetchDB product = new fetchDB();
+            ProductDAO product = new ProductDAO();
 
             product.addProduct(p);
             response.sendRedirect("admin/IndexADM.jsp");
