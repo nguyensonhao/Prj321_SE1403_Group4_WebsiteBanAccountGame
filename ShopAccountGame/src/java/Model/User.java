@@ -12,15 +12,17 @@ public class User {
     private String userName;
     private String pasWord;
     private int uAge;
-    private int uPhone;
+    private String uPhone;
     private String uEmail;
     private String uAdrress;
     private Date uBirthday;
+    private int roles ;
+    
 
     public User() {
     }
 
-    public User(int uId, String uFullName, String userName, String pasWord, int uAge, int uPhone, String uEmail, String uAdrress, Date uBirthday) {
+    public User(int uId, String uFullName, String userName, String pasWord, int uAge, String uPhone, String uEmail, String uAdrress, Date uBirthday, int roles) {
         this.uId = uId;
         this.uFullName = uFullName;
         this.userName = userName;
@@ -30,8 +32,9 @@ public class User {
         this.uEmail = uEmail;
         this.uAdrress = uAdrress;
         this.uBirthday = uBirthday;
+        this.roles = roles;
     }
-
+    
     public int getuId() {
         return uId;
     }
@@ -72,11 +75,11 @@ public class User {
         this.uAge = uAge;
     }
 
-    public int getuPhone() {
+    public String getuPhone() {
         return uPhone;
     }
 
-    public void setuPhone(int uPhone) {
+    public void setuPhone(String uPhone) {
         this.uPhone = uPhone;
     }
 
@@ -103,6 +106,16 @@ public class User {
     public void setuBirthday(Date uBirthday) {
         this.uBirthday = uBirthday;
     }
-    
+
+    public int getRoles() {
+        return roles;
+    }
+
+    public void setRoles(int roles) {
+        this.roles = roles;
+    }
+
+
+   
     
 }
