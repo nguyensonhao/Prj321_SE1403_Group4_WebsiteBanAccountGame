@@ -58,7 +58,7 @@
                 <nav class="templatemo-left-nav">
                     <ul>
                        <li><a href="IndexADM.jsp"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                        <li><a href="AddProduct.jsp" class="active"><i class="fa fa-database fa-fw"></i>Product</a></li>
+                        <li><a href="AddProduct.jsp" class="active"><i class="fa fa-database fa-fw"></i>Add Product</a></li>
                         <li><a href="User.jsp"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
                         <li><a href="#">Pages</a></li>
@@ -72,10 +72,9 @@
                     <div class="row">
                         <nav class="templatemo-top-nav col-lg-12 col-md-12">
                             <ul class="text-uppercase">
-                                <li><a href="" class="active">Admin panel</a></li>
-                                <li><a href="">Dashboard</a></li>
-                                <li><a href="">Overview</a></li>
-                                <li><a href="login.html">Sign in form</a></li>
+                                <li><a href="IndexADM.jsp" >Admin panel</a></li>
+                                <li><a href="ManageUsers.jsp"class="active">Overview</a></li>
+                                <li><a href="/ADMController?page=logout">Sign in form</a></li>
                             </ul>
                         </nav>
                     </div>

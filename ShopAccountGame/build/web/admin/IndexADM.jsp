@@ -11,11 +11,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Insert title here</title>
+        <title>Dashboard - Home</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">  
-        <title>Visual Admin Dashboard - Home</title>
+        <title>Admin </title>
         <meta name="description" content="">
         <meta name="author" content="templatemo">
         <!-- 
@@ -39,7 +39,7 @@
             <div class="templatemo-sidebar">
                 <header class="templatemo-site-header">
                     <div class="square"></div>
-                    <h1>Admin</h1>
+                    <h1>Admin <c:out value="${username}"></c:out> </h1>
                 </header>
                 <div class="profile-photo-container">
                     <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
@@ -51,7 +51,7 @@
                 <nav class="templatemo-left-nav"> 
                     <ul>
                         <li><a href="IndexADM.jsp"class="active"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                        <li><a href="AddProduct.jsp"><i class="fa fa-database fa-fw"></i>Product</a></li>
+                        <li><a href="AddProduct.jsp"><i class="fa fa-database fa-fw"></i>Add Product</a></li>
                         <li><a href="ManageUsers.jsp" ><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
                         <li><a href="#">Settings</a></li>
                         <li><a href="/ADMController?page=home">Pages</a></li>
@@ -60,7 +60,6 @@
 
                     <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="conn"/>
                     <sql:query var="result" dataSource="${conn }">
-      
                        select * from product ORDER BY pId ASC
                     </sql:query>
                 </nav>
@@ -70,11 +69,9 @@
                     <div class="row">
                         <nav class="templatemo-top-nav col-lg-12 col-md-12">
                             <ul class="text-uppercase">
-                                <li><a href="" class="active">Admin panel</a></li>
-                                <li><a href="">Dashboard</a></li>
-                                <li><a href="">Overview</a></li>
-                                <li><a href="login.html">Sign in form</a></li>
-                                <li><a href="?rs=">Sign in form</a></li>
+                                <li><a href="IndexADM.jsp" class="active">Admin panel</a></li>
+                                <li><a href="ManageUsers.jsp">Overview</a></li>
+                                <li><a href="/ADMController?page=logout">Sign in form</a></li>
                             </ul>  
                         </nav> 
                     </div>
@@ -111,8 +108,7 @@
                                             <td ><img src="${row.pImage}" height="100" width="150" ></td>
                                             <td ><c:out value="${row.PpriceSale}"/></td>
                                             <td ><a href="/ADMController?page=edit&id=${row.pId}"class="templatemo-edit-btn">Edit</a> </td>
-                                            <td><a href="/ADMController?page=delete&id=${row.pId}" class="templatemo-edit-btn">Delete</a></td>
-                                            
+                                            <td><a href="/ADMController?page=delete&id=${row.pId}" class="templatemo-edit-btn">Delete</a></td>            
                                         </tr>
                                     </c:forEach>   
                                 </tbody>
