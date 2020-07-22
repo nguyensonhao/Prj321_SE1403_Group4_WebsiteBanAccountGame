@@ -363,54 +363,7 @@
 <!--------------------------------------------------------------------------------------------------->
 <div id="payment-confirm-data"></div>
 <footer>
-    <div class="footer-top" style="margin-top:20px;">
-        <div class="container mt-0">
-            <div class="row">
-                <div class="col-md-3 col-sm-12 flex-row">
-                    <div class="img">
-                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service1.png" style="max-width:50px;" alt="GIAO HÀNG SIÊU TỐC">
-                    </div>
-                    <div style="margin-left: 20px;">
-                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">GIAO HÀNG SIÊU TỐC</span>
-                        <p style="font-size:13px;">Hệ thống giao hàng tự động chỉ trong 3 phút</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12 flex-row">
-                    <div class="img">
-                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service2.png" style="max-width:50px;" alt="BẢO HÀNH NHANH CHÓNG">
-                    </div>
-                    <div style="margin-left: 20px;">
-                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">BẢO HÀNH NHANH CHÓNG</span>
-                        <p style="font-size:13px;">Mọi yêu cầu hỗ trợ sẽ được đội ngũ tư vấn giải quyết trực tiếp.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12 flex-row">
-                    <div class="img">
-                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service3.png" style="max-width:50px;" alt="UY TÍN 5 SAO">
-                    </div>
-                    <div style="margin-left: 20px;">
-                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">UY TÍN 5 SAO</span>
-                        <p style="font-size:13px;">Được cộng đồng bình chọn là shop game uy tín nhất VN</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12 flex-row">
-                    <div class="img">
-                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service4.png" style="max-width:50px;" alt="HỖ TRỢ TẬN TÌNH">
-                    </div>
-                    <div style="margin-left: 20px;">
-                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">HỖ TRỢ TẬN TÌNH</span>
-                        <p style="font-size:13px;">Hệ thống hỗ trợ online liên tục từ 8h - 24h</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="notification_footer" class="notification_footer">
-        <div class="nt-content"></div>
-        <div class="nt-close"><i class="far fa-times-circle"></i></div>
-    </div>
+    <jsp:include page="footer/footer1.jsp"></jsp:include>
 </footer>
 
 <a id="messenger-button" href="https://m.me/divineshop.vn" alt="Hỗ Trợ DivineShop" title="Hỗ Trợ DivineShop">
