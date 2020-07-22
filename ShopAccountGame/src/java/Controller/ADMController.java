@@ -6,10 +6,15 @@
 package Controller;
 
 import Model.Product;
+import Model.User;
 import ModelDao.ProductDAO;
+import ModelDao.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,6 +93,14 @@ public class ADMController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String page = request.getParameter("page");
+        if(page.equals("home")){
+            response.sendRedirect("index.jsp");
+        }
+        if (page.equals("logout")) {
+            request.getSession();
+            getServletContext().removeAttribute("username");
+            response.sendRedirect("login.jsp");
+        }
         if (page.equals("edit_product")) {
             int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
@@ -150,6 +163,53 @@ public class ADMController extends HttpServlet {
 
             product.addProduct(p);
             response.sendRedirect("admin/IndexADM.jsp");
+        }
+        if (page.equals("edit_u")) {
+            int id = Integer.parseInt(request.getParameter("uid"));
+            String role = request.getParameter("role");
+            if(role.equals("admin")){
+                out.print("<script>alert('Admin is Cannot Edit');</script>");
+                response.sendRedirect("admin/ManageUsers.jsp");
+                 
+            }else{
+            UserDAO uDao = new UserDAO();
+            User u = null;
+            u = uDao.getUser(id);
+            getServletContext().setAttribute("u", u);
+            response.sendRedirect("admin/EditUser.jsp");
+            }
+        }
+        if (page.equals("edit_user")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            String uFullName = request.getParameter("fullname");
+            String userName = request.getParameter("username");
+            String pasWord = request.getParameter("password");
+            int uAge = Integer.parseInt(request.getParameter("age"));
+            String uPhone = request.getParameter("phone");
+            String uEmail = request.getParameter("email");
+            String uAdrress = request.getParameter("address");    
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date birthday = Date.valueOf(request.getParameter("birthDay"));
+            int roles = Integer.parseInt(request.getParameter("role"));
+            User u = new User();
+            u.setuId(id);
+            u.setuFullName(uFullName);
+            u.setUserName(userName);
+            u.setPasWord(pasWord);
+            u.setuAge(uAge);
+            u.setuPhone(uPhone);
+            u.setuEmail(uEmail);
+            u.setuAdrress(uAdrress);
+            u.setuBirthday(birthday);
+            u.setRoles(roles);
+             if( roles== 1){
+                 new UserDAO().InsertAdmin(u);
+            }
+            new UserDAO().updateUser(u);
+            
+
+            response.sendRedirect("admin/ManageUsers.jsp");
+//            request.getRequestDispatcher(" IndexADM.jsp").forward(request, response);
         }
 
     }

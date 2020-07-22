@@ -56,16 +56,7 @@
             </div>
 
             <header>
-            <c:choose>
-            <c:when test="${not empty User}">
-                <%@include file="header/header2.jsp" %>
-            </c:when>
-            <c:when test="${User == username}">
-                <%@include file="header/header3.jsp" %>
-            </c:when>
-            <c:otherwise>
-                <%@include file="header/header3.jsp" %>
-            </c:otherwise>
+           
         </c:choose>
             </header>
 

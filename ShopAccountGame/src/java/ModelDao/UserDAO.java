@@ -129,6 +129,22 @@ public class UserDAO {
         return 0;
 
     }
+    public int InsertAdmin(User u) {
+        try {
+            String sql = "INSERT INTO `admin`(`aFullName`, `aUserName`, `aPassWord`, `uEmail`, `rId`) VALUES (?,?,?,?,?)";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, u.getuFullName());
+            st.setString(2, u.getUserName());
+            st.setString(3, u.getPasWord());
+            st.setString(4, u.getuEmail());
+            st.setInt(5, u.getRoles());
+            return st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+
+    }
 
     public int addUser(User u) {
         try {

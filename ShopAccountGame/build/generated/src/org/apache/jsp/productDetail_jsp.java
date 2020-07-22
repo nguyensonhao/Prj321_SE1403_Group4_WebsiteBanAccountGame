@@ -12,6 +12,7 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
 
   private static java.util.List<String> _jspx_dependants;
 
+<<<<<<< HEAD
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/header/header2.jsp");
@@ -25,12 +26,15 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
 
+=======
+>>>>>>> Hiển
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
   }
 
+<<<<<<< HEAD
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_set_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
@@ -49,6 +53,8 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
     _jspx_tagPool_c_when_test.release();
   }
 
+=======
+>>>>>>> Hiển
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
         throws java.io.IOException, ServletException {
 
@@ -77,7 +83,10 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+<<<<<<< HEAD
       out.write("\r\n");
+=======
+>>>>>>> Hiển
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html dir=\"ltr\" lang=\"vi\">\r\n");
       out.write("\r\n");
@@ -133,10 +142,15 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("            <header>\r\n");
+<<<<<<< HEAD
       out.write("            ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\r\n");
+=======
+      out.write("           \r\n");
+      out.write("        </c:choose>\r\n");
+>>>>>>> Hiển
       out.write("            </header>\r\n");
       out.write("\r\n");
       out.write("            <script src=\"https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js\" type=\"text/javascript\"></script>\r\n");
@@ -519,6 +533,7 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
   }
+<<<<<<< HEAD
 
   private boolean _jspx_meth_c_choose_0(PageContext _jspx_page_context)
           throws Throwable {
@@ -1411,4 +1426,6 @@ public final class productDetail_jsp extends org.apache.jasper.runtime.HttpJspBa
     _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
     return false;
   }
+=======
+>>>>>>> Hiển
 }
