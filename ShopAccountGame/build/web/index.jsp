@@ -410,7 +410,10 @@
                                 </a>
                             </div>
 
-                            <div class="item-btn" onclick="cart.buyNow('188', '1', this);" style="margin-top: 10px">Mua ngay</div>
+                            <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                 <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

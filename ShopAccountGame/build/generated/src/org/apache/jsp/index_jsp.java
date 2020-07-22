@@ -970,10 +970,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("</span>\r\n");
           out.write("                            </div>\r\n");
           out.write("\r\n");
-          out.write("                            <div class=\"item-btn-a\">\r\n");
-          out.write("                                <a href=\"javascript:void(0);\" onclick=\"javascript:void(0);cart.add('188', '1', this);\">\r\n");
-          out.write("                                    <i class=\"fas fa-shopping-cart \"></i>\r\n");
-          out.write("                                </a>\r\n");
+          out.write("                            <div class=\"item-btn\" style=\"margin-top: 10px\" class=\"templatemo-edit-btn\">\r\n");
+          out.write("                                 <a href=\"CartController?id=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("&sl=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.quantity}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\">Mua ngay</a>    \r\n");
           out.write("                            </div>\r\n");
           out.write("\r\n");
           out.write("                            <div class=\"item-btn\" onclick=\"cart.buyNow('188', '1', this);\" style=\"margin-top: 10px\">Mua ngay</div>\r\n");
