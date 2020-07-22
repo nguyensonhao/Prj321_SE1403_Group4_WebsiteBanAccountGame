@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="vi">
     <head>
-        <jsp:include page="header/header1.jsp"></jsp:include>
+         <jsp:include page="header/header1.jsp"></jsp:include>
     </head>
 
     <body>
@@ -52,7 +52,17 @@
             </div>
         </div>
         <header>
-                <jsp:include page="header/header2.jsp"></jsp:include>
+               <c:choose>
+            <c:when test="${not empty User}">
+                <%@include file="header/header2.jsp" %>
+            </c:when>
+            <c:when test="${User == username}">
+                <%@include file="header/header3.jsp" %>
+            </c:when>
+            <c:otherwise>
+                <%@include file="header/header3.jsp" %>
+            </c:otherwise>
+        </c:choose>
 
         </header>
 

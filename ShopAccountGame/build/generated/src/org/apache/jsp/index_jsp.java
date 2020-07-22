@@ -11,8 +11,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/header/header2.jsp");
+    _jspx_dependants.add("/header/header3.jsp");
+  }
+
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_set_var_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_out_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sql_query_var_dataSource;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sql_setDataSource_var_user_url_password_driver_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -23,13 +34,23 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_set_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_out_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_sql_query_var_dataSource = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_when_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_sql_setDataSource_var_user_url_password_driver_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_set_var_value_nobody.release();
+    _jspx_tagPool_c_out_value_nobody.release();
+    _jspx_tagPool_c_choose.release();
+    _jspx_tagPool_c_otherwise.release();
     _jspx_tagPool_sql_query_var_dataSource.release();
+    _jspx_tagPool_c_when_test.release();
     _jspx_tagPool_sql_setDataSource_var_user_url_password_driver_nobody.release();
   }
 
@@ -64,7 +85,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html dir=\"ltr\" lang=\"vi\">\r\n");
       out.write("    <head>\r\n");
-      out.write("        ");
+      out.write("         ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header/header1.jsp", out, false);
       out.write("\r\n");
       out.write("    </head>\r\n");
@@ -113,8 +134,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("        <header>\r\n");
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header/header2.jsp", out, false);
+      out.write("               ");
+      if (_jspx_meth_c_choose_0(_jspx_page_context))
+        return;
       out.write("\r\n");
       out.write("\r\n");
       out.write("        </header>\r\n");
@@ -455,7 +477,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"list-container\">\r\n");
       out.write("            <div class=\"row text-md-center\">\r\n");
       out.write("                ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+      if (_jspx_meth_c_forEach_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("            </div>\r\n");
@@ -488,7 +510,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"list-container\">\r\n");
       out.write("            <div class=\"row text-md-center\">\r\n");
       out.write("                ");
-      if (_jspx_meth_c_forEach_1(_jspx_page_context))
+      if (_jspx_meth_c_forEach_3(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("            </div>\r\n");
@@ -520,7 +542,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"list-container\">\r\n");
       out.write("            <div class=\"row text-md-center\">\r\n");
       out.write("                ");
-      if (_jspx_meth_c_forEach_2(_jspx_page_context))
+      if (_jspx_meth_c_forEach_4(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("            </div>\r\n");
@@ -859,6 +881,898 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
   }
 
+  private boolean _jspx_meth_c_choose_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:choose
+    org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_0 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+    _jspx_th_c_choose_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_choose_0.setParent(null);
+    int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
+    if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("            ");
+        if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("            ");
+        if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("            ");
+        if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("        ");
+        int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_choose_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_0);
+      return true;
+    }
+    _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_0 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty User}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
+    if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                ");
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("<!DOCTYPE html>\r\n");
+        out.write("<html>\r\n");
+        out.write("    <head>\r\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+        out.write("        <title>JSP Page</title>\r\n");
+        out.write("    </head>\r\n");
+        out.write("    <body>\r\n");
+        out.write("           <header class=\"home-page fixed-header\" style=\"background-color: #5BBD2B\">\r\n");
+        out.write("            <nav id=\"sidebar\" class=\"navbar\">\r\n");
+        out.write("                <div id=\"dismiss\">\r\n");
+        out.write("                    <i class=\"fas fa-times\"></i>\r\n");
+        out.write("                </div>\r\n");
+        out.write("\r\n");
+        out.write("                <div class=\"menu-list\">\r\n");
+        out.write("                    <ul id=\"menu-content\" class=\"menu-content\">\r\n");
+        out.write("                        <li class=\"mt-0 collapsed\" style=\"background-color: #40AB57\">\r\n");
+        out.write("                            <div class=\"header-btn text-white\">\r\n");
+        out.write("                                <i class=\"fas fa-user-circle\" style=\"font-size: 30px;\"></i>\r\n");
+        out.write("                                <span class=\"text-white\">\r\n");
+        out.write("                                    <a href=\"#\" class=\"text-white\">Đăng nhập </a>\r\n");
+        out.write("                                    <br>\r\n");
+        out.write("                                    <small style=\"margin: 40px;\">Xem nhiều thông tin hơn</small>\r\n");
+        out.write("                                </span>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("\r\n");
+        out.write("                        <li>\r\n");
+        out.write("                            <a href=\"#\"><i class=\"fa fa-home icon-font18\"></i>Trang chủ</a>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("                        <li data-toggle=\"collapse\" data-target=\"#danh-muc\" class=\"collapsed\">\r\n");
+        out.write("                            <a><i class=\"fa fa-bars icon-font18\"></i>Danh mục sản phẩm <i class=\"fa fa-angle-down\"></i></a>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("                        <ul class=\"sub-menu collapse\" id=\"danh-muc\">\r\n");
+        out.write("                            <li>\r\n");
+        out.write("                                <a href=\"#\">\r\n");
+        out.write("                                    <i class=\"fab fa-steam-symbol\"></i>\r\n");
+        out.write("                                    Liên Quân              </a>\r\n");
+        out.write("                            </li>\r\n");
+        out.write("                            <li>\r\n");
+        out.write("                                <a href=\"#\">\r\n");
+        out.write("                                    <i class=\"fas fa-trophy\"></i>\r\n");
+        out.write("                                    Liên Minh              </a>\r\n");
+        out.write("                            </li>\r\n");
+        out.write("                            <li>\r\n");
+        out.write("                                <a href=\"#\">\r\n");
+        out.write("                                    <i class=\"icon icon-origin-svg\"></i>\r\n");
+        out.write("                                    FiFa              </a>\r\n");
+        out.write("                            </li>\r\n");
+        out.write("                            <li>\r\n");
+        out.write("                                <a href=\"#\">\r\n");
+        out.write("                                    <i class=\"fas fa-mobile-alt\"></i>\r\n");
+        out.write("                                    Nạp Game Mobile              </a>\r\n");
+        out.write("                            </li>\r\n");
+        out.write("                        </ul>\r\n");
+        out.write("\r\n");
+        out.write("                        <hr>\r\n");
+        out.write("                        <li>\r\n");
+        out.write("                            <a href=\"#\"><i\r\n");
+        out.write("                                    class=\"fab fa-hotjar\"></i>Sản Phẩm Hot</a>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("                        <li>\r\n");
+        out.write("                            <a href=\"#\"><i\r\n");
+        out.write("                                    class=\"fas fa-award\"></i>Sản Phẩm Tốt</a>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("                        <li>\r\n");
+        out.write("                            <a href=\"#\"><i\r\n");
+        out.write("                                    class=\"far fa-credit-card\"></i>Hình thức thanh toán</a>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("                        <li>\r\n");
+        out.write("                            <a href=\"#\"><i\r\n");
+        out.write("                                    class=\"fas fa-gamepad\"></i>Hướng dẫn mua hàng</a>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("\r\n");
+        out.write("                        <hr>\r\n");
+        out.write("                        <!-- Link face và số đt-->\r\n");
+        out.write("\r\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\"><i class=\"fa fa-phone\"></i>HOTLINE:\r\n");
+        out.write("                                1900 123 456 </a></li>\r\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\" target=\"_blank\"><i\r\n");
+        out.write("                                    class=\"fab fa-facebook-messenger\"></i>Nhắn tin cho Shop </a></li>\r\n");
+        out.write("\r\n");
+        out.write("                    </ul>\r\n");
+        out.write("                </div>\r\n");
+        out.write("\r\n");
+        out.write("            </nav>\r\n");
+        out.write("\r\n");
+        out.write("            <div class=\"overlay\"></div>\r\n");
+        out.write("            <script src=\"https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js\" type=\"text/javascript\"></script>\r\n");
+        out.write("            <script type=\"text/javascript\">\r\n");
+        out.write("                    $(document).ready(function () {\r\n");
+        out.write("                        $(\"#filter_name\").autocomplete(\"getdata.php?lan=vi\", {\r\n");
+        out.write("                            width: 450,\r\n");
+        out.write("                            resultsClass: \"ac_results col-lg-7\",\r\n");
+        out.write("                            matchContains: true\r\n");
+        out.write("                        });\r\n");
+        out.write("\r\n");
+        out.write("                        $(\"#home-cart\").hover(\r\n");
+        out.write("                                function () {\r\n");
+        out.write("                                    $('#dropdown-detail-cart').css(\"display\", \"block\");\r\n");
+        out.write("                                },\r\n");
+        out.write("                                function () {\r\n");
+        out.write("                                    $('#dropdown-detail-cart').css(\"display\", \"none\");\r\n");
+        out.write("                                }\r\n");
+        out.write("                        );\r\n");
+        out.write("\r\n");
+        out.write("                        $(\".home-mini-profile\").hover(\r\n");
+        out.write("                                function () {\r\n");
+        out.write("                                    $('.drop-mini-profile').css(\"display\", \"block\");\r\n");
+        out.write("                                },\r\n");
+        out.write("                                function () {\r\n");
+        out.write("                                    $('.drop-mini-profile').css(\"display\", \"none\");\r\n");
+        out.write("                                }\r\n");
+        out.write("                        );\r\n");
+        out.write("\r\n");
+        out.write("                    });\r\n");
+        out.write("            </script>\r\n");
+        out.write("            <script type=\"text/javascript\">\r\n");
+        out.write("                $(document).ready(function () {\r\n");
+        out.write("                    $('#dismiss, .overlay').on('click', function () {\r\n");
+        out.write("                        $('#sidebar').removeClass('active');\r\n");
+        out.write("                        $('.overlay').removeClass('active');\r\n");
+        out.write("                        $('body').css('position', 'unset');\r\n");
+        out.write("                    });\r\n");
+        out.write("\r\n");
+        out.write("                    $('#sidebarCollapse').on('click', function () {\r\n");
+        out.write("                        $('#sidebar').addClass('active');\r\n");
+        out.write("                        $('.overlay').addClass('active');\r\n");
+        out.write("                        $('.collapse.in').toggleClass('in');\r\n");
+        out.write("                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');\r\n");
+        out.write("                        $('body').css('position', 'fixed');\r\n");
+        out.write("                    });\r\n");
+        out.write("                });\r\n");
+        out.write("            </script>\r\n");
+        out.write("            <div class=\"header-container container\">\r\n");
+        out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\r\n");
+        out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\r\n");
+        out.write("                </div>\r\n");
+        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\r\n");
+        out.write("                                                                                                   src=\"#\" />\r\n");
+        out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\r\n");
+        out.write("                <div class=\"search-form\">\r\n");
+        out.write("                    <div class=\"search-control\" id=\"search\">\r\n");
+        out.write("                        <input type=\"text\" id=\"filter_name\" class=\"search-box\" name=\"search\" value=\"\"\r\n");
+        out.write("                               placeholder=\"Nhập sản phẩm cần tìm...\">\r\n");
+        out.write("                        <div class=\"search-btn\" id=\"button-search-header\">\r\n");
+        out.write("                            <i class=\"fas fa-search\"></i>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                </div>\r\n");
+        out.write("                <div class=\"cart-mobile\">\r\n");
+        out.write("                    <div class=\"align-items-center d-flex\" id=\"update-cart-mobile\">\r\n");
+        out.write("                        <a href=\"#\"><i class=\"fas fa-shopping-cart cart-size-mobile\"></i> <span\r\n");
+        out.write("                                class=\"quantity_mobile\">0</span></a>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                </div>\r\n");
+        out.write("                <div class=\"header-btn\">\r\n");
+        out.write("                    <div class=\"header-btn d-flex flex-row\">\r\n");
+        out.write("                        <div class=\"d-flex align-items-center ml-1\">\r\n");
+        out.write("                            <i class=\"fas fa-user-circle\" style=\"font-size: 40px;\"></i>\r\n");
+        out.write("                            <span>&#160</span>\r\n");
+        out.write("                            <b style=\"font-size: 20px;\"> ");
+        if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
+          return true;
+        out.write("  </b>\r\n");
+        out.write("                           \r\n");
+        out.write("                        </div>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("\r\n");
+        out.write("                    <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\r\n");
+        out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
+        out.write("                             aria-expanded=\"false\">\r\n");
+        out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><b class=\"cart-text\">Giỏ hàng</b><span\r\n");
+        out.write("                                    class=\"quantity\">0</span>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                        \r\n");
+        out.write("                    </div>\r\n");
+        out.write("                </div>\r\n");
+        out.write("            </div>\r\n");
+        out.write("        </header>\r\n");
+        out.write("    </body>\r\n");
+        out.write("</html>\r\n");
+        out.write("\r\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_out_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_0 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_0);
+    _jspx_th_c_out_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${username}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_0 = _jspx_th_c_out_0.doStartTag();
+    if (_jspx_th_c_out_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${User == username}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
+    if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                ");
+        out.write("\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("<!DOCTYPE html>\n");
+        out.write("<html>\n");
+        out.write("    <head>\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+        out.write("        <title>JSP Page</title>\n");
+        out.write("    </head>\n");
+        out.write("    <body>\n");
+        out.write("        <header class=\"home-page fixed-header\" style=\"background-color: #5BBD2B\">\n");
+        out.write("            <nav id=\"sidebar\" class=\"navbar\">\n");
+        out.write("                <div id=\"dismiss\">\n");
+        out.write("                    <i class=\"fas fa-times\"></i>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"menu-list\">\n");
+        out.write("                    <ul id=\"menu-content\" class=\"menu-content\">\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i class=\"fa fa-home icon-font18\"></i>Trang chủ</a>\n");
+        out.write("                        </li>\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("                        <li data-toggle=\"collapse\" data-target=\"#danh-muc\" class=\"collapsed\">\n");
+        out.write("                            <a><i class=\"fa fa-bars icon-font18\"></i>Danh mục sản phẩm <i class=\"fa fa-angle-down\"></i></a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <ul class=\"sub-menu collapse\" id=\"danh-muc\">\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"fab fa-steam-symbol\"></i>\n");
+        out.write("                                    Liên Quân 123123132             </a>\n");
+        out.write("                            </li>\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"fas fa-trophy\"></i>\n");
+        out.write("                                    Liên Minh              </a>\n");
+        out.write("                            </li>\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"icon icon-origin-svg\"></i>\n");
+        out.write("                                    FiFa              </a>\n");
+        out.write("                            </li>\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"fas fa-mobile-alt\"></i>\n");
+        out.write("                                    Nạp Game Mobile              </a>\n");
+        out.write("                            </li>\n");
+        out.write("                        </ul>\n");
+        out.write("\n");
+        out.write("                        <hr>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"fab fa-hotjar\"></i>Sản Phẩm Hot</a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"fas fa-award\"></i>Sản Phẩm Tốt</a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"far fa-credit-card\"></i>Hình thức thanh toán</a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"fas fa-gamepad\"></i>Hướng dẫn mua hàng</a>\n");
+        out.write("                        </li>\n");
+        out.write("\n");
+        out.write("                        <hr>\n");
+        out.write("                        <!-- Link face và số đt-->\n");
+        out.write("\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\"><i class=\"fa fa-phone\"></i>HOTLINE:\n");
+        out.write("                                1900 123 456 </a></li>\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\" target=\"_blank\"><i\n");
+        out.write("                                    class=\"fab fa-facebook-messenger\"></i>Nhắn tin cho Shop </a></li>\n");
+        out.write("\n");
+        out.write("                    </ul>\n");
+        out.write("                </div>\n");
+        out.write("\n");
+        out.write("            </nav>\n");
+        out.write("\n");
+        out.write("            <div class=\"overlay\"></div>\n");
+        out.write("            <script src=\"https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js\" type=\"text/javascript\"></script>\n");
+        out.write("            <script type=\"text/javascript\">\n");
+        out.write("                $(document).ready(function () {\n");
+        out.write("                    $(\"#filter_name\").autocomplete(\"getdata.php?lan=vi\", {\n");
+        out.write("                        width: 450,\n");
+        out.write("                        resultsClass: \"ac_results col-lg-7\",\n");
+        out.write("                        matchContains: true\n");
+        out.write("                    });\n");
+        out.write("\n");
+        out.write("                    $(\"#home-cart\").hover(\n");
+        out.write("                            function () {\n");
+        out.write("                                $('#dropdown-detail-cart').css(\"display\", \"block\");\n");
+        out.write("                            },\n");
+        out.write("                            function () {\n");
+        out.write("                                $('#dropdown-detail-cart').css(\"display\", \"none\");\n");
+        out.write("                            }\n");
+        out.write("                    );\n");
+        out.write("\n");
+        out.write("                    $(\".home-mini-profile\").hover(\n");
+        out.write("                            function () {\n");
+        out.write("                                $('.drop-mini-profile').css(\"display\", \"block\");\n");
+        out.write("                            },\n");
+        out.write("                            function () {\n");
+        out.write("                                $('.drop-mini-profile').css(\"display\", \"none\");\n");
+        out.write("                            }\n");
+        out.write("                    );\n");
+        out.write("\n");
+        out.write("                });\n");
+        out.write("            </script>\n");
+        out.write("            <script type=\"text/javascript\">\n");
+        out.write("                $(document).ready(function () {\n");
+        out.write("                    $('#dismiss, .overlay').on('click', function () {\n");
+        out.write("                        $('#sidebar').removeClass('active');\n");
+        out.write("                        $('.overlay').removeClass('active');\n");
+        out.write("                        $('body').css('position', 'unset');\n");
+        out.write("                    });\n");
+        out.write("\n");
+        out.write("                    $('#sidebarCollapse').on('click', function () {\n");
+        out.write("                        $('#sidebar').addClass('active');\n");
+        out.write("                        $('.overlay').addClass('active');\n");
+        out.write("                        $('.collapse.in').toggleClass('in');\n");
+        out.write("                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');\n");
+        out.write("                        $('body').css('position', 'fixed');\n");
+        out.write("                    });\n");
+        out.write("                });\n");
+        out.write("            </script>\n");
+        out.write("            ");
+        if (_jspx_meth_c_set_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("            ");
+        if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("            <div class=\"header-container container\">\n");
+        out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\n");
+        out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\n");
+        out.write("                                                   src=\"#\" />\n");
+        out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\n");
+        out.write("                <div class=\"search-form\">\n");
+        out.write("                    <div class=\"search-control\" id=\"search\">\n");
+        out.write("                        <input type=\"text\" id=\"filter_name\" class=\"search-box\" name=\"search\" value=\"\"\n");
+        out.write("                               placeholder=\"Nhập sản phẩm cần tìm...\">\n");
+        out.write("                        <div class=\"search-btn\" id=\"button-search-header\">\n");
+        out.write("                            <i class=\"fas fa-search\"></i>\n");
+        out.write("                        </div>\n");
+        out.write("                    </div>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"cart-mobile\">\n");
+        out.write("                    <div class=\"align-items-center d-flex\" id=\"update-cart-mobile\">\n");
+        out.write("                        <a href=\"#\"><i class=\"fas fa-shopping-cart cart-size-mobile\"></i> <span\n");
+        out.write("                                class=\"quantity_mobile\">0</span></a>\n");
+        out.write("                    </div>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"header-btn\">\n");
+        out.write("                    <div class=\"header-btn d-flex flex-row\">\n");
+        out.write("                        <div class=\"d-flex align-items-center ml-1\">\n");
+        out.write("                            <i class=\"fas fa-user-circle\" style=\"font-size: 40px;\"></i>\n");
+        out.write("                            <span>&#160</span>\n");
+        out.write("                            <a href=\"login.jsp\" class=\"text-white\">Đăng nhập </a>\n");
+        out.write("                            <span>/</span>\n");
+        out.write("                            <a href=\"REGISTRATION.jsp\" class=\"text-white\">Đăng kí</a>\n");
+        out.write("                        </div>\n");
+        out.write("                    </div>\n");
+        out.write("\n");
+        out.write("                    <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\n");
+        out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\n");
+        out.write("                             aria-expanded=\"false\">\n");
+        out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i> <a href=\"/CartController?page=showcart\"><b class=\"cart-text\">Gio Hang</b></a><span\n");
+        out.write("                                    class=\"quantity\">");
+        if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
+          return true;
+        out.write("</span>\n");
+        out.write("                            </div>\n");
+        out.write("                        </div>\n");
+        out.write("\n");
+        out.write("                    </div>\n");
+        out.write("                </div>\n");
+        out.write("            </div>\n");
+        out.write("        </header>\n");
+        out.write("    </body>\n");
+        out.write("</html>\n");
+        out.write("\r\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_set_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:set
+    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_set_0 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _jspx_tagPool_c_set_var_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+    _jspx_th_c_set_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_set_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
+    _jspx_th_c_set_0.setVar("x");
+    _jspx_th_c_set_0.setValue(new String("0"));
+    int _jspx_eval_c_set_0 = _jspx_th_c_set_0.doStartTag();
+    if (_jspx_th_c_set_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
+      return true;
+    }
+    _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cartlist }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setVar("i");
+    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
+      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                ");
+          if (_jspx_meth_c_set_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\n");
+          out.write("            ");
+          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_0.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_set_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:set
+    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_set_1 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _jspx_tagPool_c_set_var_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+    _jspx_th_c_set_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_set_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_set_1.setVar("x");
+    _jspx_th_c_set_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x+1 }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_set_1 = _jspx_th_c_set_1.doStartTag();
+    if (_jspx_th_c_set_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_1);
+      return true;
+    }
+    _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_out_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_1 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
+    _jspx_th_c_out_1.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_1 = _jspx_th_c_out_1.doStartTag();
+    if (_jspx_th_c_out_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_otherwise_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_0 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    int _jspx_eval_c_otherwise_0 = _jspx_th_c_otherwise_0.doStartTag();
+    if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                ");
+        out.write("\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("<!DOCTYPE html>\n");
+        out.write("<html>\n");
+        out.write("    <head>\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+        out.write("        <title>JSP Page</title>\n");
+        out.write("    </head>\n");
+        out.write("    <body>\n");
+        out.write("        <header class=\"home-page fixed-header\" style=\"background-color: #5BBD2B\">\n");
+        out.write("            <nav id=\"sidebar\" class=\"navbar\">\n");
+        out.write("                <div id=\"dismiss\">\n");
+        out.write("                    <i class=\"fas fa-times\"></i>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"menu-list\">\n");
+        out.write("                    <ul id=\"menu-content\" class=\"menu-content\">\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i class=\"fa fa-home icon-font18\"></i>Trang chủ</a>\n");
+        out.write("                        </li>\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("                        <li data-toggle=\"collapse\" data-target=\"#danh-muc\" class=\"collapsed\">\n");
+        out.write("                            <a><i class=\"fa fa-bars icon-font18\"></i>Danh mục sản phẩm <i class=\"fa fa-angle-down\"></i></a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <ul class=\"sub-menu collapse\" id=\"danh-muc\">\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"fab fa-steam-symbol\"></i>\n");
+        out.write("                                    Liên Quân 123123132             </a>\n");
+        out.write("                            </li>\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"fas fa-trophy\"></i>\n");
+        out.write("                                    Liên Minh              </a>\n");
+        out.write("                            </li>\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"icon icon-origin-svg\"></i>\n");
+        out.write("                                    FiFa              </a>\n");
+        out.write("                            </li>\n");
+        out.write("                            <li>\n");
+        out.write("                                <a href=\"#\">\n");
+        out.write("                                    <i class=\"fas fa-mobile-alt\"></i>\n");
+        out.write("                                    Nạp Game Mobile              </a>\n");
+        out.write("                            </li>\n");
+        out.write("                        </ul>\n");
+        out.write("\n");
+        out.write("                        <hr>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"fab fa-hotjar\"></i>Sản Phẩm Hot</a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"fas fa-award\"></i>Sản Phẩm Tốt</a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"far fa-credit-card\"></i>Hình thức thanh toán</a>\n");
+        out.write("                        </li>\n");
+        out.write("                        <li>\n");
+        out.write("                            <a href=\"#\"><i\n");
+        out.write("                                    class=\"fas fa-gamepad\"></i>Hướng dẫn mua hàng</a>\n");
+        out.write("                        </li>\n");
+        out.write("\n");
+        out.write("                        <hr>\n");
+        out.write("                        <!-- Link face và số đt-->\n");
+        out.write("\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\"><i class=\"fa fa-phone\"></i>HOTLINE:\n");
+        out.write("                                1900 123 456 </a></li>\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\" target=\"_blank\"><i\n");
+        out.write("                                    class=\"fab fa-facebook-messenger\"></i>Nhắn tin cho Shop </a></li>\n");
+        out.write("\n");
+        out.write("                    </ul>\n");
+        out.write("                </div>\n");
+        out.write("\n");
+        out.write("            </nav>\n");
+        out.write("\n");
+        out.write("            <div class=\"overlay\"></div>\n");
+        out.write("            <script src=\"https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js\" type=\"text/javascript\"></script>\n");
+        out.write("            <script type=\"text/javascript\">\n");
+        out.write("                $(document).ready(function () {\n");
+        out.write("                    $(\"#filter_name\").autocomplete(\"getdata.php?lan=vi\", {\n");
+        out.write("                        width: 450,\n");
+        out.write("                        resultsClass: \"ac_results col-lg-7\",\n");
+        out.write("                        matchContains: true\n");
+        out.write("                    });\n");
+        out.write("\n");
+        out.write("                    $(\"#home-cart\").hover(\n");
+        out.write("                            function () {\n");
+        out.write("                                $('#dropdown-detail-cart').css(\"display\", \"block\");\n");
+        out.write("                            },\n");
+        out.write("                            function () {\n");
+        out.write("                                $('#dropdown-detail-cart').css(\"display\", \"none\");\n");
+        out.write("                            }\n");
+        out.write("                    );\n");
+        out.write("\n");
+        out.write("                    $(\".home-mini-profile\").hover(\n");
+        out.write("                            function () {\n");
+        out.write("                                $('.drop-mini-profile').css(\"display\", \"block\");\n");
+        out.write("                            },\n");
+        out.write("                            function () {\n");
+        out.write("                                $('.drop-mini-profile').css(\"display\", \"none\");\n");
+        out.write("                            }\n");
+        out.write("                    );\n");
+        out.write("\n");
+        out.write("                });\n");
+        out.write("            </script>\n");
+        out.write("            <script type=\"text/javascript\">\n");
+        out.write("                $(document).ready(function () {\n");
+        out.write("                    $('#dismiss, .overlay').on('click', function () {\n");
+        out.write("                        $('#sidebar').removeClass('active');\n");
+        out.write("                        $('.overlay').removeClass('active');\n");
+        out.write("                        $('body').css('position', 'unset');\n");
+        out.write("                    });\n");
+        out.write("\n");
+        out.write("                    $('#sidebarCollapse').on('click', function () {\n");
+        out.write("                        $('#sidebar').addClass('active');\n");
+        out.write("                        $('.overlay').addClass('active');\n");
+        out.write("                        $('.collapse.in').toggleClass('in');\n");
+        out.write("                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');\n");
+        out.write("                        $('body').css('position', 'fixed');\n");
+        out.write("                    });\n");
+        out.write("                });\n");
+        out.write("            </script>\n");
+        out.write("            ");
+        if (_jspx_meth_c_set_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("            ");
+        if (_jspx_meth_c_forEach_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("            <div class=\"header-container container\">\n");
+        out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\n");
+        out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\n");
+        out.write("                                                   src=\"#\" />\n");
+        out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\n");
+        out.write("                <div class=\"search-form\">\n");
+        out.write("                    <div class=\"search-control\" id=\"search\">\n");
+        out.write("                        <input type=\"text\" id=\"filter_name\" class=\"search-box\" name=\"search\" value=\"\"\n");
+        out.write("                               placeholder=\"Nhập sản phẩm cần tìm...\">\n");
+        out.write("                        <div class=\"search-btn\" id=\"button-search-header\">\n");
+        out.write("                            <i class=\"fas fa-search\"></i>\n");
+        out.write("                        </div>\n");
+        out.write("                    </div>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"cart-mobile\">\n");
+        out.write("                    <div class=\"align-items-center d-flex\" id=\"update-cart-mobile\">\n");
+        out.write("                        <a href=\"#\"><i class=\"fas fa-shopping-cart cart-size-mobile\"></i> <span\n");
+        out.write("                                class=\"quantity_mobile\">0</span></a>\n");
+        out.write("                    </div>\n");
+        out.write("                </div>\n");
+        out.write("                <div class=\"header-btn\">\n");
+        out.write("                    <div class=\"header-btn d-flex flex-row\">\n");
+        out.write("                        <div class=\"d-flex align-items-center ml-1\">\n");
+        out.write("                            <i class=\"fas fa-user-circle\" style=\"font-size: 40px;\"></i>\n");
+        out.write("                            <span>&#160</span>\n");
+        out.write("                            <a href=\"login.jsp\" class=\"text-white\">Đăng nhập </a>\n");
+        out.write("                            <span>/</span>\n");
+        out.write("                            <a href=\"REGISTRATION.jsp\" class=\"text-white\">Đăng kí</a>\n");
+        out.write("                        </div>\n");
+        out.write("                    </div>\n");
+        out.write("\n");
+        out.write("                    <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\n");
+        out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\n");
+        out.write("                             aria-expanded=\"false\">\n");
+        out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i> <a href=\"/CartController?page=showcart\"><b class=\"cart-text\">Gio Hang</b></a><span\n");
+        out.write("                                    class=\"quantity\">");
+        if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_0, _jspx_page_context))
+          return true;
+        out.write("</span>\n");
+        out.write("                            </div>\n");
+        out.write("                        </div>\n");
+        out.write("\n");
+        out.write("                    </div>\n");
+        out.write("                </div>\n");
+        out.write("            </div>\n");
+        out.write("        </header>\n");
+        out.write("    </body>\n");
+        out.write("</html>\n");
+        out.write("\r\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_otherwise_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+      return true;
+    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_set_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:set
+    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_set_2 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _jspx_tagPool_c_set_var_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+    _jspx_th_c_set_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_set_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_0);
+    _jspx_th_c_set_2.setVar("x");
+    _jspx_th_c_set_2.setValue(new String("0"));
+    int _jspx_eval_c_set_2 = _jspx_th_c_set_2.doStartTag();
+    if (_jspx_th_c_set_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_2);
+      return true;
+    }
+    _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_2);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_0);
+    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cartlist }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_1.setVar("i");
+    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
+      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                ");
+          if (_jspx_meth_c_set_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
+            return true;
+          out.write("\n");
+          out.write("            ");
+          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_1.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_set_3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:set
+    org.apache.taglibs.standard.tag.rt.core.SetTag _jspx_th_c_set_3 = (org.apache.taglibs.standard.tag.rt.core.SetTag) _jspx_tagPool_c_set_var_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.SetTag.class);
+    _jspx_th_c_set_3.setPageContext(_jspx_page_context);
+    _jspx_th_c_set_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
+    _jspx_th_c_set_3.setVar("x");
+    _jspx_th_c_set_3.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x+1 }", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_set_3 = _jspx_th_c_set_3.doStartTag();
+    if (_jspx_th_c_set_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_3);
+      return true;
+    }
+    _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_3);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_out_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:out
+    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_2 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
+    _jspx_th_c_out_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_out_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_0);
+    _jspx_th_c_out_2.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_out_2 = _jspx_th_c_out_2.doStartTag();
+    if (_jspx_th_c_out_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
+      return true;
+    }
+    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
+    return false;
+  }
+
   private boolean _jspx_meth_sql_setDataSource_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -927,20 +1841,20 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_forEach_2(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_0.setVar("row");
-    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_2.setParent(null);
+    _jspx_th_c_forEach_2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_2.setVar("row");
+    int[] _jspx_push_body_count_c_forEach_2 = new int[] { 0 };
     try {
-      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
-      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
+      if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
           out.write("                <div class=\"col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames\">\r\n");
@@ -970,34 +1884,39 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("</span>\r\n");
           out.write("                            </div>\r\n");
           out.write("\r\n");
+          out.write("                            <div class=\"item-btn-a\">\r\n");
+          out.write("                                <a href=\"javascript:void(0);\" onclick=\"javascript:void(0);cart.add('188', '1', this);\">\r\n");
+          out.write("                                    <i class=\"fas fa-shopping-cart \"></i>\r\n");
+          out.write("                                </a>\r\n");
+          out.write("                            </div>\r\n");
+          out.write("\r\n");
           out.write("                            <div class=\"item-btn\" style=\"margin-top: 10px\" class=\"templatemo-edit-btn\">\r\n");
           out.write("                                 <a href=\"CartController?id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("&sl=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.quantity}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">Mua ngay</a>    \r\n");
+          out.write("\">Mua ngay</a>\r\n");
+          out.write("                                \r\n");
           out.write("                            </div>\r\n");
-          out.write("\r\n");
-          out.write("                            <div class=\"item-btn\" onclick=\"cart.buyNow('188', '1', this);\" style=\"margin-top: 10px\">Mua ngay</div>\r\n");
           out.write("                        </div>\r\n");
           out.write("                    </div>\r\n");
           out.write("                </div>\r\n");
           out.write("                            ");
-          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
         } while (true);
       }
-      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      if (_jspx_th_c_forEach_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
     } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+      while (_jspx_push_body_count_c_forEach_2[0]-- > 0)
         out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+      _jspx_th_c_forEach_2.doCatch(_jspx_exception);
     } finally {
-      _jspx_th_c_forEach_0.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+      _jspx_th_c_forEach_2.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_2);
     }
     return false;
   }
@@ -1070,20 +1989,20 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_forEach_3(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_1.setParent(null);
-    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_1.setVar("row");
-    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_3 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_3.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_3.setParent(null);
+    _jspx_th_c_forEach_3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_3.setVar("row");
+    int[] _jspx_push_body_count_c_forEach_3 = new int[] { 0 };
     try {
-      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
-      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      int _jspx_eval_c_forEach_3 = _jspx_th_c_forEach_3.doStartTag();
+      if (_jspx_eval_c_forEach_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
           out.write("                <div class=\"col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames\">\r\n");
@@ -1123,21 +2042,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                    </div>\r\n");
           out.write("                </div>\r\n");
           out.write("              ");
-          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
+          int evalDoAfterBody = _jspx_th_c_forEach_3.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
         } while (true);
       }
-      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      if (_jspx_th_c_forEach_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
     } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
+      while (_jspx_push_body_count_c_forEach_3[0]-- > 0)
         out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
+      _jspx_th_c_forEach_3.doCatch(_jspx_exception);
     } finally {
-      _jspx_th_c_forEach_1.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
+      _jspx_th_c_forEach_3.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_3);
     }
     return false;
   }
@@ -1210,20 +2129,20 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_forEach_2(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_forEach_4(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_2.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_2.setParent(null);
-    _jspx_th_c_forEach_2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_2.setVar("row");
-    int[] _jspx_push_body_count_c_forEach_2 = new int[] { 0 };
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_4 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_4.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_4.setParent(null);
+    _jspx_th_c_forEach_4.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_4.setVar("row");
+    int[] _jspx_push_body_count_c_forEach_4 = new int[] { 0 };
     try {
-      int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
-      if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      int _jspx_eval_c_forEach_4 = _jspx_th_c_forEach_4.doStartTag();
+      if (_jspx_eval_c_forEach_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
           out.write("                       <div class=\"col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames\">\r\n");
@@ -1263,21 +2182,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                    </div>\r\n");
           out.write("                </div>\r\n");
           out.write("                ");
-          int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
+          int evalDoAfterBody = _jspx_th_c_forEach_4.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
         } while (true);
       }
-      if (_jspx_th_c_forEach_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      if (_jspx_th_c_forEach_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
     } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_2[0]-- > 0)
+      while (_jspx_push_body_count_c_forEach_4[0]-- > 0)
         out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_2.doCatch(_jspx_exception);
+      _jspx_th_c_forEach_4.doCatch(_jspx_exception);
     } finally {
-      _jspx_th_c_forEach_2.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_2);
+      _jspx_th_c_forEach_4.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_4);
     }
     return false;
   }
