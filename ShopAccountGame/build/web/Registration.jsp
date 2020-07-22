@@ -39,7 +39,7 @@
                         <h2 class="title">Event Registration Form</h2>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="/Controller">
+                        <form method="POST" action="/LoginController">
                             <input type="hidden" name="page" value="registration">
                             <input type="hidden" name="role" value="2">
                             

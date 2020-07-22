@@ -43,7 +43,7 @@
                         <img src="Asset/images/img-01.png" alt="IMG">
                     </div>
 
-                    <form class="login100-form validate-form" method="post" action="Controller">
+                    <form class="login100-form validate-form" method="post" action="/LoginController">
                         <input type="hidden" name="page" value="login-form">
                         
                         <span class="login100-form-logo">
