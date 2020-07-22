@@ -6,6 +6,7 @@
 
 <%@page import="Model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="vi">
 
@@ -14,14 +15,10 @@
         </head>
 
         <body>
-            <!-- Google Tag Manager (noscript) -->
             <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDLT8HM" height="0" width="0"
                     style="display:none;visibility:hidden"></iframe>
             </noscript>
-            <!-- End Google Tag Manager (noscript) -->
-
-            <
             <div class="top-header" style="background-color: #088A08">
                 <div class="container">
                     <div class="row" style="opacity: 0.7">
@@ -319,7 +316,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            
 <!--****************************-->
                             <div class="right-menu">
                                 <div class="row menu-tab-all">
@@ -410,8 +406,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 col-xs-12 bar-buy-product">
-                                    <div id="button-cart-redirect" data-loading-text="Đang tải..."
-                                         class="btn btn-green-bg col-md-5" style="margin-top: 12px;width: 144px">Mua Ngay
+                                    <div id="button-cart-redirect" data-loading-text="Đang tải..." class="btn btn-green-bg col-md-5" style="margin-top: 12px;width: 144px"
+                                          onclick="window.location.href='CartController?id=${product.pId}&sl=${product.quantity}'">
+                                        Mua Ngay                                       
                                     </div>
                                 </div>
 

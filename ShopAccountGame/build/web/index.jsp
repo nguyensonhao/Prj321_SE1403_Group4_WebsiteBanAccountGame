@@ -5,6 +5,9 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="vi">
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Trang Chủ</title>
+        <link rel="icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
          <jsp:include page="header/header1.jsp"></jsp:include>
     </head>
 
@@ -392,7 +395,7 @@
     <div class="container">
         <div class="list-title" style="margin-top: 15px;">
             <h2>Game Liên Quân</h2>
-            <a href="#">Xem chi tiết</a>
+            <a href="accountLienQuan.jsp">Xem chi tiết</a>
         </div>
             <div class="next-page-product6" style="display:none;">1</div>
         <div class="list-container">
@@ -408,7 +411,60 @@
                         <div class="item-info">
                                 <div class="item-title">
                                     <a href="ProductDetail?id=${row.pId}">${row.pName }</a>                                
+                                       <marquee width="150"><font style="font-family:Bookman" color="green" >${row.pDescription}</font></marquee>
                                 </div>
+                            <!-- thông tin acc add vào sau -->
+                            <div class="item-price">
+                                <span class="cur-p">${row.pPrice}</span>
+                            </div>
+
+                            <div class="item-btn-a">
+                                <a href="javascript:void(0);" onclick="javascript:void(0);cart.add('188', '1', this);">
+                                    <i class="fas fa-shopping-cart "></i>
+                                </a>
+                            </div>
+
+                            <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                 <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         </c:forEach>
+            </div>
+        </div>
+        <hr>
+    </div>     
+<!--end account lien quan-->
+
+<!--satrt account lien minh-->
+<sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
+
+            <sql:query var="result" dataSource="${ds}">
+                select * from product where pType="lienminh"
+            </sql:query>
+    <div class="container">
+        <div class="list-title" style="margin-top: 15px;">
+            <h2>Game Liên Minh</h2>
+            <a href="accountLienMinh.jsp">Xem chi tiết</a>
+        </div>
+        
+                    <div class="next-page-product6" style="display:none;">1</div>
+                    
+        <div class="list-container">
+            <div class="row text-md-center">
+                <c:forEach items="${result.rows}" var="row">
+                <div class="col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames">
+                    <div class="item-game-wrapper">
+                        <a href="ProductDetail?id=${row.pId}">
+                            <div class="img">
+                                <img class="check_img_errs" src="${row.pImage}" />
+                            </div></a>
+                        <div class="item-info">
+                            <div class="item-title">
+                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a>
+                                       <marquee width="150"><font style="font-family:Bookman" color="green" >${row.pDescription}</font></marquee>
+                             </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
                                 <span class="cur-p">${row.pPrice}</span>
@@ -427,67 +483,12 @@
                         </div>
                     </div>
                 </div>
-                            </c:forEach>
-            </div>
-        </div>
-        <div class="view-more btn-aqua" id="loadMoreProduct6" onclick="loadMore($('.next-page-product6').text(), 6, this);
-                    $('.next-page-product6').text(Number($('.next-page-product6').text()) + 1);">Tải thêm sản phẩm</div>
-        <hr>
-    </div>
-        
-        
-<!--end account lien quan-->
-
-<!--satrt account lien minh-->
-<sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
-
-            <sql:query var="result" dataSource="${ds}">
-                select * from product where pType="lienminh"
-            </sql:query>
-    <div class="container">
-        <div class="list-title" style="margin-top: 15px;">
-            <h2>Game Liên Minh</h2>
-            <a href="#">Xem chi tiết</a>
-        </div>
-        
-                    <div class="next-page-product6" style="display:none;">1</div>
-                    
-        <div class="list-container">
-            <div class="row text-md-center">
-                <c:forEach items="${result.rows}" var="row">
-                <div class="col-md-6 col-lg-3 col-sm-6 col-xs-6 item-frames">
-                    <div class="item-game-wrapper">
-                        <a href="ProductDetail?id=${row.pId}">
-                            <div class="img">
-                                <img class="check_img_errs" src="${row.pImage}" />
-                            </div></a>
-                        <div class="item-info">
-                            <div class="item-title">
-                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a>                                
-                             </div>
-                            <!-- thông tin acc add vào sau -->
-                            <div class="item-price">
-                                <span class="cur-p">${row.pPrice}</span>
-                            </div>
-
-                            <div class="item-btn-a">
-                                <a href="javascript:void(0);" onclick="javascript:void(0);cart.add('188', '1', this);">
-                                    <i class="fas fa-shopping-cart "></i>
-                                </a>
-                            </div>
-
-                            <div class="item-btn" onclick="cart.buyNow('188', '1', this);" style="margin-top: 10px">Mua ngay</div>
-                        </div>
-                    </div>
-                </div>
               </c:forEach>
             </div>
         </div>
                                     
 
-        <div class="view-more btn-aqua" id="loadMoreProduct6" onclick="loadMore($('.next-page-product6').text(), 6, this);
-                    $('.next-page-product6').text(Number($('.next-page-product6').text()) + 1);">Tải thêm sản phẩm</div>
-        <hr>
+                    <hr>
     </div>
 <!--end account lien minh-->
 
@@ -500,7 +501,7 @@
     <div class="container">
         <div class="list-title" style="margin-top: 15px;">
             <h2>Game Fifa</h2>
-            <a href="#">Xem chi tiết</a>
+            <a href="accountFifa.jsp">Xem chi tiết</a>
         </div>
         
         <div class="next-page-product6" style="display:none;">1</div>
@@ -515,7 +516,8 @@
                             </div></a>
                         <div class="item-info">
                           <div class="item-title">
-                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a>                                
+                                    <a href="ProductDetail?id=${row.pId}">${row.pName }</a> 
+                                       <marquee width="150"><font style="font-family:Bookman" color="green" >${row.pDescription}</font></marquee>
                                 </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
@@ -528,16 +530,15 @@
                                 </a>
                             </div>
 
-                            <div class="item-btn" onclick="" style="margin-top: 10px">Mua ngay</div>
+                           <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                 <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
                 </c:forEach>
             </div>
-        </div>
-        
-        <div class="view-more btn-aqua" id="loadMoreProduct6" onclick="loadMore($('.next-page-product6').text(), 6, this);
-                    $('.next-page-product6').text(Number($('.next-page-product6').text()) + 1);">Tải thêm sản phẩm
         </div>
         <hr>
     </div>
@@ -547,8 +548,8 @@
         <div class="container">
             <div class="text-line-though"><span>Bạn là người mới?</span></div>
             <div class="text">Hãy đăng kí tài khoản để cập nhật những ưu đãi mới nhất từ Shop</div>
-            <a href="#"><button class="btn-aqua-bg">Đăng ký ngay</button></a>
-            <div class="text">Hoặc <a href="#"><b style="color: #fff">đăng nhập</b></a> nếu bạn đã có tài khoản</div>
+            <a href="registration.jsp"><button class="btn-aqua-bg">Đăng ký ngay</button></a>
+            <div class="text">Hoặc <a href="login.jsp"><b style="color: #fff">đăng nhập</b></a> nếu bạn đã có tài khoản</div>
         </div>
     </div>
     <script>

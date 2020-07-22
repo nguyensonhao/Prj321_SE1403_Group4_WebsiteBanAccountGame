@@ -307,9 +307,6 @@
 
                     </div>
                 </div>
-                <div class="view-more btn-aqua">
-                    Xem thêm
-                </div>
             </div>
         </div>
 

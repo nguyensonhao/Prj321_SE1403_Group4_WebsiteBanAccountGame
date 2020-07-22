@@ -161,7 +161,7 @@
                             <span>&#160</span>
                             <a href="login.jsp" class="text-white">Đăng nhập </a>
                             <span>/</span>
-                            <a href="REGISTRATION.jsp" class="text-white">Đăng kí</a>
+                            <a href="registration.jsp" class="text-white">Đăng kí</a>
                         </div>
                     </div>
 
