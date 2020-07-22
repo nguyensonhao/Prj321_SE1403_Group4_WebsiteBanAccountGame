@@ -109,7 +109,7 @@
                                             <td ><c:out value="${row.uEmail}"/></td>
                                             <td ><c:out value="${row.uAddress}"/></td>
                                             <td ><c:out value="${row.NameRole}"/></td>
-                                            <td ><a href="/ADMController?page=edit_u&uid=${row.uId}"class="templatemo-edit-btn">Edit</a> <hr>
+                                            <td ><a href="/ADMController?page=edit_u&uid=${row.uId}&role=${row.NameRole}"class="templatemo-edit-btn">Edit</a> <hr>
                                                 <a href="?id=${row.uId}" class="templatemo-edit-btn">Delete</a></td>
                                         </tr>
                                     </c:forEach>   

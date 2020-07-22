@@ -11,6 +11,7 @@ import ModelDao.ProductDAO;
 import ModelDao.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -165,11 +166,18 @@ public class ADMController extends HttpServlet {
         }
         if (page.equals("edit_u")) {
             int id = Integer.parseInt(request.getParameter("uid"));
+            String role = request.getParameter("role");
+            if(role.equals("admin")){
+                out.print("<script>alert('Admin is Cannot Edit');</script>");
+                response.sendRedirect("admin/ManageUsers.jsp");
+                 
+            }else{
             UserDAO uDao = new UserDAO();
             User u = null;
             u = uDao.getUser(id);
             getServletContext().setAttribute("u", u);
             response.sendRedirect("admin/EditUser.jsp");
+            }
         }
         if (page.equals("edit_user")) {
             int id = Integer.parseInt(request.getParameter("id"));

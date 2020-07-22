@@ -68,6 +68,7 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
+      out.write("        \r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Dashboard - Home</title>\r\n");
       out.write("        <meta charset=\"utf-8\">\r\n");
@@ -92,12 +93,13 @@ public final class IndexADM_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\r\n");
       out.write("        <![endif]-->\r\n");
       out.write("    </head>\r\n");
+      out.write("    \r\n");
       out.write("    <body>\r\n");
       out.write("        <div class=\"templatemo-flex-row\">\r\n");
       out.write("            <div class=\"templatemo-sidebar\">\r\n");
       out.write("                <header class=\"templatemo-site-header\">\r\n");
       out.write("                    <div class=\"square\"></div>\r\n");
-      out.write("                    <h1>Admin ");
+      out.write("                    <h1>Admin &ensp; ");
       if (_jspx_meth_c_out_0(_jspx_page_context))
         return;
       out.write(" </h1>\r\n");
