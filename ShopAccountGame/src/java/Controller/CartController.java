@@ -1,4 +1,4 @@
-package Controller;
+ package Controller;
 
 import Model.Bill;
 import Model.Product;
@@ -43,8 +43,6 @@ public class CartController extends HttpServlet {
                 BillDao bill = new BillDao();
                 bill.insert(new Bill(p.getpName(),p.getQuantity(),p.getpLImage(), p.getDescription(),p.getpPrice(), new Date()));
                 int quantity1 = Integer.parseInt(request.getParameter("sl"));
-                ArrayList<Product> pr = pdao.getALL();
-                session.setAttribute("Product", pr);
                 if(quantity1 -1 < 0){
                     out.print("<script>alert('Quantity purchased cannot be greater than quantity in stock');</script>");
                     //back to slide buy product

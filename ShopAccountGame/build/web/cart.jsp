@@ -1,88 +1,219 @@
 <%-- 
-    Document   : cart2
-    Created on : Jul 21, 2020, 8:35:18 AM
-    Author     : Hao Nguyen 
+    Document   : Test
+    Created on : Jul 15, 2020, 7:01:10 PM
+    Author     : Quang Hiển
 --%>
 
-<%@page import="Model.Product"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Model.Bill"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h2 class="text-center">Giỏ Hàng</h2>
-        <div class="container"> 
-            <table id="cart" class="table table-hover table-condensed"> 
-                <thead> 
-                    <tr> 
-                        <th style="width:50%">Tên sản phẩm</th> 
-                        <th style="width:10%">Giá</th> 
-                        <th style="width:8%">Số lượng</th> 
-                        <th style="width:22%" class="text-center">Thành tiền</th> 
-                        <th style="width:10%"> </th> 
-                    </tr> 
-                </thead> 
-                
-                <tbody>
 
-                   <sql:setDataSource var="conn" driver = "com.mysql.jdbc.Driver"
-                           url="jdbc:mysql://localhost/shopacc"
-                           user="root" password="" scope="page"/>
-                   <sql:update var="delete" dataSource="${conn}" sql="DELETE FROM `bill` WHERE bId='${param.bId}'"/> 
-                   <sql:query var="result" dataSource="${conn}">
-                         SELECT * FROM `bill`
-                    </sql:query>
-                     
-                     <c:forEach items="${result.rows}" var="row">
-                    <tr> 
-                        <td data-th="Product"> 
-                            <div class="row"> 
-                                <div class="col-sm-2 hidden-xs"><img src="${row.pImage}" alt="" class="img-responsive" width="100">
-                                </div> 
-                                <div class="col-sm-10"> 
-                                    <h4 class="nomargin"> ${row.pName}</h4> 
-                                    <p> </p> 
-                                </div> 
-                            </div> 
-                        </td> 
-                        <td data-th="Price"></td> 
-                        <td data-th="Quantity"><input class="form-control text-center" value="${row.bQuantity}" type="number">
-                        </td> 
-                        <td data-th="Subtotal" class="text-center">${row.bQuantity * row.pPrice}</td> 
-                        <td class="actions" data-th=""> 
-                                   <button onclick="window.location.href='cart.jsp?bId=${row.bId}'" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i>
-                                      
-                                   </button>    
-                                   <!--<button onclick="window.location.href='cart.jsp?bId=${row.bId}'">Delete</button>-->
-                        </td> 
-                    </tr>
-                     </c:forEach>
-                </tbody>
-               
-                <tfoot> 
-                    <tr> 
-                        <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
-                        </td> 
-                        <td colspan="2" class="hidden-xs"> </td> 
-                        <td class="hidden-xs text-center"><strong>Tổng tiền 500.000 đ</strong>
-                        </td> 
-                        <td><a href="" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
-                        </td> 
-                    </tr> 
-                </tfoot> 
-            </table>
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="ltr" lang="vi" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="ltr" lang="vi" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="vi">
+    <!--<![endif]-->
+
+    <head>
+          <jsp:include page="header/header1.jsp"></jsp:include>
+    </head>
+
+    <body>
+         <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDLT8HM" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <div class="top-header" style="background-color: #088A08">
+            <div class="container">
+                <div class="row" style="opacity: 0.7">
+                    <div class="slide-news">
+                        <div class="w3-content w3-section">
+
+                            <a class="left carousel-control" role="button">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="right carousel-control" role="button">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+
+
+                            <div class="marquee-slide">
+                                <a href="accountLienQuan.jsp" class="mySlides" id="new-slide-0">
+                                    <i class="fab fa-hotjar"></i>
+                                    Liên Quân              </a>
+                                <a href="accountLienMinh.jsp" class="mySlides" id="new-slide-1">
+                                    <i class="fab fa-hotjar"></i>
+                                    Liên Minh              </a>
+                                <a href="accountFifa.jsp" class="mySlides" id="new-slide-2">
+                                    <i class="fab fa-hotjar"></i>
+                                    Fifa              </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right " style="padding:5px 0;float: right">
+                        Hỗ trợ 1900 123456
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <style type="text/css">.table&amp;amp;gt;tbody&amp;amp;gt;tr&amp;amp;gt;td, .table&amp;amp;gt;tfoot&amp;amp;gt;tr&amp;amp;gt;td {  
+        <header class="home-page fixed-header">
+              <c:choose>
+            <c:when test="${not empty User}">
+                <%@include file="header/header2.jsp" %>
+            </c:when>
+            <c:when test="${User == username}">
+                <%@include file="header/header3.jsp" %>
+            </c:when>
+            <c:otherwise>
+                <%@include file="header/header3.jsp" %>
+            </c:otherwise>
+        </c:choose>
+</header>
+<script src="https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js" type="text/javascript"></script>
+
+<script>
+                    var time_run_link = "5" * 1000;
+                    var lang = "vi";
+                    var check_login = true;
+</script>
+<script src="./assets/catalog/common/header.js?t=1594814390"></script>
+<div class="home-page banner-home common-menu-top" style="background-color: #f7f7f7;margin-bottom: 15px;">
+    <div class="menu-2" style="margin-top: 0">
+        <div class="container padd-0" style="margin-top: 6px;">
+            <div class="menu-catalog">
+                <div class="header-menu dropdown" id="category-product">
+                    <div class="bar-btn">
+                        <i class="fas fa-bars"></i><span>Danh mục sản phẩm</span>
+                    </div>
+                    <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
+                        <ul>
+                            <li>
+                                <a href="/index.php?route=product/category&amp;path=59&amp;filter_price_from=0&amp;filter_price_to=15000000&amp;sort=op.quantity&amp;order=DESC&amp;limit=12"><i class="fab fa-steam-symbol"></i>
+                                    <span>Game trên Steam</span></a>
+                            </li>
+                            <li>
+                                <a href="/index.php?route=product/search&amp;search=pubg"><i class="fas fa-trophy"></i>
+                                    <span>PUBG</span></a>
+                            </li>
+                            <li>
+                                <a href="/Origin"><i class="icon icon-origin-svg"></i>
+                                    <span>Game trên Origin</span></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-menu">
+                    <div class="row menu-tab-all">
+                        <div class="quick-menu head-link">
+                            <a href="#"><i class="fab fa-hotjar"></i><span>Mua nhiều trong 24h</span></a>
+                        </div>
+                        <div class="quick-menu head-link">
+                            <a href="#"><i class="fas fa-award"></i><span>ĐANG KHUYẾN MẠI</span></a>
+                        </div>
+                        <div class="quick-menu head-link">
+                            <a href="#"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
+                        </div>
+                        <div class="quick-menu head-link">
+                            <a href="#"><i class="fas fa-gamepad"></i><span>Hướng dẫn mua hàng</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .banner-home .menu-2 .header-menu div.nav-menu {
+        display: none;
+        height: auto;
+        margin: auto;
+        width: 100%;
+    }
+</style>
+
+<script>
+                    $("#category-product").hover(
+                            function () {
+                                $(this).css("cursor", "pointer");
+                                $('.drop-category').css("display", "grid");
+                            }, function () {
+                        $('.drop-category').css("display", "none");
+                    }
+                    );
+</script><style xmlns="">
+    @media (max-width: 415px) {
+        .col-xs-6 {
+            width: 50%;
+        }
+    }
+
+    .text-center-col {
+        text-align: center !important;
+    }
+
+    .text-left-col {
+        text-align: left !important;
+    }
+
+    div.trang-sp .container .container-title {
+        display: flex;
+        align-items: center;
+    }
+
+    div.trang-sp .container .container-title h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0px;
+        display: inline-block;
+    }
+
+    div.trang-sp .container .container-title .count-sp-thanhtoan {
+        color: #21beff;
+        margin-left: 5px;
+        margin-top: 3px;
+        font-size: 14px;
+    }
+
+    div.trang-sp .container .container-title .sort {
+        margin-left: auto;
+    }
+
+    div.trang-sp .container .container-title .sort .btn {
+        width: 150px;
+        height: 32px;
+    }
+
+    .alert {
+        padding: 8px;
+    }
+
+    .ver-middle {
+        vertical-align: middle !important;
+    }
+
+    .text-color {
+        color: red;
+    }
+
+    #form_address_other {
+        display: none;
+    }
+
+    #my_address {
+        display: none;
+    }
+</style>
+
+<!--Main show sản pam-->
+ <style type="text/csss">.table &amp;amp;gt;tbody&amp;amp;gt;tr&amp;amp;gt;td, .table&amp;amp;gt;tfoot&amp;amp;gt;tr&amp;amp;gt;td {  
             vertical-align: middle;
         }
 
@@ -134,5 +265,158 @@
                 display:block;
             }
         }</style>
+<div class="trang-sp">
 
+    <div class="container">
+
+        <div id="alert-position"></div>
+        <div class="container-title">
+            <h2 class="thanh-toan-title">Thanh Toán</h2><span class="count-san-pham">${temp}</span>
+                    </div>
+        </br>
+        <div class="row cart-detail">
+            <table id="cart" class="table table-hover table-condensed" > 
+                <thead> 
+                    <tr> 
+                        <th style="width:50% ">Tên sản phẩm</th> 
+                        <th style="width:10%">Giá</th> 
+                        <th style="width:8%">Số lượng</th> 
+                        <th style="width:22%" class="text-center">Thành tiền</th> 
+                        <th style="width:10%"> </th> 
+                    </tr> 
+                </thead> 
+                
+                <tbody>
+
+                   <sql:setDataSource var="conn" driver = "com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost/shopacc"
+                           user="root" password="" scope="page"/>
+                   <sql:update var="delete" dataSource="${conn}" sql="DELETE FROM `bill` WHERE bId='${param.bId}'"/> 
+                   <sql:query var="result" dataSource="${conn}">
+                         SELECT * FROM `bill`
+                    </sql:query>
+                     
+                     <c:forEach items="${result.rows}" var="row">
+                    <tr> 
+                        <td data-th="Product"> 
+                            <div class="row"> 
+                                <div class="col-sm-2 hidden-xs"><img src="${row.pImage}" alt="" class="portrait-crop"width="125">
+                                </div> 
+                                <div class="col-sm-10"> 
+                                    <h4 class="col-sm-10 col-xs-10"> ${row.pName}</h4> 
+                                    <p> </p> 
+                                </div> 
+                            </div> 
+                        </td> 
+                        <td data-th="Price">${row.pPrice}</td> 
+                        <td data-th="Quantity">${row.bQuantity}
+                        </td> 
+                        <td data-th="Subtotal" class="text-center">${row.bQuantity * row.pPrice}</td> 
+                        <td  > 
+                            <button class="btn btn-danger btn-sm"  onclick="window.location.href='cart.jsp?bId=${row.bId}'"><i class="far fa-times-circle"></i>                                     
+                                   </button>    
+                                   <!--<button onclick="window.location.href='cart.jsp?bId=${row.bId}'">Delete</button>-->
+                        </td> 
+                    </tr>
+                    <c:set var="total" value="${total + row.pPrice}"></c:set>
+                    <c:set var="temp" value="${temp + row.bQuantity}"></c:set>
+                      </c:forEach>
+                </tbody>
+                <tfoot> 
+                    <tr> 
+                        
+                        <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                        </td> 
+                        <td colspan="2" class="hidden-xs"> </td> 
+                        <td class="hidden-xs text-center"><strong>Tổng tiền <c:out value="${total}"/></strong>
+                        </td> 
+                        <td><a href="" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                        </td> 
+                    </tr> 
+                </tfoot> 
+               
+            </table>
+        </div>              
+
+    </div>
+    <div class="mb15"></div>
+
+    <input type="hidden" value="0" id="product_physical">
+
+    <div class="mb15"></div>
+    <div class="thanh-toan">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 padd-0">
+                <div class="col-md-6 col-xs-12 padd-0">
+
+                    <div class="mb15"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    
+</div>
+</div>
+<!--------------------------------------------------------------------------------------------------->
+<div id="payment-confirm-data"></div>
+<footer>
+    <div class="footer-top" style="margin-top:20px;">
+        <div class="container mt-0">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 flex-row">
+                    <div class="img">
+                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service1.png" style="max-width:50px;" alt="GIAO HÀNG SIÊU TỐC">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">GIAO HÀNG SIÊU TỐC</span>
+                        <p style="font-size:13px;">Hệ thống giao hàng tự động chỉ trong 3 phút</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 flex-row">
+                    <div class="img">
+                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service2.png" style="max-width:50px;" alt="BẢO HÀNH NHANH CHÓNG">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">BẢO HÀNH NHANH CHÓNG</span>
+                        <p style="font-size:13px;">Mọi yêu cầu hỗ trợ sẽ được đội ngũ tư vấn giải quyết trực tiếp.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 flex-row">
+                    <div class="img">
+                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service3.png" style="max-width:50px;" alt="UY TÍN 5 SAO">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">UY TÍN 5 SAO</span>
+                        <p style="font-size:13px;">Được cộng đồng bình chọn là shop game uy tín nhất VN</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 flex-row">
+                    <div class="img">
+                        <img src="https://hgeqic7azi.vcdn.com.vn/image/catalog/Footer/service4.png" style="max-width:50px;" alt="HỖ TRỢ TẬN TÌNH">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <span style="font-size:13px;font-weight:bold;text-transform:uppercase;">HỖ TRỢ TẬN TÌNH</span>
+                        <p style="font-size:13px;">Hệ thống hỗ trợ online liên tục từ 8h - 24h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="notification_footer" class="notification_footer">
+        <div class="nt-content"></div>
+        <div class="nt-close"><i class="far fa-times-circle"></i></div>
+    </div>
+</footer>
+
+<a id="messenger-button" href="https://m.me/divineshop.vn" alt="Hỗ Trợ DivineShop" title="Hỗ Trợ DivineShop">
+    <img style="position: fixed;bottom: 35px;right: 25px;z-index:2;" src="https://hgeqic7azi.vcdn.com.vn/image/banner_v2/messager.svg">
+</a>
+<script src="./assets/catalog/common/footer.js?t=1594814390"></script>
+</body>
 </html>
+
