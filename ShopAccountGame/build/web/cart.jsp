@@ -324,7 +324,6 @@
                 </tbody>
                 <tfoot> 
                     <tr> 
-                        
                         <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                         </td> 
                         <td colspan="2" class="hidden-xs"> </td> 
@@ -359,17 +358,17 @@
     <hr>
     
 </div>
-</div>
-<!--------------------------------------------------------------------------------------------------->
-<div id="payment-confirm-data"></div>
-<footer>
-    <jsp:include page="footer/footer1.jsp"></jsp:include>
-</footer>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+    <div id="payment-confirm-data"></div>
+    <footer>
+        <jsp:include page="footer/footer1.jsp"></jsp:include>
+    </footer>
 
-<a id="messenger-button" href="https://m.me/divineshop.vn" alt="Hỗ Trợ DivineShop" title="Hỗ Trợ DivineShop">
-    <img style="position: fixed;bottom: 35px;right: 25px;z-index:2;" src="https://hgeqic7azi.vcdn.com.vn/image/banner_v2/messager.svg">
-</a>
-<script src="./assets/catalog/common/footer.js?t=1594814390"></script>
+    <a id="messenger-button" href="https://m.me/divineshop.vn" alt="Hỗ Trợ DivineShop" title="Hỗ Trợ DivineShop">
+        <img style="position: fixed;bottom: 35px;right: 25px;z-index:2;" src="https://hgeqic7azi.vcdn.com.vn/image/banner_v2/messager.svg">
+    </a>
+    <script src="./assets/catalog/common/footer.js?t=1594814390"></script>
 </body>
 </html>
 

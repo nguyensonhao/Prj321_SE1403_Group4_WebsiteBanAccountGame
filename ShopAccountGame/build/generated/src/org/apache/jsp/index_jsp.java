@@ -373,7 +373,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <a href=\"bestsellers.jsp\" target=\"_blank\"><i class=\"fab fa-hotjar\"></i><span>Sản Phẩm Hot</span></a>\r\n");
       out.write("                                </div>\r\n");
       out.write("                                <div class=\"quick-menu head-link\">\r\n");
-      out.write("                                    <a href=\"#\" target=\"_blank\"><i class=\"fas fa-award\"></i><span>Đang Khuyến Mãi</span></a>\r\n");
+      out.write("                                    <a href=\"AccSale.jsp\" target=\"_blank\"><i class=\"fas fa-award\"></i><span>Đang Khuyến Mãi</span></a>\r\n");
       out.write("                                </div>\r\n");
       out.write("                                <div class=\"quick-menu head-link\">\r\n");
       out.write("                                    <a href=\"#\" target=\"_blank\"><i class=\"far fa-credit-card\"></i><span>Hình thức thanh toán</span></a>\r\n");
@@ -933,7 +933,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("<html>\r\n");
         out.write("    <head>\r\n");
         out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-        out.write("        <title>JSP Page</title>\r\n");
+        out.write("        \r\n");
         out.write("    </head>\r\n");
         out.write("    <body>\r\n");
         out.write("           <header class=\"home-page fixed-header\" style=\"background-color: #5BBD2B\">\r\n");
@@ -1810,7 +1810,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\r\n");
-          out.write("                select * from product where pType=\"lienquan\"\r\n");
+          out.write("               SELECT * FROM product WHERE pType='lienquan' LIMIT 2;\r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -2017,7 +2017,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write('"');
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pName }", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</a>                                \r\n");
+          out.write("</a>\r\n");
+          out.write("                                       <marquee width=\"150\"><font style=\"font-family:Bookman\" color=\"green\" >");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pDescription}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</font></marquee>\r\n");
           out.write("                             </div>\r\n");
           out.write("                            <!-- thông tin acc add vào sau -->\r\n");
           out.write("                            <div class=\"item-price\">\r\n");
@@ -2107,7 +2110,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\r\n");
-          out.write("                select * from product where pType=\"fifa4\"\r\n");
+          out.write("                select * from product where pType=\"fifa4\"  \r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_sql_query_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -2164,7 +2167,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write('"');
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pName }", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</a>                                \r\n");
+          out.write("</a> \r\n");
+          out.write("                                       <marquee width=\"150\"><font style=\"font-family:Bookman\" color=\"green\" >");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pDescription}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</font></marquee>\r\n");
           out.write("                                </div>\r\n");
           out.write("                            <!-- thông tin acc add vào sau -->\r\n");
           out.write("                            <div class=\"item-price\">\r\n");

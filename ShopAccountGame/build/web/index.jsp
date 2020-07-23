@@ -298,7 +298,7 @@
                                     <a href="bestsellers.jsp" target="_blank"><i class="fab fa-hotjar"></i><span>Sản Phẩm Hot</span></a>
                                 </div>
                                 <div class="quick-menu head-link">
-                                    <a href="#" target="_blank"><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
+                                    <a href="AccSale.jsp" target="_blank"><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
                                 </div>
                                 <div class="quick-menu head-link">
                                     <a href="#" target="_blank"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
@@ -390,7 +390,7 @@
   <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
 
             <sql:query var="result" dataSource="${ds}">
-                select * from product where pType="lienquan"
+               SELECT * FROM product WHERE pType='lienquan' LIMIT 2;
             </sql:query>
     <div class="container">
         <div class="list-title" style="margin-top: 15px;">
@@ -496,7 +496,7 @@
 <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
 
             <sql:query var="result" dataSource="${ds}">
-                select * from product where pType="fifa4"
+                select * from product where pType="fifa4"  
             </sql:query>
     <div class="container">
         <div class="list-title" style="margin-top: 15px;">
