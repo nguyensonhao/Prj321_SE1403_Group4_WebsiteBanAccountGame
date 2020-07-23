@@ -8,6 +8,10 @@
         <servlet-name>Controller</servlet-name>
         <servlet-class>Controller.LoginController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CartController</servlet-name>
+        <servlet-class>Controller.CartController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ADMController</servlet-name>
         <url-pattern>/ADMController</url-pattern>
@@ -15,6 +19,10 @@
      <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>CartController</servlet-name>
+        <url-pattern>/CartController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
