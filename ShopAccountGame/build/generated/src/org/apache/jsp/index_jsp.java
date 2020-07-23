@@ -432,7 +432,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"well-price\">\r\n");
       out.write("                             <a href=\"search1.jsp?min=0&max=50000\"><strong>Dưới 50.000đ</strong></a>\r\n");
       out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
+      out.write("                    </div>x\r\n");
       out.write("                    <div class=\"col-lg-2 col-md-3 col-sm-6 col-xs-6\">\r\n");
       out.write("                        <div class=\"well-price\" onclick=\"filterMaxPrice(this, 100000)\">\r\n");
       out.write("                            <a href=\"search1.jsp?min=50000&max=100000\"><strong>Dưới 100.000đ</strong></a>\r\n");
@@ -1812,7 +1812,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\r\n");
-          out.write("               SELECT * FROM product WHERE pType='lienquan' LIMIT 2;\r\n");
+          out.write("               SELECT * FROM product WHERE pType='lienquan' LIMIT 4;\r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -1879,7 +1879,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                            <div class=\"item-price\">\r\n");
           out.write("                                <span class=\"cur-p\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</span>\r\n");
+          out.write(" VNĐ</span>\r\n");
           out.write("                            </div>\r\n");
           out.write("\r\n");
           out.write("                            <div class=\"item-btn-a\">\r\n");
@@ -2028,7 +2028,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                            <div class=\"item-price\">\r\n");
           out.write("                                <span class=\"cur-p\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</span>\r\n");
+          out.write(" VNĐ</span>\r\n");
           out.write("                            </div>\r\n");
           out.write("\r\n");
           out.write("                            <div class=\"item-btn-a\">\r\n");
@@ -2112,7 +2112,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\r\n");
-          out.write("                select * from product where pType=\"fifa4\"  \r\n");
+          out.write("                select * from product where pType=\"fifa4\" LIMIT 4  \r\n");
           out.write("            ");
           int evalDoAfterBody = _jspx_th_sql_query_2.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -2178,7 +2178,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                            <div class=\"item-price\">\r\n");
           out.write("                                <span class=\"cur-p\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</span>\r\n");
+          out.write(" VNĐ</span>\r\n");
           out.write("                            </div>\r\n");
           out.write("\r\n");
           out.write("                            <div class=\"item-btn-a\">\r\n");

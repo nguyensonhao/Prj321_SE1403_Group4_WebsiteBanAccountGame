@@ -359,22 +359,23 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
-                        <div class="well-price" onclick="filterMaxPrice(this, 100000)">
+                        <div class="well-price">
                             <a href="search1.jsp?min=50000&max=100000"><strong>Dưới 100.000đ</strong></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
-                        <div class="well-price" onclick="filterMaxPrice(this, 200000)">
+                        <div class="well-price">
                             <a href="search1.jsp?min=100000&max=200000"><strong>Dưới 200.000đ</strong></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
-                        <div class="well-price" onclick="filterMaxPrice(this, 500000)">
+                        <div class="well-price">
                             <a href="search1.jsp?min=200000&max=500000"><strong>Dưới 500.000đ</strong></a>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12" style="padding-left: 15px;padding-right: 15px">
-                        <div class="well-price" onclick="filterMaxPrice(this, 1000000)">
+                    
+                    <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12" style="padding-left: 15px;padding-right:15px">
+                        <div class="well-price">
                             <a href="search1.jsp?min=500000&max=1000000"><strong>Dưới 500.000đ</strong></a>
                         </div>
                     </div>
@@ -392,7 +393,7 @@
   <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
 
             <sql:query var="result" dataSource="${ds}">
-               SELECT * FROM product WHERE pType='lienquan' LIMIT 2;
+               SELECT * FROM product WHERE pType='lienquan' LIMIT 4;
             </sql:query>
     <div class="container">
         <div class="list-title" style="margin-top: 15px;">
@@ -417,7 +418,7 @@
                                 </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
-                                <span class="cur-p">${row.pPrice}</span>
+                                <span class="cur-p">${row.pPrice} VNĐ</span>
                             </div>
 
                             <div class="item-btn-a">
@@ -469,7 +470,7 @@
                              </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
-                                <span class="cur-p">${row.pPrice}</span>
+                                <span class="cur-p">${row.pPrice} VNĐ</span>
                             </div>
 
                             <div class="item-btn-a">
@@ -498,7 +499,7 @@
 <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
 
             <sql:query var="result" dataSource="${ds}">
-                select * from product where pType="fifa4"  
+                select * from product where pType="fifa4" LIMIT 4  
             </sql:query>
     <div class="container">
         <div class="list-title" style="margin-top: 15px;">
