@@ -1,6 +1,7 @@
  package Controller;
 
 import Model.Bill;
+import Model.Cart;
 import Model.Product;
 import ModelDao.BillDao;
 import ModelDao.ProductDAO;
@@ -19,9 +20,12 @@ import javax.servlet.http.HttpSession;
  *
  * @author Hao Nguyen
  */
-@WebServlet(name = "CartController", urlPatterns = {"/CartController"})
 public class CartController extends HttpServlet {
+ private static final long serialVersionUID = 1L;
+    ArrayList<Product> list = new ArrayList<>();
+    static ArrayList<Cart> cartlist = new ArrayList<>();
 
+    HttpSession session;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,59 +38,8 @@ public class CartController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            if(request.getParameter("id")!=null && request.getParameter("sl")!=null){
-                HttpSession session = request.getSession();
-                ProductDAO pdao = new ProductDAO();
-                Product p = pdao.getProduct(Integer.parseInt(request.getParameter("id")));
-                
-                BillDao bill = new BillDao();
-                bill.insert(new Bill(p.getpName(),p.getQuantity(),p.getpLImage(), p.getDescription(),p.getpPrice(), new Date()));
-                int quantity1 = Integer.parseInt(request.getParameter("sl"));
-                if(quantity1 -1 < 0){
-                    out.print("<script>alert('Quantity purchased cannot be greater than quantity in stock');</script>");
-                    //back to slide buy product
-                    out.print("<script>location.href='index.jsp';</script>");
-                }else{
-                    int id = Integer.parseInt(request.getParameter("id"));
-                    pdao.updateBill(id, pdao.getProduct(id).getQuantity());
-                    
-                    if(session.getAttribute("cart")== null){
-                        ArrayList<Product> cart = new ArrayList<>();
-                        Product product = pdao.getProduct(id);
-                        product.setQuantity(1);
-                        cart.add(product);
-                        request.getSession().setAttribute("cart", cart);
-                                
-                    }else{
-                        ArrayList<Product> cart = (ArrayList<Product>) session.getAttribute("cart");
-                        int index =-1;
-                        
-                        // find Item exist in list cart
-                        for(int i =0; i<cart.size(); i++){
-                            if(cart.get(i).getpId()==id){
-                                index = i;
-                                break;
-                            }
-                        }
-                        
-                         //if not exist, create new item then add it to cart
-                        if(index ==-1){
-                           Product product = pdao.getProduct(id);
-                           product.setQuantity(1);
-                           cart.add(product);
-                        }else{
-                            int quantity = cart.get(index).getQuantity()+1;
-                            cart.get(index).setQuantity(quantity);
-                        }
-                        request.getSession().setAttribute("cart", cart);
-                    }
-                }
-            }
-            //response.sendRedirect("cart.jsp");
-//            request.getRequestDispatcher("/cart.jsp").forward(request, response);
-            response.sendRedirect("./cart.jsp");
-        }
+      
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -101,7 +54,12 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String page = request.getParameter("page");
+        if (page == null || page.equals("index")) {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else {
+            doPost(request, response);
+        } 
     }
 
     /**
@@ -115,7 +73,41 @@ public class CartController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         String page = request.getParameter("page");
+        if (page.equals("addtocart")) {
+            session = request.getSession();
+            String action = request.getParameter("action");
+            int id = Integer.parseInt(request.getParameter("id"));
+            Cart cart = new Cart();
+            boolean check = cart.check(cartlist, id);
+            if (check) {
+                response.sendRedirect("index.jsp");
+            } else {
+                Product product = new ProductDAO().getProduct(id);
+                cart.setcId(product.getpId());
+                cart.setcName(product.getpName());
+                cart.setcPrice(product.getpPrice());
+                cart.setcQuantity(product.getQuantity());
+                cart.setcType(product.getpType());
+                cart.setcLImage(product.getpLImage());
+                cartlist.add(cart);
+                session.setAttribute("cartlist", cartlist);
+                if (action.equals("showcart")) {
+                    request.getRequestDispatcher("cart.jsp").forward(request, response);
+                }if (action.equals("index")) {
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
+            }
+
+        }
+        if (page.equals("remove")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Cart cart = new Cart();
+            cartlist = cart.remove(cartlist, id);
+            session = request.getSession();
+            session.setAttribute("cartlist", cartlist);
+            request.getRequestDispatcher("cart.jsp").forward(request, response);
+        }
     }
 
     /**
