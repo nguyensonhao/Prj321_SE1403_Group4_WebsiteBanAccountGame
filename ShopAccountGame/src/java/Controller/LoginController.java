@@ -98,11 +98,6 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String page = request.getParameter("page");
-        if (page.equals("logout")) {
-            request.getSession();
-            getServletContext().removeAttribute("username");
-            response.sendRedirect("login.jsp");
-        }
         if (page.equals("login-form")) {
             String username = request.getParameter("txtUser");
             String password = request.getParameter("txtPassword");
