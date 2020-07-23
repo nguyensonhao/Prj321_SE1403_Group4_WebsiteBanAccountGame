@@ -299,15 +299,10 @@
                                             </p>
                                         </div>
 
-                                         <div class="item-btn-a">  
-                                              <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="">
-                                         <i class="fas fa-shopping-cart "></i>
-                                       </a>
+                                        <div class="item-btn-a">  
+                                            <i class="fas fa-shopping-cart">${pDescription}</i></a>
                                         </div>
-                                        <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
-                                            <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>
-                                
-                                        </div>
+                                        <div class="item-btn" style="margin-top: 10px">Mua ngay</div>
                                     </div>
                                 </div>
                                         <hr>
