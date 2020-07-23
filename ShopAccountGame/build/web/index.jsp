@@ -534,9 +534,8 @@
                             </div>
 
                            <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
-                                 <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>
-                                
-                            </div>
+                                 <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>       
+                          </div>
                         </div>
                     </div>
                 </div>

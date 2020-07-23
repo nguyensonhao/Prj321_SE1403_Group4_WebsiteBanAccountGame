@@ -83,7 +83,7 @@
                         <hr>
                         <!-- Link face và số đt-->
 
-                        <li style="margin: 0;"><a href="#" style="font-size: 17px;"><i class="fa fa-phone"></i>HOTLINE:
+                        <li style="margin: 0;"><a href="" style="font-size: 17px;"><i class="fa fa-phone"></i>HOTLINE:
                                 1900 123 456 </a></li>
                         <li style="margin: 0;"><a href="#" style="font-size: 17px;" target="_blank"><i
                                     class="fab fa-facebook-messenger"></i>Nhắn tin cho Shop </a></li>
@@ -148,7 +148,7 @@
                 <div id="sidebarCollapse" class="btn-menu">
                     <i class="fas fa-bars" style="font-size: 20px; vertical-align: middle"></i>
                 </div>
-                <div class="logo"><a href="#"><img style="margin-right: 10px;width: 60px"
+                <div class="logo"><a href="https://photos.google.com/u/1/photo/AF1QipOyWueoE8SWR-yZBp9K4yHKHnZ4ULgfMKwFp30d"><img style="margin-right: 10px;width: 60px"
                                                                                                    src="#" />
                         <img style="width: 100px;" src="#" /></a></div>
                 <div class="search-form">
