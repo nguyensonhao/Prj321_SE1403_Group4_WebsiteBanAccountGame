@@ -48,6 +48,7 @@
                             </div>
                         </div>
                     </div>
+                    <li><a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
                     <div class="text-right " style="padding:5px 0;float: right">
                         Hỗ trợ 1900 123456
                     </div>

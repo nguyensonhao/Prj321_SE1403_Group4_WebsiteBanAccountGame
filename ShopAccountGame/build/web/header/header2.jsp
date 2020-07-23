@@ -167,8 +167,8 @@
                         <div class="d-flex align-items-center ml-1">
                             <i class="fas fa-user-circle" style="font-size: 40px;"></i>
                             <span>&#160</span>
-                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out>  </b>
-                           
+                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out> <a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a>  </b>
+                 
                         </div>
                     </div>
 
