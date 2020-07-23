@@ -661,7 +661,7 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                        <hr>\r\n");
         out.write("                        <!-- Link face và số đt-->\r\n");
         out.write("\r\n");
-        out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\"><i class=\"fa fa-phone\"></i>HOTLINE:\r\n");
+        out.write("                        <li style=\"margin: 0;\"><a href=\"\" style=\"font-size: 17px;\"><i class=\"fa fa-phone\"></i>HOTLINE:\r\n");
         out.write("                                1900 123 456 </a></li>\r\n");
         out.write("                        <li style=\"margin: 0;\"><a href=\"#\" style=\"font-size: 17px;\" target=\"_blank\"><i\r\n");
         out.write("                                    class=\"fab fa-facebook-messenger\"></i>Nhắn tin cho Shop </a></li>\r\n");
@@ -730,7 +730,7 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\r\n");
         out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\r\n");
         out.write("                </div>\r\n");
-        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\r\n");
+        out.write("                <div class=\"logo\"><a href=\"https://photos.google.com/u/1/photo/AF1QipOyWueoE8SWR-yZBp9K4yHKHnZ4ULgfMKwFp30d\"><img style=\"margin-right: 10px;width: 60px\"\r\n");
         out.write("                                                                                                   src=\"#\" />\r\n");
         out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\r\n");
         out.write("                <div class=\"search-form\">\r\n");
@@ -1093,7 +1093,7 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
         out.write("                             aria-expanded=\"false\">\r\n");
         out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Gio Hang</b></a><span\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
         out.write("                                    class=\"quantity\">");
         if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
@@ -1402,7 +1402,7 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
         out.write("                             aria-expanded=\"false\">\r\n");
         out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Gio Hang</b></a><span\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
         out.write("                                    class=\"quantity\">");
         if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_0, _jspx_page_context))
           return true;
@@ -1631,25 +1631,27 @@ public final class bestsellers_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pName }", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</a>\r\n");
           out.write("                                        </div>\r\n");
-          out.write("                                        <div class=\"item-price\">\r\n");
-          out.write("                                            <p class=\"price\">\r\n");
-          out.write("                                                <span class=\"cur-p\"> <td>");
+          out.write("                                            <div class=\"item-price\">\r\n");
+          out.write("                                                <p class=\"price\">\r\n");
+          out.write("                                                    <span class=\"cur-p\"> <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td></span>\r\n");
-          out.write("                                            </p>\r\n");
-          out.write("                                        </div>\r\n");
-          out.write("                                        <!--them san pham vao gio-->\r\n");
-          out.write("                                         <a href=\"/CartController?action=index&page=addtocart&id=");
+          out.write("                                                </p>\r\n");
+          out.write("                                            </div>\r\n");
+          out.write("                                            <!--them san pham vao gio-->\r\n");
+          out.write("                                            <div class=\"item-btn-a\">\r\n");
+          out.write("                                                <a href=\"/CartController?action=index&page=addtocart&id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\" onclick=\"\">\r\n");
-          out.write("                                         <i class=\"fas fa-shopping-cart \"></i>\r\n");
-          out.write("                                       </a>\r\n");
-          out.write("                                         <!--hien thi bill-->\r\n");
-          out.write("                                        <div class=\"item-btn\" style=\"margin-top: 10px\" class=\"templatemo-edit-btn\">\r\n");
-          out.write("                                 <a href=\"/CartController?action=showcart&page=addtocart&id=");
+          out.write("                                                    <i class=\"fas fa-shopping-cart \"></i>\r\n");
+          out.write("                                                </a>\r\n");
+          out.write("                                            </div>\r\n");
+          out.write("                                            <!--hien thi bill-->\r\n");
+          out.write("                                            <div class=\"item-btn\" style=\"margin-top: 10px\" class=\"templatemo-edit-btn\">\r\n");
+          out.write("                                                <a href=\"/CartController?action=showcart&page=addtocart&id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">Mua ngay</a>       \r\n");
-          out.write("                          </div>\r\n");
+          out.write("                                            </div>\r\n");
           out.write("                                    </div>\r\n");
           out.write("                                </div>\r\n");
           out.write("                            </div>\r\n");
