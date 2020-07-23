@@ -31,7 +31,7 @@
                             <li>
                                 <a href="#">
                                     <i class="fab fa-steam-symbol"></i>
-                                    Liên Quân              </a>
+                                    Liên Quân 123123132             </a>
                             </li>
                             <li>
                                 <a href="#">
