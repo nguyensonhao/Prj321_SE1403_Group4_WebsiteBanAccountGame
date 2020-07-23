@@ -1114,7 +1114,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
         out.write("                             aria-expanded=\"false\">\r\n");
         out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><b class=\"cart-text\">Giỏ hàng</b><span\r\n");
         out.write("                                    class=\"quantity\">");
         if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
@@ -1442,7 +1442,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
         out.write("                             aria-expanded=\"false\">\r\n");
         out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Gio Hang</b></a><span\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i> <a href=\"/CartController?page=showcart\"><b class=\"cart-text\">Gio Hang</b></a><span\r\n");
         out.write("                                    class=\"quantity\">");
         if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
@@ -1751,7 +1751,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
         out.write("                             aria-expanded=\"false\">\r\n");
         out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Gio Hang</b></a><span\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i> <a href=\"/CartController?page=showcart\"><b class=\"cart-text\">Gio Hang</b></a><span\r\n");
         out.write("                                    class=\"quantity\">");
         if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_0, _jspx_page_context))
           return true;
@@ -2300,8 +2300,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                           <div class=\"item-btn\" style=\"margin-top: 10px\" class=\"templatemo-edit-btn\">\r\n");
           out.write("                                 <a href=\"/CartController?action=showcart&page=addtocart&id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">Mua ngay</a>       \r\n");
-          out.write("                          </div>\r\n");
+          out.write("\">Mua ngay</a>\r\n");
+          out.write("                                \r\n");
+          out.write("                            </div>\r\n");
           out.write("                        </div>\r\n");
           out.write("                    </div>\r\n");
           out.write("                </div>\r\n");
