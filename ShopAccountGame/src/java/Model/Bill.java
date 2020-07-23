@@ -1,6 +1,7 @@
 package Model;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 /**
  *
@@ -9,26 +10,46 @@ import java.sql.Date;
 public class Bill {
 
     private int bId;
-    private String uFullname;
+    private int uId;
+    private String pName;
+    private int bQuantity;
+    private String pLImage;
+    private String pDescription;
     private int pId;
-    private String aFullname;
     private double pPrice;
     private double bTotalPrice;
-    private Date bDateBy;
+    private Date bDateBuy;
     private String uEmail;
     private String Note;
 
-    public Bill(int bId, String uFullname, int pId, String aFullname, double pPrice, double bTotalPrice, Date bDateBy, String uEmail, String Note) {
+    public Bill(){
+        
+    }
+
+    public Bill(int bId, int uId, String pName, int bQuantity, String pLImage, String Description, int pId, double pPrice, double bTotalPrice, Date bDateBuy, String uEmail, String Note) {
         this.bId = bId;
-        this.uFullname = uFullname;
+        this.uId = uId;
+        this.pName = pName;
+        this.bQuantity = bQuantity;
+        this.pLImage = pLImage;
+        this.pDescription = Description;
         this.pId = pId;
-        this.aFullname = aFullname;
         this.pPrice = pPrice;
         this.bTotalPrice = bTotalPrice;
-        this.bDateBy = bDateBy;
+        this.bDateBuy = bDateBuy;
         this.uEmail = uEmail;
         this.Note = Note;
     }
+    
+    public Bill(String pName, int bQuantity, String pLImage, String Description, double pPrice, Date bDateBuy) {
+        this.pName = pName;
+        this.bQuantity = bQuantity;
+        this.pLImage = pLImage;
+        this.pDescription = Description;
+        this.pPrice = pPrice;
+        this.bDateBuy = bDateBuy;
+    }
+
 
     public int getbId() {
         return bId;
@@ -38,12 +59,44 @@ public class Bill {
         this.bId = bId;
     }
 
-    public String getuFullname() {
-        return uFullname;
+    public int getuId() {
+        return uId;
     }
 
-    public void setuFullname(String uFullname) {
-        this.uFullname = uFullname;
+    public void setuId(int uId) {
+        this.uId = uId;
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public int getbQuantity() {
+        return bQuantity;
+    }
+
+    public void setbQuantity(int bQuantity) {
+        this.bQuantity = bQuantity;
+    }
+
+    public String getpLImage() {
+        return pLImage;
+    }
+
+    public void setpLImage(String pLImage) {
+        this.pLImage = pLImage;
+    }
+
+    public String getpDescription() {
+        return pDescription;
+    }
+
+    public void setpDescription(String Description) {
+        this.pDescription = Description;
     }
 
     public int getpId() {
@@ -52,14 +105,6 @@ public class Bill {
 
     public void setpId(int pId) {
         this.pId = pId;
-    }
-
-    public String getaFullname() {
-        return aFullname;
-    }
-
-    public void setaFullname(String aFullname) {
-        this.aFullname = aFullname;
     }
 
     public double getpPrice() {
@@ -78,12 +123,12 @@ public class Bill {
         this.bTotalPrice = bTotalPrice;
     }
 
-    public Date getbDateBy() {
-        return bDateBy;
+    public Date getbDateBuy() {
+        return bDateBuy;
     }
 
-    public void setbDateBy(Date bDateBy) {
-        this.bDateBy = bDateBy;
+    public void setbDateBuy(Date bDateBuy) {
+        this.bDateBuy = bDateBuy;
     }
 
     public String getuEmail() {
@@ -102,4 +147,7 @@ public class Bill {
         this.Note = Note;
     }
 
+    
+
+    
 }

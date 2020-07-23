@@ -59,7 +59,17 @@
             </div>
 
             <header>
-            <jsp:include page= "header/header2.jsp"></jsp:include>
+            <c:choose>
+            <c:when test="${not empty User}">
+                <%@include file="header/header2.jsp" %>
+            </c:when>
+            <c:when test="${User == username}">
+                <%@include file="header/header3.jsp" %>
+            </c:when>
+            <c:otherwise>
+                <%@include file="header/header3.jsp" %>
+            </c:otherwise>
+        </c:choose>
             </header>
 
             <script src="https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js" type="text/javascript"></script>
@@ -317,10 +327,10 @@
                                         <a href=""><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href="/index.php?route=account/topup"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
+                                        <a href="#"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href="Link huong dan mua hang"><i class="fas fa-gamepad"></i><span>Hướng dẫn mua hàng</span></a>
+                                        <a href="#"><i class="fas fa-gamepad"></i><span>Hướng dẫn mua hàng</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -434,17 +444,14 @@
                                         <div class="item-btn-a">  
                                             <i class="fas fa-shopping-cart">${pDescription}</i></a>
                                         </div>
-                                        <div class="item-btn" style="margin-top: 10px">Mua ngay</div>
+                                         <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                            <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </c:forEach>
-
-
                     </div>
-                </div>
-                <div class="view-more btn-aqua">
-                    Xem thêm
                 </div>
             </div>
         </div>

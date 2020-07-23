@@ -78,8 +78,8 @@
                         </div>
 
                         <div class="text-center p-t-90">
-                            <a class="txt1" href="#">
-                                Quên Mật Khẩu?
+                            <a class="txt1" href="registration.jsp">
+                                REGISTRATION
                             </a>
                         </div>
                     </form>

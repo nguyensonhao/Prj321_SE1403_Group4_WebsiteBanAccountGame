@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        
     </head>
     <body>
            <header class="home-page fixed-header" style="background-color: #5BBD2B">
@@ -165,9 +165,10 @@
                 <div class="header-btn">
                     <div class="header-btn d-flex flex-row">
                         <div class="d-flex align-items-center ml-1">
-                            <a href="#" class="text-white">Đăng nhập </a>
-                            <span>/</span>
-                            <a href="#" class="text-white">Đăng kí</a>
+                            <i class="fas fa-user-circle" style="font-size: 40px;"></i>
+                            <span>&#160</span>
+                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out>  </b>
+                           
                         </div>
                     </div>
 
