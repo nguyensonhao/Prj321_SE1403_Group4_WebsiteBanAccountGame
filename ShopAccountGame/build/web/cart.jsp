@@ -274,95 +274,90 @@
             <h2 class="thanh-toan-title">Thanh Toán</h2><span class="count-san-pham">${temp}</span>
                     </div>
         </br>
-         <div class="trang-sp">
+        <div class="row cart-detail">
+            <table id="cart" class="table table-hover table-condensed" > 
+                <thead> 
+                    <tr> 
+                        <th style="width:50% ">Tên sản phẩm</th> 
+                        <th style="width:10%">Giá</th> 
+                        <th style="width:8%">Số lượng</th> 
+                        <th style="width:22%" class="text-center">Thành tiền</th> 
+                        <th style="width:10%"> </th> 
+                    </tr> 
+                </thead> 
+                
+                <tbody>
 
-            <div class="container">
+                   <sql:setDataSource var="conn" driver = "com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost/shopacc"
+                           user="root" password="" scope="page"/>
+                   <sql:update var="delete" dataSource="${conn}" sql="DELETE FROM `bill` WHERE bId='${param.bId}'"/> 
+                   <sql:query var="result" dataSource="${conn}">
+                         SELECT * FROM `bill`
+                    </sql:query>
+                     
+                     <c:forEach items="${result.rows}" var="row">
+                    <tr> 
+                        <td data-th="Product"> 
+                            <div class="row"> 
+                                <div class="col-sm-2 hidden-xs"><img src="${row.pImage}" alt="" class="portrait-crop"width="125">
+                                </div> 
+                                <div class="col-sm-10"> 
+                                    <h4 class="col-sm-10 col-xs-10"> ${row.pName}</h4> 
+                                    <p> </p> 
+                                </div> 
+                            </div> 
+                        </td> 
+                        <td data-th="Price">${row.pPrice}</td> 
+                        <td data-th="Quantity">${row.bQuantity}
+                        </td> 
+                        <td data-th="Subtotal" class="text-center">${row.bQuantity * row.pPrice}</td> 
+                        <td  > 
+                            <button class="btn btn-danger btn-sm"  onclick="window.location.href='cart.jsp?bId=${row.bId}'"><i class="far fa-times-circle"></i>                                     
+                                   </button>    
+                                   <!--<button onclick="window.location.href='cart.jsp?bId=${row.bId}'">Delete</button>-->
+                        </td> 
+                    </tr>
+                    <c:set var="total" value="${total + row.pPrice}"></c:set>
+                    <c:set var="temp" value="${temp + row.bQuantity}"></c:set>
+                      </c:forEach>
+                </tbody>
+                <tfoot> 
+                    <tr> 
+                        <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                        </td> 
+                        <td colspan="2" class="hidden-xs"> </td> 
+                        <td class="hidden-xs text-center"><strong>Tổng tiền <c:out value="${total}"/></strong>
+                        </td> 
+                        <td><a href="" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                        </td> 
+                    </tr> 
+                </tfoot> 
+               
+            </table>
+        </div>              
 
-                <div id="alert-position"></div>
-                <div class="container-title">
-                    <h2 class="thanh-toan-title">Thanh Toán</h2><span class="count-san-pham">${temp}</span>
+    </div>
+    <div class="mb15"></div>
+
+    <input type="hidden" value="0" id="product_physical">
+
+    <div class="mb15"></div>
+    <div class="thanh-toan">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 padd-0">
+                <div class="col-md-6 col-xs-12 padd-0">
+
+                    <div class="mb15"></div>
+
                 </div>
-                </br>
-                <div class="row cart-detail">
-                    <table id="cart" class="table table-hover table-condensed" > 
-                        <thead> 
-                            <tr> 
-                                <th style="width:50% ">Tên sản phẩm</th> 
-                                <th style="width:10%">Giá</th> 
-                                <th style="width:8%">Số lượng</th> 
-                                 <th style="width:8%">Type</th> 
-                                <th style="width:22%" class="text-center">Thành tiền</th> 
-                                <th style="width:10%"> </th> 
-                            </tr> 
-                        </thead> 
-                        <tbody>
-                      
-                            <c:set var="total" value="0"></c:set>     
+
+            </div>
+        </div>
+    </div>
+    <hr>
     
-                            <c:forEach items="${cartlist }" var="i">  
-                                        <tr> 
-                                            <td data-th="Product"> 
-                                                <div class="row"> 
-                                                    <div class="col-sm-2 hidden-xs"><img src="<c:out value="${i.getcLImage() }"></c:out>" alt="" class="portrait-crop"width="125">
-                                                    </div> 
-                                                    <div class="col-sm-10"> 
-                                                        <h4 class="col-sm-10 col-xs-10"><c:out value="${i.getcName()}"></c:out></h4> 
-                                                        <p> </p> 
-                                                    </div> 
-                                                </div> 
-                                            </td> 
-                                            <td data-th="Price"><c:out value="${i.getcPrice()}"></c:out></td>
-                                            <td data-th="Quantity"><c:out value="${i.getcQuantity()}"></c:out></td>
-                                            <td data-th="Type"><c:out value="${i.getcType()}"></c:out>
-                                            </td> 
-                                            <td data-th="Subtotal" class="text-center"><c:out value="${i.getcPrice()}"></c:out></td> 
-                                            <td  > 
-                                                <button class="btn btn-danger btn-sm" ><a href="/CartController?page=remove&id=<c:out value="${i.getcId()}"/>"><i class="far fa-times-circle"></i></a>                                   
-                                                </button>    
-                                                
-                                            </td> 
-                                        </tr>
-                                        <c:set var="total" value="${total +  i.getcPrice()}"></c:set>                                
-                            </c:forEach>
-                        </form
-                        </tbody>
-                        <tfoot> 
-                            <tr> 
-
-                                <td><a href="index.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
-                                </td> 
-                                <td colspan="2" class="hidden-xs"> </td> 
-                                <td class="hidden-xs text-center"><strong>Tổng tiền <c:out value="${total}"/></strong>
-                                </td> 
-                                <td><a href="" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
-                                </td> 
-                            </tr> 
-                        </tfoot> 
-
-                    </table>
-                </div>              
-
-            </div>
-            <div class="mb15"></div>
-
-            <input type="hidden" value="0" id="product_physical">
-
-            <div class="mb15"></div>
-            <div class="thanh-toan">
-                <div class="row">
-                    <div class="col-md-12 col-xs-12 padd-0">
-                        <div class="col-md-6 col-xs-12 padd-0">
-
-                            <div class="mb15"></div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <hr>
-
-        </div>             
+</div>
     </div>
     <!--------------------------------------------------------------------------------------------------->
     <div id="payment-confirm-data"></div>
