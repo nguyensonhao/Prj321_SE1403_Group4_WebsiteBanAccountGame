@@ -61,7 +61,17 @@
             </div>
 
             <header>
-            <jsp:include page= "header/header2.jsp"></jsp:include>
+          <c:choose>
+            <c:when test="${not empty User}">
+                <%@include file="header/header2.jsp" %>
+            </c:when>
+            <c:when test="${User == username}">
+                <%@include file="header/header3.jsp" %>
+            </c:when>
+            <c:otherwise>
+                <%@include file="header/header3.jsp" %>
+            </c:otherwise>
+        </c:choose>
             </header>
 
             <script src="https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js" type="text/javascript"></script>
@@ -148,16 +158,21 @@
                                 </div>
                                 <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
                                     <ul>
+                                         <li>
+                                            <a href="index.jsp"><i class="fab fa-google-play"></i>
+                                                <span>Trang chủ</span></a>
+                                        </li>
+                                        
                                         <li>
-                                            <a href="link duong dan lien quan"><i class="fab fa-steam-symbol"></i>
+                                            <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
                                                 <span>Liên quân</span></a>
                                         </li>
                                         <li>
-                                            <a href="link duong dan lien minh"><i class="fas fa-trophy"></i>
+                                            <a href="accountLienMinh.jsp"><i class="fas fa-trophy"></i>
                                                 <span>Liên minh</span></a>
                                         </li>
                                         <li>
-                                            <a href="Link duong dan fifa"><i class="icon icon-origin-svg"></i>
+                                            <a href="accountFifa.jsp"><i class="icon icon-origin-svg"></i>
                                                 <span>Fifa oline 4</span></a>
 
                                     </ul>
@@ -170,13 +185,13 @@
                                         <a href="bestsellers.jsp"><i class="fab fa-hotjar"></i><span>Khác hàng mua nhiều</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href=""><i class="fas fa-award"></i><span>ĐANG KHUYẾN MẠI</span></a>
+                                        <a href="AccSale.jsp"><i class="fas fa-award"></i><span>ĐANG KHUYẾN MẠI</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href="/index.php?route=account/topup"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
+                                        <a href="#"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href="Link huong dan mua hang"><i class="fas fa-gamepad"></i><span>Hướng dẫn mua hàng</span></a>
+                                        <a href="#"><i class="fas fa-gamepad"></i><span>Hướng dẫn mua hàng</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +221,7 @@
             </script>
             <div class="container">
                 <div style="text-align:center;margin-bottom:22px;">
-                    <strong><h1>Account Fifa online 4</h1></strong>
+<!--                    <strong><h1>Account Fifa online 4</h1></strong>-->
                 </div>
                 <!--thanh chon gia san pham-->
                  <div class="form-group set-price">
@@ -215,7 +230,7 @@
 
                 <div class="row" style="margin-top:25px;margin-bottom:50px;">
                     <div class="col-lg-9 col-md-9 col-sm-9">
-                        <strong><h4>Fifa Online 4</h4></strong>
+                        <strong><h4>Account phù hợp</h4></strong>
                     </div>
                 </div>
             <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
@@ -246,14 +261,19 @@
                                         </div>
                                         <div class="item-price">
                                             <p class="price">
-                                                <span class="cur-p"> <td>${row.pPrice}</td></span>
+                                                <span class="cur-p"> <td>${row.pPrice} VNĐ</span>
                                             </p>
                                         </div>
 
-                                        <div class="item-btn-a">  
-                                            <i class="fas fa-shopping-cart">${pDescription}</i></a>
-                                        </div>
-                                        <div class="item-btn" style="margin-top: 10px">Mua ngay</div>
+                                       
+                                        <div class="item-btn-a">
+                                             <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="">
+                                                 <i class="fas fa-shopping-cart "></i>
+                                             </a>
+                                         </div>
+                                         <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                             <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>       
+                                         </div>
                                     </div>
                                 </div>
                             </div>
@@ -261,9 +281,6 @@
 
 
                     </div>
-                </div>
-                <div class="view-more btn-aqua">
-                    Xem thêm
                 </div>
             </div>
         </div>

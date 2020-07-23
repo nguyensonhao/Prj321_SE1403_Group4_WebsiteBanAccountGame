@@ -524,7 +524,7 @@
                                 </div>
                             <!-- thông tin acc add vào sau -->
                             <div class="item-price">
-                                <span class="cur-p">${row.pPrice}</span>
+                                <span class="cur-p">${row.pPrice} VNĐ</span>
                             </div>
 
                             <div class="item-btn-a">

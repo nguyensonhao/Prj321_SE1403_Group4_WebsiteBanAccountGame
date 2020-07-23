@@ -157,6 +157,10 @@
                                 <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
                                     <ul>
                                         <li>
+                                            <a href="index.jsp"><i class="fab fa-google-play"></i>
+                                                <span>Trang chủ</span></a>
+                                        </li>
+                                        <li>
                                             <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
                                                 <span>Liên quân</span></a>
                                         </li>
@@ -178,7 +182,7 @@
                                         <a href="bestsellers.jsp"><i class="fab fa-hotjar"></i><span>Sản Phẩm Hot</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href=""><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
+                                        <a href="AccSale.jsp"><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
                                         <a href=""><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
@@ -299,10 +303,14 @@
                                             </p>
                                         </div>
 
-                                        <div class="item-btn-a">  
-                                            <i class="fas fa-shopping-cart">${pDescription}</i></a>
-                                        </div>
-                                        <div class="item-btn" style="margin-top: 10px">Mua ngay</div>
+                                         <div class="item-btn-a">
+                                             <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="">
+                                                 <i class="fas fa-shopping-cart "></i>
+                                             </a>
+                                         </div>
+                                         <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                             <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>       
+                                         </div>
                                     </div>
                                 </div>
                                         <hr>
@@ -317,6 +325,5 @@
         <footer>
             <jsp:include page="footer/footer1.jsp"></jsp:include>
         </footer>
-
     </body>
 </html>
