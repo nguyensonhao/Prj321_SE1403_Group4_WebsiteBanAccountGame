@@ -345,7 +345,7 @@
 
 
         <hr>
-    <div class="container padd-0">
+       <div class="container padd-0">
         <div class="list-title">
             <h2>Sản phẩm giá tốt</h2>
             <p>Bạn có thể lựa chọn hiển thị theo giá sản phẩm phù hợp với túi tiền</p>
@@ -354,30 +354,32 @@
             <div class="row justify-content-md-center">
                 <div class="product-price-well">
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
-                        <div class="well-price" onclick="filterMaxPrice(this, 50000)">
-                            <strong>Dưới 50.000đ</strong>
+                        <div class="well-price">
+                             <a href="search1.jsp?min=0&max=50000"><strong>Dưới 50.000đ</strong></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
                         <div class="well-price" onclick="filterMaxPrice(this, 100000)">
-                            <strong>Dưới 100.000đ</strong>
+                            <a href="search1.jsp?min=50000&max=100000"><strong>Dưới 100.000đ</strong></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
                         <div class="well-price" onclick="filterMaxPrice(this, 200000)">
-                            <strong>Dưới 200.000đ</strong>
+                            <a href="search1.jsp?min=100000&max=200000"><strong>Dưới 200.000đ</strong></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
                         <div class="well-price" onclick="filterMaxPrice(this, 500000)">
-                            <strong>Dưới 500.000đ</strong>
+                            <a href="search1.jsp?min=200000&max=500000"><strong>Dưới 500.000đ</strong></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12" style="padding-left: 15px;padding-right: 15px">
                         <div class="well-price" onclick="filterMaxPrice(this, 1000000)">
-                            <strong>Dưới 1.000.000đ</strong>
+                            <a href="search1.jsp?min=500000&max=1000000"><strong>Dưới 500.000đ</strong></a>
                         </div>
                     </div>
+                    
+                    
                 </div>
             </div>
             <div class="row service" id="max-price"></div>
@@ -531,7 +533,7 @@
                             </div>
 
                            <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
-                                 <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
+                                 <a href="/CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
                                 
                             </div>
                         </div>
