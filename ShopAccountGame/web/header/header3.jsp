@@ -31,7 +31,7 @@
                             <li>
                                 <a href="#">
                                     <i class="fab fa-steam-symbol"></i>
-                                    Liên Quân              </a>
+                                    Liên Quân 123123132             </a>
                             </li>
                             <li>
                                 <a href="#">
@@ -169,7 +169,7 @@
                         <div data-toggle="dropdown" data-loading-text="Đang tải..." class="heading dropdown-toggle"
                              aria-expanded="false">
                             <div class="align-items-center d-flex" id="update-cart">
-                                <i class="fas fa-shopping-cart cart-size text-white"></i><a href="cart.jsp"><b class="cart-text">Giỏ hàng</b></a><span
+                                <i class="fas fa-shopping-cart cart-size text-white"></i> <a href="/CartController?page=showcart"><b class="cart-text">Gio Hang</b></a><span
                                     class="quantity"><c:out value="${x}"/></span>
                             </div>
                         </div>

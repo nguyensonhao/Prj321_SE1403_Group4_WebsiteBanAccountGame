@@ -140,10 +140,6 @@
                     });
                 });
             </script>
-               <c:set var="x" value="0"></c:set>
-	<c:forEach items="${cartlist }" var="i">
-		<c:set var="x" value="${x+1 }"></c:set>
-	</c:forEach>
             <div class="header-container container">
                 <div id="sidebarCollapse" class="btn-menu">
                     <i class="fas fa-bars" style="font-size: 20px; vertical-align: middle"></i>
@@ -171,8 +167,8 @@
                         <div class="d-flex align-items-center ml-1">
                             <i class="fas fa-user-circle" style="font-size: 40px;"></i>
                             <span>&#160</span>
-                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out>  </b>
-                           
+                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out> <a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a>  </b>
+                 
                         </div>
                     </div>
 
@@ -180,8 +176,8 @@
                         <div data-toggle="dropdown" data-loading-text="Đang tải..." class="heading dropdown-toggle"
                              aria-expanded="false">
                             <div class="align-items-center d-flex" id="update-cart">
-                                <i class="fas fa-shopping-cart cart-size text-white"></i><a href="cart.jsp"><b class="cart-text">Giỏ hàng</b></a><span
-                                    class="quantity"><c:out value="${x}"></c:out></span>
+                                <i class="fas fa-shopping-cart cart-size text-white"></i><b class="cart-text">Giỏ hàng</b><span
+                                    class="quantity">0</span>
                             </div>
                         </div>
                         

@@ -48,6 +48,7 @@
                             </div>
                         </div>
                     </div>
+                    <li><a href="/ADMController?page=logout"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
                     <div class="text-right " style="padding:5px 0;float: right">
                         Hỗ trợ 1900 123456
                     </div>
@@ -422,13 +423,13 @@
                             </div>
 
                             <div class="item-btn-a">
-                                <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="javascript:void(0);cart.add('188', '1', this);">
+                                <a href="javascript:void(0);" onclick="javascript:void(0);cart.add('188', '1', this);">
                                     <i class="fas fa-shopping-cart "></i>
                                 </a>
                             </div>
 
                             <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
-                                 <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>
+                                 <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
                             </div>
                         </div>
                     </div>
@@ -474,13 +475,13 @@
                             </div>
 
                             <div class="item-btn-a">
-                                <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="javascript:void(0);cart.add('188', '1', this);">
+                                <a href="javascript:void(0);" onclick="javascript:void(0);cart.add('188', '1', this);">
                                     <i class="fas fa-shopping-cart "></i>
                                 </a>
                             </div>
 
                             <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
-                                 <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>
+                                 <a href="CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
                                 
                             </div>
                         </div>
@@ -528,14 +529,15 @@
                             </div>
 
                             <div class="item-btn-a">
-                                <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="">
+                                <a href="" onclick="">
                                     <i class="fas fa-shopping-cart "></i>
                                 </a>
                             </div>
 
                            <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
-                                 <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>       
-                          </div>
+                                 <a href="/CartController?id=${row.pId}&sl=${row.quantity}">Mua ngay</a>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
