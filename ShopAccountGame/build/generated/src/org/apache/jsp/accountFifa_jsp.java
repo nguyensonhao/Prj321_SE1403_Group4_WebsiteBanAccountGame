@@ -87,6 +87,9 @@ public final class accountFifa_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html dir=\"ltr\" lang=\"vi\">\r\n");
       out.write("\r\n");
       out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title> Fifa Online 4</title>\r\n");
+      out.write("        <link rel=\"icon\" href=\"http://www.domain.com/favicon.ico\" type=\"image/x-icon\" />\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header/header1.jsp", out, false);
       out.write("\r\n");
@@ -229,7 +232,7 @@ public final class accountFifa_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <ul>\r\n");
       out.write("                                        <li>\r\n");
       out.write("                                            <a href=\"index.jsp\"><i class=\"fab fa-google-play\"></i>\r\n");
-      out.write("                                                <span>Liên quân</span></a>\r\n");
+      out.write("                                                <span>Trang chủ</span></a>\r\n");
       out.write("                                        </li>\r\n");
       out.write("                                        <li>\r\n");
       out.write("                                            <a href=\"accountLienQuan.jsp\"><i class=\"fab fa-steam-symbol\"></i>\r\n");
