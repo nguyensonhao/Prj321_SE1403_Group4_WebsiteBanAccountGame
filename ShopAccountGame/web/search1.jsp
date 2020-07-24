@@ -14,6 +14,9 @@
 
     <head>
         <jsp:include page="header/header1.jsp"></jsp:include>
+        meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Search </title>
+        <link rel="icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
         </head>
 
         <body>

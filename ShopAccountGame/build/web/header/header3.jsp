@@ -136,9 +136,9 @@
                 <div id="sidebarCollapse" class="btn-menu">
                     <i class="fas fa-bars" style="font-size: 20px; vertical-align: middle"></i>
                 </div>
-                <div class="logo"><a href="#"><img style="margin-right: 10px;width: 60px"
-                                                   src="#" />
-                        <img style="width: 100px;" src="#" /></a></div>
+                <div class="logo"><a href="index.jsp"><img style="margin-right: 10px;width: 60px" src="img/Logo1.png" />
+                        <img style="width: 100px;" src="img/Logochu.png" /></a></div>
+                
                 <div class="search-form">
                     <div class="search-control" id="search">
                         <input type="text" id="filter_name" class="search-box" name="search" value=""

@@ -87,6 +87,9 @@ public final class accountLienQuan_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<html dir=\"ltr\" lang=\"vi\">\r\n");
       out.write("\r\n");
       out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title> Liên Quân Mobile</title>\r\n");
+      out.write("        <link rel=\"icon\" href=\"http://www.domain.com/favicon.ico\" type=\"image/x-icon\" />\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "header/header1.jsp", out, false);
       out.write("\r\n");

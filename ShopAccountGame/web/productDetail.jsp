@@ -11,6 +11,9 @@
 <html dir="ltr" lang="vi">
 
         <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Detail</title>
+        <link rel="icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
         <jsp:include page="header/header1.jsp"></jsp:include>
         </head>
 
@@ -366,14 +369,14 @@
                 %>
 
              <div class="container-title title-detail-product">
-                     <div class="fontSize-title"><% out.print(product.getpName());%></div>
+                 <div class="fontSize-title"><h1><% out.print(product.getpName());%></h1></div>
             </div>
                 <div class="container-body">
                     <div class="slider-container">
                     <div class="slider sp-slider-big">
                         <div class="img-item">
                                 <div class="click_show_slide" onclick="click_show_slide()" style="height: 100%;width: 100%;">
-                                    <img src="${product.pLImage}" 
+                                    <img width="700" height="550" src="${product.pLImage}" 
                                           class="slide-product-big check_img_errs"/>
                                 </div>
                             </div>
@@ -406,9 +409,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 col-xs-12 bar-buy-product">
-                                    <div id="button-cart-redirect" data-loading-text="Đang tải..." class="btn btn-green-bg col-md-5" style="margin-top: 12px;width: 144px"
-                                          onclick="window.location.href='/CartController?action=showcart&page=addtocart&id=${row.pId}'">
-                                        Mua Ngay                                       
+                                    <div id="button-cart-redirect" data-loading-text="Đang tải..." class="btn btn-green-bg col-md-5" style="margin-top: 12px;width: 144px">
+                                         <a href="/CartController?action=showcart&page=addtocart&id=${product.pId}"> Mua ngay </a>                                       
                                     </div>
                                 </div>
 
@@ -419,7 +421,7 @@
                 </div>
                 
                 <div class="description-container">
-                    <h5><p><% out.print(product.getDescription());%></p></h5>
+                    <font color="red"><h5><p><% out.print(product.getDescription());%></p></h5></font>
                 </div>
 
         <link rel="stylesheet" href="https://hgeqic7azi.vcdn.com.vn/assets/css/ranger_price.css">

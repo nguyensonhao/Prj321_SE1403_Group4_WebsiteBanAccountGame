@@ -9,13 +9,14 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Colorlib Templates">
         <meta name="author" content="Colorlib">
         <meta name="keywords" content="Colorlib Templates">
 
         <!-- Title Page-->
-        <title>Au Register Forms by Colorlib</title>
+        <title>Registration</title>
 
         <!-- Icons font CSS-->
         <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">

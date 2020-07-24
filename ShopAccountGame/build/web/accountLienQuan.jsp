@@ -11,6 +11,9 @@
 <html dir="ltr" lang="vi">
 
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Liên Quân Mobile</title>
+        <link rel="icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
         <jsp:include page="header/header1.jsp"></jsp:include>
         </head>
 

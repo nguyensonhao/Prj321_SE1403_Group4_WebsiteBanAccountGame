@@ -131,7 +131,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        </div>\r\n");
       out.write("                    </div>\r\n");
       out.write("                    <div class=\"text-right \" style=\"padding:5px 0;float: right\">\r\n");
-      out.write("                        Hỗ trợ 1900 123456\r\n");
+      out.write("                        Hỗ trợ 0337470726\r\n");
       out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
@@ -387,7 +387,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"home-slider\">\r\n");
       out.write("                                        <div>\r\n");
       out.write("                                            <!--  Link hình chạy, link hình  -->\r\n");
-      out.write("                                            <a href=\"index.jsp\"><img class=\"check_img_errs\" src=\"https://lh3.googleusercontent.com/NrqvieF6vnnrPQGKbAQLcEVrVPeA8rNiYbzxhkLAOqVarCjZCMufHV9aBRnqXhl0Sq0g3mB7zIgfJEcZpZKmdFmGCaOlvKo4zUFHRNZLxdE6OFtUrR5ocfhurqpob_ab6D511pI1bVJ10m2q5ZXQIJrWWmhp-hJN7vhTQagEig1DDwpBeBLv_5mvTxxOcgSOe4ZPkY3H1VLU6VlcU6m-slkAsBJ75koO0YIdu8u7IYX6dNFtRjYb0-AY0njw-XTUkUzX7DRtl-sbjOLsJcEbQmsi97aCj9lOIi_wDVFo0UOHlmhViwKq4h_A6zfeXdlzf6Rn3W5_5iuDAw6zdo_pBFTvfMnkwFyAfUmy7G-nCnUhRPbaQoHBgqOU2azzAe7NFqs0XXOy0Z5kDs4eO4cpfDrG0QOIq6bpu3ltFIAC7_Fl_N3wMJm7Ad4IM6TyYsSFvXBrN_fLnZ_dlEIFXwGvm3X_M50aA4ciIGGfObn0N0uqWDHnJafbz8oH-PvIOnljjyi23rKVYOf0g5uHM8AhGcAc441x3KvY5-L_iOnVH3u6yGHXCza4Sj5yNkw_fgtTu99Hkf-AXlPf_Rlu5TrfJgynKSFAycDdnPwSSxc2JRPGKFKdY1e_fpP3RT70N4GvO2M2rKS9YoBxQuCf7f8IDxUffbUrkZzShVu9kZzicm1Og6YbevXDCN7nwTw=w1677-h943-no?authuser=1\" alt=\"#\"></a>\r\n");
+      out.write("                                            <a href=\"index.jsp\"><img class=\"check_img_errs\" src=\"img/Ys12.jpg\" alt=\"#\"></a>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div>\r\n");
       out.write("                                            <a href=\"accountFifa.jsp\"><img class=\"check_img_errs\" src=\"https://danongonline.com.vn/wp-content/uploads/2017/11/Fifa-Online-4-ra-m%E1%BA%AFt-v%E1%BB%9Bi-%C4%91%E1%BB%93-h%E1%BB%8Da-si%C3%AAu-kh%E1%BB%A7ng-1.jpg\" alt=\"#\t\"></a>\r\n");
@@ -410,6 +410,16 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                        arrows: true,\r\n");
       out.write("                                    });\r\n");
       out.write("                                </script>\r\n");
+      out.write("                                 <div class=\"row sub-banner\">\r\n");
+      out.write("                            <div class=\"col col-md-4 col-sm-6 col-xs-6 col-lg-4\">\r\n");
+      out.write("                                <a class=\"w-100\" href=\"https://lienminh.garena.vn/cong-dong-game/su-kien/ket-qua-su-kien-mua-the-garena-nhan-qua-thiet-da\"><img class=\"check_img_errs\" src=\"https://lienminh.garena.vn/images/Lan_h3lpm3/07_2018/APC_banner_luckydraw_LOL-290x163.jpg\" alt=\"Garena Bonus\"></a>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                                     <br>\r\n");
+      out.write("                                     <br>\r\n");
+      out.write("                            <div class=\"col col-md-4 col-sm-6 col-xs-6 col-lg-4\">\r\n");
+      out.write("                                <a class=\"w-100\" href=\"https://lienquan.garena.vn/tin-tuc/hoi-quan-lien-quan\"><img src=\"https://channel.mediacdn.vn/thumb_w/640/2019/8/15/photo-1-15658635296501879299040.jpg\" class=\"height-banner-home check_img_errs img-banner\" alt=\"Gói nạp Itunes\"></a>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
       out.write("                                \r\n");
       out.write("                            </div>\r\n");
       out.write("                        </div>\r\n");
@@ -555,7 +565,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container\">\r\n");
       out.write("            <div class=\"text-line-though\"><span>Bạn là người mới?</span></div>\r\n");
       out.write("            <div class=\"text\">Hãy đăng kí tài khoản để cập nhật những ưu đãi mới nhất từ Shop</div>\r\n");
-      out.write("            <a href=\"registration.jsp\"><button class=\"btn-aqua-bg\">Đăng ký ngay</button></a>\r\n");
+      out.write("            <button class=\"btn-aqua-bg\"><a href=\"registration.jsp\">Đăng ký ngay</a></button>\r\n");
       out.write("            <div class=\"text\">Hoặc <a href=\"login.jsp\"><b style=\"color: #fff\">đăng nhập</b></a> nếu bạn đã có tài khoản</div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");
@@ -858,10 +868,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "footer/footer1.jsp", out, false);
       out.write("\r\n");
       out.write("    </footer>\r\n");
-      out.write("    <a id=\"messenger-button\" href=\"#\" alt=\"Hỗ Trợ Shop ACC Game\" title=\"Hỗ Trợ Shop ACC Game\">\r\n");
-      out.write("        <img style=\"position: fixed;bottom: 35px;right: 25px;z-index:2;\" src=\"#\">\r\n");
-      out.write("    </a>\r\n");
-      out.write("\r\n");
       out.write("    <script data-cfasync=\"false\" src=\"/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script></body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
@@ -1079,9 +1085,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\r\n");
         out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\r\n");
         out.write("                </div>\r\n");
-        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\r\n");
-        out.write("                                                                                                   src=\"#\" />\r\n");
-        out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\r\n");
+        out.write("                <div class=\"logo\"><a href=\"index.jsp\"><img style=\"margin-right: 10px;width: 60px\" src=\"img/Logo1.png\" />\r\n");
+        out.write("                        <img style=\"width: 120px;\" src=\"img/Logochu.png\" /></a></div>\r\n");
         out.write("                <div class=\"search-form\">\r\n");
         out.write("                    <div class=\"search-control\" id=\"search\">\r\n");
         out.write("                        <input type=\"text\" id=\"filter_name\" class=\"search-box\" name=\"search\" value=\"\"\r\n");
@@ -1409,9 +1414,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\r\n");
         out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\r\n");
         out.write("                </div>\r\n");
-        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\r\n");
-        out.write("                                                   src=\"#\" />\r\n");
-        out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\r\n");
+        out.write("                <div class=\"logo\"><a href=\"index.jsp\"><img style=\"margin-right: 10px;width: 60px\" src=\"img/Logo1.png\" />\r\n");
+        out.write("                        <img style=\"width: 100px;\" src=\"img/Logochu.png\" /></a></div>\r\n");
+        out.write("                \r\n");
         out.write("                <div class=\"search-form\">\r\n");
         out.write("                    <div class=\"search-control\" id=\"search\">\r\n");
         out.write("                        <input type=\"text\" id=\"filter_name\" class=\"search-box\" name=\"search\" value=\"\"\r\n");
@@ -1718,9 +1723,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                <div id=\"sidebarCollapse\" class=\"btn-menu\">\r\n");
         out.write("                    <i class=\"fas fa-bars\" style=\"font-size: 20px; vertical-align: middle\"></i>\r\n");
         out.write("                </div>\r\n");
-        out.write("                <div class=\"logo\"><a href=\"#\"><img style=\"margin-right: 10px;width: 60px\"\r\n");
-        out.write("                                                   src=\"#\" />\r\n");
-        out.write("                        <img style=\"width: 100px;\" src=\"#\" /></a></div>\r\n");
+        out.write("                <div class=\"logo\"><a href=\"index.jsp\"><img style=\"margin-right: 10px;width: 60px\" src=\"img/Logo1.png\" />\r\n");
+        out.write("                        <img style=\"width: 100px;\" src=\"img/Logochu.png\" /></a></div>\r\n");
+        out.write("                \r\n");
         out.write("                <div class=\"search-form\">\r\n");
         out.write("                    <div class=\"search-control\" id=\"search\">\r\n");
         out.write("                        <input type=\"text\" id=\"filter_name\" class=\"search-box\" name=\"search\" value=\"\"\r\n");
@@ -2148,7 +2153,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                            </div>\r\n");
           out.write("\r\n");
           out.write("                            <div class=\"item-btn\" style=\"margin-top: 10px\" class=\"templatemo-edit-btn\">\r\n");
-          out.write("                                 <a href=\"/CartController?action=showcart&page=addtocart&id=");
+          out.write("                                 <a href=\"CartController?action=showcart&page=addtocart&id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.pId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">Mua ngay</a>\r\n");
           out.write("                                \r\n");
