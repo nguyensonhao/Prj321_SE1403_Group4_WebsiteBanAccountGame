@@ -81,7 +81,7 @@ public class UserDAO {
 
     public User getUser(int userId) {
         try {
-            String sql = "SELECT * FROM `user`where uId=?";
+            String sql = "SELECT * FROM `user` WHERE `uId`=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, userId);
             ResultSet rst = pstmt.executeQuery();
@@ -91,7 +91,7 @@ public class UserDAO {
                 u.setuFullName(rst.getString("uFullName"));
                 u.setUserName(rst.getString("userName"));
                 u.setPasWord(rst.getString("uPassWord"));
-                u.setRoles(rst.getInt("rId"));
+                u.setRoles(rst.getInt("rid"));
                 u.setuAge(rst.getInt("uAge"));
                 u.setuPhone(rst.getString("uPhone"));
                 u.setuEmail(rst.getString("uEmail"));

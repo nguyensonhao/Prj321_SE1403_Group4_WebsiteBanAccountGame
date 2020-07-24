@@ -113,8 +113,8 @@
                                 <th style="width:50% ">Tên sản phẩm</th> 
                                 <th style="width:10%">Giá</th> 
                                 <th style="width:8%">Số lượng</th> 
-                                 <th style="width:8%">Type</th> 
-                                <th style="width:22%" class="text-center">Thành tiền</th> 
+                                
+                                <th style="width:22%" class="text-center">Thể Loại</th> 
                                 <th style="width:10%"> </th> 
                             </tr> 
                         </thead> 
@@ -138,13 +138,10 @@
                                             <td data-th="Quantity"><c:out value="${i.getcQuantity()}"></c:out></td>
                                             <td data-th="Type"><c:out value="${i.getcType()}"></c:out>
                                             </td> 
-                                            <td data-th="Subtotal" class="text-center"><c:out value="${i.getcPrice()}"></c:out></td> 
+                                          
                                             <td  > 
-                                                <button class="btn btn-danger btn-sm" ><a href="/CartController?page=remove&id=<c:out value="${i.getcId()}"/>"><i class="far fa-times-circle"></i></a>                                   
-                                                </button>    
-                                                
-                                            </td> 
-                                        </tr>
+                                       
+                                        
                                         <c:set var="total" value="${total +  i.getcPrice()}"></c:set>                                
                             </c:forEach>
                         </form
@@ -237,7 +234,7 @@
                                                                 <div class="h16-bo-26 text-primary"><c:out value="${total}"/> <b style="color:#000;">VNĐ</b></div>
                                                             </div>
                                                         </div>
-                                                        <a href="index.php?route=account/recharge">
+                                                        <a href="/">
                                                             <button type="button" class="btn btn-danger col-md-12 col-sm-12 col-xs-12"><strong style="color:#fff;">Thanh Toán</strong></button>
                                                         </a>
                                                     </div>

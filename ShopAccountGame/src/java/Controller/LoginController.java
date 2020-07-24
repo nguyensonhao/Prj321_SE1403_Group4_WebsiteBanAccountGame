@@ -156,7 +156,7 @@ public class LoginController extends HttpServlet {
                 request.setAttribute("name", uFullname);
                 request.setAttribute("email", uEmail);
                 request.setAttribute("username", uUser);
-                request.getRequestDispatcher("signup.jsp").forward(request, response);
+                request.getRequestDispatcher("registration.jsp").forward(request, response);
             }
 
         }
