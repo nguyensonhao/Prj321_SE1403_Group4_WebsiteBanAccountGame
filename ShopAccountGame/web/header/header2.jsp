@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
     </head>
     <body>
-           <header class="home-page fixed-header" style="background-color: #5BBD2B">
+        <header class="home-page fixed-header" style="background-color: #5BBD2B">
             <nav id="sidebar" class="navbar">
                 <div id="dismiss">
                     <i class="fas fa-times"></i>
@@ -96,32 +96,32 @@
             <div class="overlay"></div>
             <script src="https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js" type="text/javascript"></script>
             <script type="text/javascript">
-                    $(document).ready(function () {
-                        $("#filter_name").autocomplete("getdata.php?lan=vi", {
-                            width: 450,
-                            resultsClass: "ac_results col-lg-7",
-                            matchContains: true
-                        });
-
-                        $("#home-cart").hover(
-                                function () {
-                                    $('#dropdown-detail-cart').css("display", "block");
-                                },
-                                function () {
-                                    $('#dropdown-detail-cart').css("display", "none");
-                                }
-                        );
-
-                        $(".home-mini-profile").hover(
-                                function () {
-                                    $('.drop-mini-profile').css("display", "block");
-                                },
-                                function () {
-                                    $('.drop-mini-profile').css("display", "none");
-                                }
-                        );
-
+                $(document).ready(function () {
+                    $("#filter_name").autocomplete("getdata.php?lan=vi", {
+                        width: 450,
+                        resultsClass: "ac_results col-lg-7",
+                        matchContains: true
                     });
+
+                    $("#home-cart").hover(
+                            function () {
+                                $('#dropdown-detail-cart').css("display", "block");
+                            },
+                            function () {
+                                $('#dropdown-detail-cart').css("display", "none");
+                            }
+                    );
+
+                    $(".home-mini-profile").hover(
+                            function () {
+                                $('.drop-mini-profile').css("display", "block");
+                            },
+                            function () {
+                                $('.drop-mini-profile').css("display", "none");
+                            }
+                    );
+
+                });
             </script>
             <script type="text/javascript">
                 $(document).ready(function () {
@@ -140,10 +140,10 @@
                     });
                 });
             </script>
-               <c:set var="x" value="0"></c:set>
-	<c:forEach items="${cartlist }" var="i">
-		<c:set var="x" value="${x+1 }"></c:set>
-	</c:forEach>
+            <c:set var="x" value="0"></c:set>
+            <c:forEach items="${cartlist }" var="i">
+                <c:set var="x" value="${x+1 }"></c:set>
+            </c:forEach>
             <div class="header-container container">
                 <div id="sidebarCollapse" class="btn-menu">
                     <i class="fas fa-bars" style="font-size: 20px; vertical-align: middle"></i>
@@ -170,8 +170,10 @@
                         <div class="d-flex align-items-center ml-1">
                             <i class="fas fa-user-circle" style="font-size: 40px;"></i>
                             <span>&#160</span>
-                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out>  </b>
-                           
+                            <b style="font-size: 20px;"> <c:out value="${username}"></c:out>  
+                            <a href="index.php?route=account/login"> Đăng Xuất
+                              </a>                           
+                                </b>    
                         </div>
                     </div>
 
@@ -183,7 +185,7 @@
                                     class="quantity"><c:out value="${x}"></c:out></span>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

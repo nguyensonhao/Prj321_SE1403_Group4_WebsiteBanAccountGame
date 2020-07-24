@@ -20,7 +20,7 @@
             </noscript>
             <!-- End Google Tag Manager (noscript) -->
 
-           <div class="top-header" style="background-color: #088A08">
+            <div class="top-header" style="background-color: #088A08">
                 <div class="container">
                     <div class="row" style="opacity: 0.7">
                         <div class="slide-news">
@@ -106,150 +106,155 @@
                     </div>
                 </div>
                 <hr>
-                  <div class="row cart-detail">
+                <div class="row cart-detail">
                     <table id="cart" class="table table-hover table-condensed" > 
                         <thead> 
                             <tr> 
                                 <th style="width:50% ">Tên sản phẩm</th> 
                                 <th style="width:10%">Giá</th> 
                                 <th style="width:8%">Số lượng</th> 
-                                
+                                <th style="width:8%"></th> 
                                 <th style="width:22%" class="text-center">Thể Loại</th> 
                                 <th style="width:10%"> </th> 
                             </tr> 
                         </thead> 
                         <tbody>
-                      
+
                             <c:set var="total" value="0"></c:set>     
-    
+
                             <c:forEach items="${cartlist }" var="i">  
-                                        <tr> 
-                                            <td data-th="Product"> 
-                                                <div class="row"> 
-                                                    <div class="col-sm-2 hidden-xs"><img src="<c:out value="${i.getcLImage() }"></c:out>" alt="" class="portrait-crop"width="125">
-                                                    </div> 
-                                                    <div class="col-sm-10"> 
-                                                        <h4 class="col-sm-10 col-xs-10"><c:out value="${i.getcName()}"></c:out></h4> 
-                                                        <p> </p> 
-                                                    </div> 
+                                <tr> 
+                                    <td data-th="Product"> 
+                                        <div class="row"> 
+                                            <div class="col-sm-2 hidden-xs"><img src="<c:out value="${i.getcLImage() }"></c:out>" alt="" class="portrait-crop"width="125">
                                                 </div> 
-                                            </td> 
-                                            <td data-th="Price"><c:out value="${i.getcPrice()}"></c:out></td>
-                                            <td data-th="Quantity"><c:out value="${i.getcQuantity()}"></c:out></td>
-                                            <td data-th="Type"><c:out value="${i.getcType()}"></c:out>
-                                            </td> 
-                                          
-                                            <td  > 
-                                       
-                                        
-                                        <c:set var="total" value="${total +  i.getcPrice()}"></c:set>                                
+                                                <div class="col-sm-10"> 
+                                                    <h4 class="col-sm-10 col-xs-10"><c:out value="${i.getcName()}"></c:out></h4> 
+                                                    <p> </p> 
+                                                </div> 
+                                            </div> 
+                                        </td> 
+                                        <td data-th="Price"><c:out value="${i.getcPrice()}"></c:out></td>
+                                    <td data-th="Quantity"><c:out value="${i.getcQuantity()}"></c:out></td>
+                                        <td data-th="Type">
+                                        </td> 
+                                        <td data-th="Subtotal" class="text-center"><c:out value="${i.getcType()}"></c:out></td> 
+                                    </tr>
+                                <c:set var="cID" value="${i.getcId()}"></c:set>  
+                                <c:set var="total" value="${total +  i.getcPrice()}"></c:set>                                
                             </c:forEach>
-                        </form
+
                         </tbody>
-                     
                     </table>
                 </div> 
-                                <hr>
-                        <div class="mb15"></div>
-                        <div class="thanh-toan">
-                            <div class="row">
-                                <div class="col-md-12 col-xs-12 padd-0">
-                                    <div class="col-md-6 col-xs-12 padd-0">
-                                        <div class="panel-group" id="accordion">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title"><a href="#collapse-coupon" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"><strong>Nhập Email Để Mua Hàng</strong></a></h4>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="input-group">
-                                                        <input type="text" name="coupon" value="" placeholder="Nhập Email để mua hàng" id="input-coupon" class="form-control" />
-                                                        <span class="input-group-btn">
-                                                            <input type="button" value="Sử dụng" id="button-coupon" data-loading-text="Đang tải..." style="color: #fff;background-color: #21beff;border-color: #21beff;" class="btn btn-primary"  />
-                                                        </span></div>
+                <hr>
 
+                <div class="mb15"></div>
+                <div class="thanh-toan">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 padd-0">
+                            <div class="col-md-6 col-xs-12 padd-0">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title"><a href="#collapse-coupon" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"><strong>Nhập Email Để Mua Hàng</strong></a></h4>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <tbody>
+                                            <form action="PaymentController" method="post" >
+                                                <div class="input-group">
+                                                    <input  type="hidden" name="page" value="check_mail">
+                                                    <input type="text" name="Gmail" value="" placeholder="Nhập Email để mua hàng" id="input-coupon" class="form-control" />
+                                                    <span class="input-group-btn">
+                                                        <input type="button" value="Thực Hiện" id="button-coupon" data-loading-text="Đang tải..." style="color: #fff;background-color: #21beff;border-color: #21beff;" class="btn btn-primary"  />
+                                                    </span>
                                                 </div>
-                                            </div>
+                                            </form>
+                                            </tbody>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12 padd-0">
-                                        <div class="order-total">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading" style="border-color: transparent;">
-                                                    <h4 class="panel-title"><strong>THÔNG TIN THANH TOÁN</strong></h4>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <div class="row">
-                                                        <!-- Thành Tiền -->
-                                                        <div class="col-md-12col-sm-12 col-xs-12 padd-0 margin-item">
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
-                                                                <span class="text-gray">Thành tiền sản phẩm</span>
-                                                            </div>
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
-                                                                <span class="thanh-tien"><c:out value="${total}"/></span>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <!-- Border Bottom Nét Đứt -->
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-border-dash border-bottom-dash"></div>
-
-                                                        <!-- Tổng Tiền -->
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
-                                                                <div class="h16-md-26 text-gray-900">TỔNG TIỀN</div>
-                                                            </div>
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
-                                                                <div class="h16-bo-26 text-primary"><c:out value="${total}"/></div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Border Bottom Nét Đứt -->
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-border-dash border-bottom-dash"></div>
-                                                        <!-- Thưởng Tiền + Số Dư Hiện Tại -->
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
-                                                                <span class="text-gray">Mã giảm giá</span>
-                                                            </div>
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
-                                                                <span class="thanh-tien">0%</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
-                                                                <span class="text-gray">Giảm giá</span>
-                                                            </div>
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
-                                                                <span class="thanh-tien"><b style="color:#000;">VNĐ</b></i></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Border Bottom Nét Đứt -->
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-border-dash border-bottom-dash"></div>
-                                                        <!-- Số Tiền Cần Nạp Thêm -->
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
-                                                                <div class="h16-md-26 text-gray-900">Số Tiền Bạn Cần Chi Trả</div>
-                                                            </div>
-                                                            <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
-                                                                <div class="h16-bo-26 text-primary"><c:out value="${total}"/> <b style="color:#000;">VNĐ</b></div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="/">
-                                                            <button type="button" class="btn btn-danger col-md-12 col-sm-12 col-xs-12"><strong style="color:#fff;">Thanh Toán</strong></button>
-                                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12 padd-0">
+                                <div class="order-total">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" style="border-color: transparent;">
+                                            <h4 class="panel-title"><strong>THÔNG TIN THANH TOÁN</strong></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <!-- Thành Tiền -->
+                                                <div class="col-md-12col-sm-12 col-xs-12 padd-0 margin-item">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
+                                                        <span class="text-gray">Thành tiền sản phẩm</span>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
+                                                        <span class="thanh-tien"><c:out value="${total}"/></span>
                                                     </div>
                                                 </div>
+
+
+                                                <!-- Border Bottom Nét Đứt -->
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-border-dash border-bottom-dash"></div>
+
+                                                <!-- Tổng Tiền -->
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
+                                                        <div class="h16-md-26 text-gray-900">TỔNG TIỀN</div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
+                                                        <div class="h16-bo-26 text-primary"><c:out value="${total}"/></div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Border Bottom Nét Đứt -->
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-border-dash border-bottom-dash"></div>
+                                                <!-- Thưởng Tiền + Số Dư Hiện Tại -->
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
+                                                        <span class="text-gray">Mã giảm giá</span>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
+                                                        <span class="thanh-tien">0%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
+                                                        <span class="text-gray">Giảm giá</span>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
+                                                        <span class="thanh-tien"><b style="color:#000;">VNĐ</b></i></span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Border Bottom Nét Đứt -->
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-border-dash border-bottom-dash"></div>
+                                                <!-- Số Tiền Cần Nạp Thêm -->
+                                                <div class="col-md-12 col-sm-12 col-xs-12 padd-0 margin-item">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0">
+                                                        <div class="h16-md-26 text-gray-900">Số Tiền Bạn Cần Chi Trả</div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 padd-0 text-right">
+                                                        <div class="h16-bo-26 text-primary"><c:out value="${total}"/> <b style="color:#000;">VNĐ</b></div>
+                                                    </div>
+                                                </div>
+                                                <a href="/PaymentController?page=Thanhtoan&total=${total}&cid=${cID}">
+                                                    <button type="button" class="btn btn-danger col-md-12 col-sm-12 col-xs-12"><strong style="color:#fff;">Thanh Toán</strong></button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="buttons clearfix">
-                            <div class="pull-left"><a href="index.jsp" class="btn btn-default">Tiếp tục mua hàng</a></div>
-                           
-                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="buttons clearfix">
+                    <div class="pull-left"><a href="index.jsp" class="btn btn-default">Tiếp tục mua hàng</a></div>
+
+                </div>
                 </form>
             </div>
         </div>
@@ -297,7 +302,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
             <div id="notification_footer" class="notification_footer">
                 <div class="nt-content"></div>
@@ -310,8 +315,8 @@
         </a>
 
         <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-          var time_show_notification = 5000;
-          var time_next_notification = 12000;
+            var time_show_notification = 5000;
+            var time_next_notification = 12000;
         </script>
         <script src="./assets/catalog/common/footer.js"></script>
 

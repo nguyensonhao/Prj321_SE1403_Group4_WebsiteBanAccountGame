@@ -78,6 +78,38 @@ public class UserDAO {
         }
         return "Invalid user credentials";
     }
+    public ArrayList<User> getUserAll() {
+        try {
+            String sql = "SELECT * FROM `user`";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rst = pstmt.executeQuery();
+            while (rst.next()) {
+                int uId = rst.getInt("uId");
+                String uFullName = rst.getString("uFullName");
+                String userName =rst.getString("userName");
+                int uAge =rst.getInt("uAge");
+                String uPhone =rst.getString("uPhone");
+                String uEmail =rst.getString("uEmail");
+                String uAdrress =rst.getString("uAddress");
+                Date uBirthday=rst.getDate("uBirthday");
+                
+                User u = new User();
+                u.setuId(uId);
+                u.setuFullName(uFullName);
+                u.setUserName(userName);
+                u.setuAge(uAge);
+                u.setuPhone(uPhone);
+                u.setuEmail(uEmail);
+                u.setuAdrress(uAdrress);
+                u.setuBirthday((java.sql.Date)uBirthday);
+                userList.add(u);
+            }
+            return userList;
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     public User getUser(int userId) {
         try {
@@ -161,6 +193,20 @@ public class UserDAO {
             st.setDate(9, u.getuBirthday());
             return st.executeUpdate();
 
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+     public int getUid(String userName){
+        try {
+            String sql = "SELECT `uId` FROM `user` WHERE `userName` = ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1,userName );
+            ResultSet rs = st.executeQuery();
+             while (rs.next()) {
+                 return rs.getInt("uId");
+             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

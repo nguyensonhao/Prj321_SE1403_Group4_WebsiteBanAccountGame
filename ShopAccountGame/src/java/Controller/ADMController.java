@@ -98,7 +98,8 @@ public class ADMController extends HttpServlet {
         }
         if (page.equals("logout")) {
             request.getSession();
-            getServletContext().removeAttribute("username");
+            session.removeAttribute("username");
+            session.removeAttribute("cartlist");
             response.sendRedirect("login.jsp");
         }
         if (page.equals("edit_product")) {
