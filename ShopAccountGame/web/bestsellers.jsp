@@ -301,6 +301,10 @@
                                 </div>
                                 <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
                                     <ul>
+                                         <li>
+                                            <a href="index.jsp"><i class="fab fa-google-play"></i>
+                                                <span>Trang chủ</span></a>
+                                        </li>
                                         <li>
                                             <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
                                                 <span>Liên quân</span></a>
@@ -323,7 +327,7 @@
                                         <a href="bestsellers.jsp"><i class="fab fa-hotjar"></i><span>Sản Phẩm Hot</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
-                                        <a href=""><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
+                                        <a href="AccSale.jsp"><i class="fas fa-award"></i><span>Đang Khuyến Mãi</span></a>
                                     </div>
                                     <div class="quick-menu head-link">
                                         <a href="/index.php?route=account/topup"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
@@ -361,52 +365,50 @@
                 <div style="text-align:center;margin-bottom:22px;">
                     <strong><h1>Được Mua Nhiều</h1></strong>
                 </div>
-                <div class="search-header" id="content">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 mb-15 col-filter-price">
-                            <input type="text" name="search" value="" placeholder="Nhập từ khóa tìm kiếm..." class="form-control">
-                        </div>
-                        <div class="col-lg-2 col-md-2 mb-15 col-filter-price">
-                            <select name="category_id" class="form-control">
-                                <option value="0">Tất cả danh mục</option>
-                                <option value="1">Liên minh huyền thoại </option>
-                                <option value="2">Liên quân</option>
-                                <option value="3">Fifa oline 4</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-2 col-md-2 mb-15 col-filter-price">
-                            <select id="input-sort" class="form-control">
-                                <option value="" selected="selected" data-order="">Mặc định</option>
-                                <option value="p.price"  data-order="ASC">Giá (Thấp &gt; Cao)</option>
-                                <option value="p.price"  data-order="DESC">Giá (Cao &gt; Thấp)</option>
-                                <option value="pd.name"  data-order="ASC">Tên (A - Z)</option>
-                                <option value="pd.name"  data-order="DESC">Tên (Z - A)</option>
-                            </select>
-                        </div>
+                <div class="list-container">
+                    <div class="row justify-content-md-center">
+                        <div class="product-price-well">
+                            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+                                <div class="well-price">
+                                    <a href="search1.jsp?min=0&max=50000"><strong>Dưới 50.000đ</strong></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+                                <div class="well-price" onclick="filterMaxPrice(this, 100000)">
+                                    <a href="search1.jsp?min=50000&max=100000"><strong>Dưới 100.000đ</strong></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+                                <div class="well-price" onclick="filterMaxPrice(this, 200000)">
+                                    <a href="search1.jsp?min=100000&max=200000"><strong>Dưới 200.000đ</strong></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+                                <div class="well-price" onclick="filterMaxPrice(this, 500000)">
+                                    <a href="search1.jsp?min=200000&max=500000"><strong>Dưới 500.000đ</strong></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12" style="padding-left: 15px;padding-right: 15px">
+                                <div class="well-price">
+                                    <a href="search1.jsp?min=500000&max=1000000"><strong>Trên 500.000đ</strong></a>
+                                </div>
+                            </div>
 
-                        <div class="col-lg-2 col-md-2 mb-15 col-filter-price">
-                            <select id="input-tag" class="form-control" name="filter_tag">
-                                <option value="">---- Tag ---</option>
-                                <option value="lienminh">lienminh</option>
-                                <option value="lienquan">lienquan</option>
-                                <option value="fifaonline4">fifaonline4</option>
-                            </select>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-sm-2 text-right col-filter-price">
-                            <select id="input-limit" style="font-weight: bold;color: #656262;" class="form-control">
-                                <option value="1" selected="selected">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+                            <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12" style="padding-left: 15px;padding-right: 15px">
+                                <div class="well-price">
+                                    <a href="search1.jsp?min=1000000&max=3000000"><strong>Trên 1.000.000đ</strong></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="row service" id="max-price"></div>
+                    <hr>
                 </div>
 
 
                 <div class="row" style="margin-top:25px;margin-bottom:50px;">
                     <div class="col-lg-9 col-md-9 col-sm-9">
-                        <strong><h4>Sản phẩm thỏa điều kiện tìm kiếm (39 sản phẩm )</h4></strong>
+                        <strong><h4>Account hot tháng 7</h4></strong>
                     </div>
                 </div>
             <sql:setDataSource user="root" password="" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/shopacc" var="ds"/>
@@ -432,27 +434,27 @@
                                     <div class="item-info">
                                         <div class="item-title">
                                             <a href="ProductDetail?id=${row.pId}">${row.pName }</a>
+                                             <marquee width="150"><font style="font-family:Bookman" color="green" >${row.pDescription}</font></marquee>
                                         </div>
                                         <div class="item-price">
                                             <p class="price">
-                                                <span class="cur-p"> <td>${row.pPrice}</td></span>
+                                                <span class="cur-p"> <td>${row.pPrice} VNĐ</span>
                                             </p>
                                         </div>
 
-                                        <div class="item-btn-a">  
-                                            <i class="fas fa-shopping-cart">${pDescription}</i></a>
-                                        </div>
-                                        <div class="item-btn" style="margin-top: 10px">Mua ngay</div>
+                                        <div class="item-btn-a">
+                                             <a href="/CartController?action=index&page=addtocart&id=${row.pId}" onclick="">
+                                                 <i class="fas fa-shopping-cart "></i>
+                                             </a>
+                                         </div>
+                                         <div class="item-btn" style="margin-top: 10px" class="templatemo-edit-btn">
+                                             <a href="/CartController?action=showcart&page=addtocart&id=${row.pId}">Mua ngay</a>       
+                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </c:forEach>
-
-
                     </div>
-                </div>
-                <div class="view-more btn-aqua">
-                    Xem thêm
                 </div>
             </div>
         </div>

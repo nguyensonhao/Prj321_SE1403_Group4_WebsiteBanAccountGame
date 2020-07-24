@@ -9,13 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
-<!--[if IE 8 ]><html dir="ltr" lang="vi" class="ie8"><![endif]-->
-<!--[if IE 9 ]><html dir="ltr" lang="vi" class="ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
 <html dir="ltr" lang="vi">
-    <!--<![endif]-->
-
     <head>
           <jsp:include page="header/header1.jsp"></jsp:include>
     </head>
@@ -90,32 +84,36 @@
                     <div class="bar-btn">
                         <i class="fas fa-bars"></i><span>Danh mục sản phẩm</span>
                     </div>
+                    
                     <div class="dropdown-menu drop-category nav-menu" aria-labelledby="dropdownMenuLink">
-                        <ul>
-                            <li>
-                                <a href="/index.php?route=product/category&amp;path=59&amp;filter_price_from=0&amp;filter_price_to=15000000&amp;sort=op.quantity&amp;order=DESC&amp;limit=12"><i class="fab fa-steam-symbol"></i>
-                                    <span>Game trên Steam</span></a>
-                            </li>
-                            <li>
-                                <a href="/index.php?route=product/search&amp;search=pubg"><i class="fas fa-trophy"></i>
-                                    <span>PUBG</span></a>
-                            </li>
-                            <li>
-                                <a href="/Origin"><i class="icon icon-origin-svg"></i>
-                                    <span>Game trên Origin</span></a>
-                            </li>
+                                    <ul>
+                                         <li>
+                                            <a href="index.jsp"><i class="fab fa-google-play"></i>
+                                                <span>Trang chủ</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="accountLienQuan.jsp"><i class="fab fa-steam-symbol"></i>
+                                                <span>Liên quân</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="accountLienMinh.jsp"><i class="fas fa-trophy"></i>
+                                                <span>Liên minh</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="accountFifa.jsp"><i class="icon icon-origin-svg"></i>
+                                                <span>Fifa online 4</span></a>
 
-                        </ul>
-                    </div>
+                                    </ul>
+                                </div>
                 </div>
 
                 <div class="right-menu">
                     <div class="row menu-tab-all">
                         <div class="quick-menu head-link">
-                            <a href="#"><i class="fab fa-hotjar"></i><span>Mua nhiều trong 24h</span></a>
+                            <a href="bestsellers.jsp"><i class="fab fa-hotjar"></i><span>Mua nhiều trong 24h</span></a>
                         </div>
                         <div class="quick-menu head-link">
-                            <a href="#"><i class="fas fa-award"></i><span>ĐANG KHUYẾN MẠI</span></a>
+                            <a href="AccSale.jsp"><i class="fas fa-award"></i><span>ĐANG KHUYẾN MẠI</span></a>
                         </div>
                         <div class="quick-menu head-link">
                             <a href="#"><i class="far fa-credit-card"></i><span>Hình thức thanh toán</span></a>
@@ -265,15 +263,6 @@
                 display:block;
             }
         }</style>
-<div class="trang-sp">
-
-    <div class="container">
-
-        <div id="alert-position"></div>
-        <div class="container-title">
-            <h2 class="thanh-toan-title">Thanh Toán</h2><span class="count-san-pham">${temp}</span>
-                    </div>
-        </br>
          <div class="trang-sp">
 
             <div class="container">
