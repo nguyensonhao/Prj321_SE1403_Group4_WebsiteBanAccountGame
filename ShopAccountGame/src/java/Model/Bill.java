@@ -1,55 +1,47 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
-
 
 /**
  *
  * @author Hao Nguyen
  */
-public class Bill {
+public class Bill implements Serializable {
 
     private int bId;
-    private int uId;
     private String pName;
     private int bQuantity;
-    private String pLImage;
-    private String pDescription;
-    private int pId;
-    private double pPrice;
-    private double bTotalPrice;
+    private String pType;
+    private int pPrice;
+    private int bTotalPrice;
     private Date bDateBuy;
     private String uEmail;
-    private String Note;
+    private String codeProduce;
 
-    public Bill(){
-        
+    public Bill() {
+
     }
 
-    public Bill(int bId, int uId, String pName, int bQuantity, String pLImage, String Description, int pId, double pPrice, double bTotalPrice, Date bDateBuy, String uEmail, String Note) {
+    public Bill(int bId, String pName, int bQuantity, String pType, int pPrice, int bTotalPrice, Date bDateBuy, String uEmail, String codeProduce) {
         this.bId = bId;
-        this.uId = uId;
         this.pName = pName;
         this.bQuantity = bQuantity;
-        this.pLImage = pLImage;
-        this.pDescription = Description;
-        this.pId = pId;
+        this.pType = pType;
         this.pPrice = pPrice;
         this.bTotalPrice = bTotalPrice;
         this.bDateBuy = bDateBuy;
         this.uEmail = uEmail;
-        this.Note = Note;
-    }
-    
-    public Bill(String pName, int bQuantity, String pLImage, String Description, double pPrice, Date bDateBuy) {
-        this.pName = pName;
-        this.bQuantity = bQuantity;
-        this.pLImage = pLImage;
-        this.pDescription = Description;
-        this.pPrice = pPrice;
-        this.bDateBuy = bDateBuy;
+        this.codeProduce = codeProduce;
     }
 
+    public String getCodeProduce() {
+        return codeProduce;
+    }
+
+    public void setCodeProduce(String codeProduce) {
+        this.codeProduce = codeProduce;
+    }
 
     public int getbId() {
         return bId;
@@ -57,14 +49,6 @@ public class Bill {
 
     public void setbId(int bId) {
         this.bId = bId;
-    }
-
-    public int getuId() {
-        return uId;
-    }
-
-    public void setuId(int uId) {
-        this.uId = uId;
     }
 
     public String getpName() {
@@ -83,43 +67,27 @@ public class Bill {
         this.bQuantity = bQuantity;
     }
 
-    public String getpLImage() {
-        return pLImage;
+    public String getpType() {
+        return pType;
     }
 
-    public void setpLImage(String pLImage) {
-        this.pLImage = pLImage;
+    public void setpType(String pType) {
+        this.pType = pType;
     }
 
-    public String getpDescription() {
-        return pDescription;
-    }
-
-    public void setpDescription(String Description) {
-        this.pDescription = Description;
-    }
-
-    public int getpId() {
-        return pId;
-    }
-
-    public void setpId(int pId) {
-        this.pId = pId;
-    }
-
-    public double getpPrice() {
+    public int getpPrice() {
         return pPrice;
     }
 
-    public void setpPrice(double pPrice) {
+    public void setpPrice(int pPrice) {
         this.pPrice = pPrice;
     }
 
-    public double getbTotalPrice() {
+    public int getbTotalPrice() {
         return bTotalPrice;
     }
 
-    public void setbTotalPrice(double bTotalPrice) {
+    public void setbTotalPrice(int bTotalPrice) {
         this.bTotalPrice = bTotalPrice;
     }
 
@@ -138,16 +106,4 @@ public class Bill {
     public void setuEmail(String uEmail) {
         this.uEmail = uEmail;
     }
-
-    public String getNote() {
-        return Note;
-    }
-
-    public void setNote(String Note) {
-        this.Note = Note;
-    }
-
-    
-
-    
 }

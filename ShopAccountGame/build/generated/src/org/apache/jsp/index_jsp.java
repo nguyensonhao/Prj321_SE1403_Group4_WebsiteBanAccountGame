@@ -942,10 +942,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("<html>\r\n");
         out.write("    <head>\r\n");
         out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-        out.write("        \r\n");
+        out.write("\r\n");
         out.write("    </head>\r\n");
         out.write("    <body>\r\n");
-        out.write("           <header class=\"home-page fixed-header\" style=\"background-color: #5BBD2B\">\r\n");
+        out.write("        <header class=\"home-page fixed-header\" style=\"background-color: #5BBD2B\">\r\n");
         out.write("            <nav id=\"sidebar\" class=\"navbar\">\r\n");
         out.write("                <div id=\"dismiss\">\r\n");
         out.write("                    <i class=\"fas fa-times\"></i>\r\n");
@@ -961,7 +961,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                                    <br>\r\n");
         out.write("                                    <small style=\"margin: 40px;\">Xem nhiều thông tin hơn</small>\r\n");
         out.write("                                </span>\r\n");
-        out.write("                            </div>\r\n");
+        out.write("                                <div class=\"dropdown-menu drop-mini-login\" aria-labelledby=\"dropdownMenuLink\">\r\n");
+        out.write("                                    <a href=\"*\">\r\n");
+        out.write("                                        <div class=\"element-menu-login style-login\">\r\n");
+        out.write("                                            Đăng nhập\r\n");
+        out.write("                                        </div>\r\n");
+        out.write("                                    </a>\r\n");
+        out.write("                                </div>\r\n");
         out.write("                        </li>\r\n");
         out.write("\r\n");
         out.write("                        <li>\r\n");
@@ -1029,32 +1035,32 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("            <div class=\"overlay\"></div>\r\n");
         out.write("            <script src=\"https://hgeqic7azi.vcdn.com.vn/catalog/view/theme/bigshop/js/jquery.autocomplete.js\" type=\"text/javascript\"></script>\r\n");
         out.write("            <script type=\"text/javascript\">\r\n");
-        out.write("                    $(document).ready(function () {\r\n");
-        out.write("                        $(\"#filter_name\").autocomplete(\"getdata.php?lan=vi\", {\r\n");
-        out.write("                            width: 450,\r\n");
-        out.write("                            resultsClass: \"ac_results col-lg-7\",\r\n");
-        out.write("                            matchContains: true\r\n");
-        out.write("                        });\r\n");
-        out.write("\r\n");
-        out.write("                        $(\"#home-cart\").hover(\r\n");
-        out.write("                                function () {\r\n");
-        out.write("                                    $('#dropdown-detail-cart').css(\"display\", \"block\");\r\n");
-        out.write("                                },\r\n");
-        out.write("                                function () {\r\n");
-        out.write("                                    $('#dropdown-detail-cart').css(\"display\", \"none\");\r\n");
-        out.write("                                }\r\n");
-        out.write("                        );\r\n");
-        out.write("\r\n");
-        out.write("                        $(\".home-mini-profile\").hover(\r\n");
-        out.write("                                function () {\r\n");
-        out.write("                                    $('.drop-mini-profile').css(\"display\", \"block\");\r\n");
-        out.write("                                },\r\n");
-        out.write("                                function () {\r\n");
-        out.write("                                    $('.drop-mini-profile').css(\"display\", \"none\");\r\n");
-        out.write("                                }\r\n");
-        out.write("                        );\r\n");
-        out.write("\r\n");
+        out.write("                $(document).ready(function () {\r\n");
+        out.write("                    $(\"#filter_name\").autocomplete(\"getdata.php?lan=vi\", {\r\n");
+        out.write("                        width: 450,\r\n");
+        out.write("                        resultsClass: \"ac_results col-lg-7\",\r\n");
+        out.write("                        matchContains: true\r\n");
         out.write("                    });\r\n");
+        out.write("\r\n");
+        out.write("                    $(\"#home-cart\").hover(\r\n");
+        out.write("                            function () {\r\n");
+        out.write("                                $('#dropdown-detail-cart').css(\"display\", \"block\");\r\n");
+        out.write("                            },\r\n");
+        out.write("                            function () {\r\n");
+        out.write("                                $('#dropdown-detail-cart').css(\"display\", \"none\");\r\n");
+        out.write("                            }\r\n");
+        out.write("                    );\r\n");
+        out.write("\r\n");
+        out.write("                    $(\".home-mini-profile\").hover(\r\n");
+        out.write("                            function () {\r\n");
+        out.write("                                $('.drop-mini-profile').css(\"display\", \"block\");\r\n");
+        out.write("                            },\r\n");
+        out.write("                            function () {\r\n");
+        out.write("                                $('.drop-mini-profile').css(\"display\", \"none\");\r\n");
+        out.write("                            }\r\n");
+        out.write("                    );\r\n");
+        out.write("\r\n");
+        out.write("                });\r\n");
         out.write("            </script>\r\n");
         out.write("            <script type=\"text/javascript\">\r\n");
         out.write("                $(document).ready(function () {\r\n");
@@ -1073,11 +1079,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                    });\r\n");
         out.write("                });\r\n");
         out.write("            </script>\r\n");
-        out.write("               ");
+        out.write("            ");
         if (_jspx_meth_c_set_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("\r\n");
-        out.write("\t");
+        out.write("            ");
         if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("\r\n");
@@ -1111,22 +1117,22 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("  </b>\r\n");
-        out.write("                           \r\n");
-        out.write("                        </div>\r\n");
-        out.write("                    </div>\r\n");
         out.write("\r\n");
-        out.write("                    <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\r\n");
-        out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
-        out.write("                             aria-expanded=\"false\">\r\n");
-        out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
-        out.write("                                    class=\"quantity\">");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("\r\n");
+        out.write("                        <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\r\n");
+        out.write("                            <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
+        out.write("                                 aria-expanded=\"false\">\r\n");
+        out.write("                                <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
+        out.write("                                    <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
+        out.write("                                        class=\"quantity\">");
         if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("</span>\r\n");
         out.write("                            </div>\r\n");
         out.write("                        </div>\r\n");
-        out.write("                        \r\n");
+        out.write("\r\n");
         out.write("                    </div>\r\n");
         out.write("                </div>\r\n");
         out.write("            </div>\r\n");
@@ -1183,11 +1189,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("\t\t");
+          out.write("                ");
           if (_jspx_meth_c_set_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("\r\n");
-          out.write("\t");
+          out.write("            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;

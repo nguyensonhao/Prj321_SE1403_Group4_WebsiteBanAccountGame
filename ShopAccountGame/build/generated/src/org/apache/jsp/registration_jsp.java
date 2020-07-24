@@ -48,14 +48,21 @@ public final class registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<html lang=\"en\">\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+<<<<<<< HEAD
       out.write("        <link rel=\"icon\" href=\"http://www.domain.com/favicon.ico\" type=\"image/x-icon\" />\r\n");
+=======
+>>>>>>> Hiển
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n");
       out.write("        <meta name=\"description\" content=\"Colorlib Templates\">\r\n");
       out.write("        <meta name=\"author\" content=\"Colorlib\">\r\n");
       out.write("        <meta name=\"keywords\" content=\"Colorlib Templates\">\r\n");
       out.write("\r\n");
       out.write("        <!-- Title Page-->\r\n");
+<<<<<<< HEAD
       out.write("        <title>Registration</title>\r\n");
+=======
+      out.write("        <title>Au Register Forms by Colorlib</title>\r\n");
+>>>>>>> Hiển
       out.write("\r\n");
       out.write("        <!-- Icons font CSS-->\r\n");
       out.write("        <link href=\"vendor/mdi-font/css/material-design-iconic-font.min.css\" rel=\"stylesheet\" media=\"all\">\r\n");
