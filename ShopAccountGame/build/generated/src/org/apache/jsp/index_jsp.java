@@ -961,13 +961,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                                    <br>\r\n");
         out.write("                                    <small style=\"margin: 40px;\">Xem nhiều thông tin hơn</small>\r\n");
         out.write("                                </span>\r\n");
-        out.write("                                <div class=\"dropdown-menu drop-mini-login\" aria-labelledby=\"dropdownMenuLink\">\r\n");
-        out.write("                                    <a href=\"*\">\r\n");
-        out.write("                                        <div class=\"element-menu-login style-login\">\r\n");
-        out.write("                                            Đăng nhập\r\n");
-        out.write("                                        </div>\r\n");
-        out.write("                                    </a>\r\n");
-        out.write("                                </div>\r\n");
+        out.write("                            </div>\r\n");
         out.write("                        </li>\r\n");
         out.write("\r\n");
         out.write("                        <li>\r\n");
@@ -1116,17 +1110,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("                            <b style=\"font-size: 20px;\"> ");
         if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
-        out.write("  </b>\r\n");
-        out.write("\r\n");
-        out.write("                            </div>\r\n");
+        out.write("  \r\n");
+        out.write("                            <a href=\"index.php?route=account/login\"> Đăng Xuất\r\n");
+        out.write("                              </a>                           \r\n");
+        out.write("                                </b>    \r\n");
         out.write("                        </div>\r\n");
+        out.write("                    </div>\r\n");
         out.write("\r\n");
-        out.write("                        <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\r\n");
-        out.write("                            <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
-        out.write("                                 aria-expanded=\"false\">\r\n");
-        out.write("                                <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
-        out.write("                                    <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
-        out.write("                                        class=\"quantity\">");
+        out.write("                    <div id=\"home-cart\" class=\"dropdown dropdown-header shopping-cart\">\r\n");
+        out.write("                        <div data-toggle=\"dropdown\" data-loading-text=\"Đang tải...\" class=\"heading dropdown-toggle\"\r\n");
+        out.write("                             aria-expanded=\"false\">\r\n");
+        out.write("                            <div class=\"align-items-center d-flex\" id=\"update-cart\">\r\n");
+        out.write("                                <i class=\"fas fa-shopping-cart cart-size text-white\"></i><a href=\"cart.jsp\"><b class=\"cart-text\">Giỏ hàng</b></a><span\r\n");
+        out.write("                                    class=\"quantity\">");
         if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("</span>\r\n");

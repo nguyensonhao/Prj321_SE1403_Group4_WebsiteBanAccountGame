@@ -1,2 +1,0 @@
-Model.Product
-Model.Temp
